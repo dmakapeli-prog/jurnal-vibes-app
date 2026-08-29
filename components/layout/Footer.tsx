@@ -3,7 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { Share2, Link as LinkIcon, Camera, PlayCircle, Music } from 'lucide-react';
-import { Logo } from '../ui/Logo';
 
 export const Footer: React.FC = () => {
   return (
@@ -12,7 +11,12 @@ export const Footer: React.FC = () => {
         {/* Layer 1: Logo */}
         <div>
           <Link href="/">
-            <Logo variant="footer" size="lg" />
+            {/* eslint-disable-next-img-element */}
+            <img
+              alt="Jurnal Vibes Logo"
+              className="h-14 md:h-16 w-auto object-contain transition-transform hover:scale-105"
+              src="/logo-unmatted-white.png"
+            />
           </Link>
         </div>
 
