@@ -9,8 +9,8 @@ interface LogoProps {
 
 export const Logo: React.FC<LogoProps> = ({ variant = 'light', size = 'md' }) => {
   const iconHeights = {
-    sm: 'h-7 md:h-8',
-    md: 'h-9 md:h-11',
+    sm: 'h-8 md:h-9',
+    md: 'h-10 md:h-12',
     lg: 'h-12 md:h-14'
   };
 
@@ -22,30 +22,30 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'light', size = 'md' }) =>
 
   const taglineSizes = {
     sm: 'text-[9px]',
-    md: 'text-[9.5px] md:text-[10.5px]',
+    md: 'text-[10px] md:text-[11px]',
     lg: 'text-[11px] md:text-xs'
   };
 
   const textColor = variant === 'footer' ? 'text-white' : 'dark:text-white text-[#1b1c1c]';
   const taglineColor =
     variant === 'footer'
-      ? 'text-gray-300 font-medium tracking-wider'
-      : 'dark:text-gray-300 text-[#5d3f3c] font-medium tracking-wider';
+      ? 'text-gray-200 font-medium'
+      : 'dark:text-gray-300 text-[#bd0015] font-semibold opacity-90';
 
   return (
-    <div className="flex items-center gap-2.5 group shrink-0">
+    <div className="flex items-center gap-2.5 group shrink-0 min-w-max">
       {/* eslint-disable-next-img-element */}
       <img
         src="/logo-icon.png"
         alt="Jurnal Vibes Icon"
         className={`${iconHeights[size]} w-auto object-contain transition-transform group-hover:scale-105 shrink-0`}
       />
-      <div className="flex flex-col justify-center leading-none">
-        <span className={`tracking-tight ${titleSizes[size]} ${textColor}`}>
+      <div className="flex flex-col justify-center leading-tight shrink-0 min-w-max">
+        <span className={`tracking-tight ${titleSizes[size]} ${textColor} whitespace-nowrap`}>
           Jurnal <span className="text-[#bd0015]">Vibes</span>
         </span>
-        <span className={`font-sans uppercase mt-1 ${taglineSizes[size]} ${taglineColor}`}>
-          Portal Berita Sukabumi
+        <span className={`font-sans tracking-wide whitespace-nowrap ${taglineSizes[size]} ${taglineColor}`}>
+          Your daily dose of <span className="text-[#bd0015] font-bold">Sukabumi Vibes</span>
         </span>
       </div>
     </div>

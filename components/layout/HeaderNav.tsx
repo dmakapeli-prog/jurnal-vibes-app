@@ -37,16 +37,16 @@ export const HeaderNav: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-b border-outline-variant dark:border-secondary transition-colors duration-300">
-      <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto w-full relative z-10">
+      <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto w-full relative z-10 gap-4">
         {/* Brand Logo */}
-        <div className="shrink-0 flex items-center pr-4">
-          <Link href="/" className="flex items-center shrink-0">
+        <div className="shrink-0 min-w-max flex items-center pr-2">
+          <Link href="/" className="flex items-center shrink-0 min-w-max">
             <Logo variant={isDark ? 'dark' : 'light'} size="md" />
           </Link>
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex-1 flex items-center justify-center">
+        <nav className="flex-1 flex items-center justify-center min-w-0">
           {/* Desktop Navigation (Hybrid) */}
           <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-on-surface">
             {navLinks.map((link, idx) => {
