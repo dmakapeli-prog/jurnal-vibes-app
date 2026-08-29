@@ -43,8 +43,8 @@ export const HeaderNav: React.FC = () => {
             {/* eslint-disable-next-img-element */}
             <img
               alt="Jurnal Vibes Logo"
-              className="h-10 md:h-14 w-auto object-contain transition-transform hover:scale-105"
-              src={isDark ? '/logo-unmatted-white.png' : '/logo-unmatted.png'}
+              className="h-12 md:h-16 w-auto object-contain transition-transform hover:scale-105"
+              src={isDark ? '/logo-all-white.png' : '/logo-unmatted.png'}
             />
           </Link>
         </div>

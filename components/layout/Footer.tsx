@@ -14,8 +14,8 @@ export const Footer: React.FC = () => {
             {/* eslint-disable-next-img-element */}
             <img
               alt="Jurnal Vibes Logo"
-              className="h-14 md:h-16 w-auto object-contain transition-transform hover:scale-105"
-              src="/logo-unmatted-white.png"
+              className="h-16 md:h-20 w-auto object-contain transition-transform hover:scale-105 opacity-95"
+              src="/logo-all-white.png"
             />
           </Link>
         </div>
