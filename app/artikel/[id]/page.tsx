@@ -48,7 +48,7 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
     });
   };
 
-  const article = DUMMY_ARTICLES.find(a => a.id === id) || DUMMY_ARTICLES[1];
+  const article = DUMMY_ARTICLES.find(a => a.id === id) || DUMMY_ARTICLES[0];
   const relatedArticles = DUMMY_ARTICLES.filter(a => a.id !== article.id).slice(0, 3);
 
   return (
@@ -62,8 +62,8 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
             Home
           </Link>
           <ChevronRight className="w-3 h-3" />
-          <Link href="/lifestyle" className="hover:text-primary transition-colors">
-            Lifestyle
+          <Link href="/berita" className="hover:text-primary transition-colors">
+            Berita
           </Link>
           <ChevronRight className="w-3 h-3" />
           <span className="text-on-surface font-semibold">{article.categoryLabel}</span>
@@ -146,57 +146,15 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
             />
           </div>
           <figcaption className="mt-3 text-sm text-on-surface-variant italic text-center">
-            {article.imageAlt || 'Suasana hangat di kedai kopi terbaru kawasan Cikole, Sukabumi.'}
+            {article.imageAlt || article.title}
           </figcaption>
         </figure>
 
-        {/* Article Body */}
+        {/* Article Body (Dynamic & Matched) */}
         <div className="font-body-lg text-on-surface leading-relaxed flex flex-col gap-6 text-base md:text-lg">
-          <p>
-            Sukabumi tak henti-hentinya menghadirkan kejutan bagi para pecinta kopi. Kali ini, sebuah
-            kedai kopi baru di kawasan Cikole mendadak viral dan menjadi perbincangan hangat di media
-            sosial. Bukan tanpa alasan, tempat ini menawarkan pengalaman menyesap kopi yang berbeda dari
-            biasanya.
-          </p>
-
-          <h2 className="font-headline-md text-2xl font-bold text-on-surface mt-4">
-            Konsep Minimalis yang Menenangkan
-          </h2>
-
-          <p>
-            Begitu melangkah masuk, pengunjung akan disambut dengan desain interior yang mengusung
-            konsep industrial-minimalis. Penggunaan material kayu yang dominan dipadukan dengan jendela
-            kaca besar memberikan kesan luas dan menyatu dengan alam sekitar yang asri.
-          </p>
-
-          <blockquote className="border-l-4 border-primary pl-6 py-2 my-4 italic text-xl font-headline-md text-on-surface-variant">
-            &quot;Kopi terbaik bukan hanya soal rasa, tapi juga soal memori yang tercipta di setiap
-            sudutnya.&quot;
-          </blockquote>
-
-          <p>
-            Cahaya matahari pagi yang masuk melalui celah-celah jendela menciptakan atmosfer yang
-            hangat, sangat cocok bagi mereka yang ingin mencari ketenangan atau sekadar bekerja dengan
-            suasana baru (WFH).
-          </p>
-
-          <h2 className="font-headline-md text-2xl font-bold text-on-surface mt-4">
-            Menu yang Wajib Dicoba
-          </h2>
-
-          <ul className="list-disc pl-6 flex flex-col gap-2">
-            <li>
-              <strong>Signature Cold Brew:</strong> Difermentasi selama 18 jam dengan notes buah-buahan
-              yang segar.
-            </li>
-            <li>
-              <strong>Gourmet Latte:</strong> Tekstur susu yang creamy dengan biji kopi pilihan lokal
-              Sukabumi.
-            </li>
-            <li>
-              <strong>Klepon Cake:</strong> Interpretasi modern dari jajanan pasar yang manis dan gurih.
-            </li>
-          </ul>
+          {article.content.split('\n\n').map((paragraph, idx) => (
+            <p key={idx}>{paragraph.trim()}</p>
+          ))}
         </div>
 
         {/* Reaction Section (BAGAIMANA REAKSI ANDA?) */}

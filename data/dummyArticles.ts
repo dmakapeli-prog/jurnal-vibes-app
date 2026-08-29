@@ -1,7 +1,136 @@
 import { Article } from '@/types';
 
 export const DUMMY_ARTICLES: Article[] = [
-  // --- KAMPUS ---
+  // --- ARTICLE 1: Festival Kuliner (EVENT LOKAL) ---
+  {
+    id: '1',
+    title: 'Festival Kuliner Sukabumi 2024 Dibanjiri Ribuan Pengunjung Gen-Z',
+    slug: 'festival-kuliner-sukabumi-2024-dibanjiri-ribuan-pengunjung-gen-z',
+    excerpt: 'Kemeriahan festival kuliner tahunan yang menyajikan berbagai hidangan khas daerah dan modern di pusat kota Sukabumi.',
+    content: `Sukabumi tak henti-hentinya menghadirkan kejutan bagi para pecinta kuliner dan hiburan. Festival Kuliner Sukabumi 2024 yang digelar di Alun-alun Kota Sukabumi resmi dibuka minggu ini dan langsung menyedot antusiasme ribuan pengunjung dari berbagai kalangan, khususnya generasi muda.
+
+    Berbagai booth makanan lokal hingga kuliner kekinian tersaji lengkap dengan pertunjukan musik live dari talenta-talenta lokal berbakat. Panitia mencatat lebih dari 50 tenant UMKM kuliner berpartisipasi dalam event tahunan ini.`,
+    category: 'lifestyle',
+    categoryLabel: 'EVENT LOKAL',
+    subCategory: 'EVENT LOKAL',
+    imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Suasana Kemeriahan Festival Kuliner Sukabumi 2024 di Alun-Alun',
+    author: 'Tim Redaksi',
+    readTime: '5 min read',
+    isHero: true,
+    badge: 'VIRAL',
+    createdAt: '2 JAM LALU',
+    publishedDate: '26 Okt 2024'
+  },
+
+  // --- ARTICLE 2: Kedai Kopi Cikole (KULINER / LIFESTYLE) ---
+  {
+    id: '2',
+    title: 'Review Jujur: Kedai Kopi Baru di Cikole yang Bikin Rela Antri',
+    slug: 'review-jujur-kedai-kopi-baru-di-cikole-yang-bikin-rela-antri',
+    excerpt: 'Desain interiornya yang minimalis dan sajian cold brew-nya menjadi sorotan utama pecinta kopi Sukabumi.',
+    content: `Sukabumi tak henti-hentinya menghadirkan kejutan bagi para pecinta kopi. Kali ini, sebuah kedai kopi baru di kawasan Cikole mendadak viral dan menjadi perbincangan hangat di media sosial. Bukan tanpa alasan, tempat ini menawarkan pengalaman menyesap kopi yang berbeda dari biasanya.
+
+    Begitu melangkah masuk, pengunjung akan disambut dengan desain interior yang mengusung konsep industrial-minimalis. Penggunaan material kayu yang dominan dipadukan dengan jendela kaca besar memberikan kesan luas dan menyatu dengan alam sekitar yang asri.
+
+    "Kopi terbaik bukan hanya soal rasa, tapi juga soal memori yang tercipta di setiap sudutnya," tutur pemilik kedai kopi Cikole.`,
+    category: 'lifestyle',
+    categoryLabel: 'KULINER',
+    imageUrl: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Interior Kedai Kopi Cikole Minimalis Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '5 min read',
+    isHero: true,
+    isEditorsPick: true,
+    badge: 'HOT',
+    isSaved: true,
+    createdAt: '5 JAM LALU',
+    publishedDate: '26 Okt 2024'
+  },
+
+  // --- ARTICLE 3: Gunung Gede (WISATA / LIFESTYLE) ---
+  {
+    id: '3',
+    title: 'Panduan Lengkap Pendakian Gunung Gede Jalur Selabintana',
+    slug: 'panduan-lengkap-pendakian-gunung-gede-jalur-selabintana',
+    excerpt: 'Persiapan penting, kondisi jalur terbaru, dan keindahan alam tersembunyi yang ditawarkan rute Selabintana.',
+    content: `Jalur Selabintana Sukabumi dikenal sebagai salah satu rute pendakian Gunung Gede yang paling menantang sekaligus memanjakan mata pendaki dengan keasrian hutan tropisnya.
+
+    Sepanjang rute pendakian, para pendaki akan disuguhi panorama vegetasi hutan hujan pegunungan yang lebat, gemericik aliran sungai jernih, serta keanekaragaman hayati flora dan fauna endemik Jawa Barat.`,
+    category: 'lifestyle',
+    categoryLabel: 'WISATA',
+    imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Pemandangan jalur pendakian Gunung Gede Selabintana Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '6 min read',
+    isHero: true,
+    isEditorsPick: true,
+    badge: 'LATEST',
+    isSaved: true,
+    createdAt: 'KEMARIN',
+    publishedDate: '25 Okt 2024'
+  },
+
+  // --- ARTICLE 4: Sukabumi Creative Fest (EVENT LOKAL) ---
+  {
+    id: '4',
+    title: 'Lineup Artis Indie yang Akan Menggebrak Panggung Sukabumi Creative Fest',
+    slug: 'lineup-artis-indie-yang-akan-menggebrak-panggung-sukabumi-creative-fest',
+    excerpt: 'Dari band lokal hingga pendatang baru nasional, bersiaplah untuk malam konser musik yang tak terlupakan.',
+    content: `Komunitas musik Sukabumi kembali bersiap menyambut festival musik indie bergengsi Sukabumi Creative Fest yang akan menghadirkan deretan musisi papan atas nasional dan talenta lokal pilihan di GOR Cisaat.
+
+    Selain penampilan panggung musik, festival ini juga menghadirkan area instalasi seni visual interaktif dan pameran merchandise dari band-band lokal indie Sukabumi.`,
+    category: 'lifestyle',
+    categoryLabel: 'EVENT LOKAL',
+    subCategory: 'EVENT LOKAL',
+    imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Panggung Konser Musik Indie Sukabumi Creative Fest',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    badge: 'EVENT',
+    createdAt: 'KEMARIN',
+    publishedDate: '24 Okt 2024'
+  },
+
+  // --- ARTICLE 5: Startup Tech (TECH) ---
+  {
+    id: '5',
+    title: 'Startup Lokal Sukabumi Raih Pendanaan Seri A dari Investor Global',
+    slug: 'startup-lokal-sukabumi-raih-pendanaan-seri-a',
+    excerpt: 'Perkembangan ekosistem digital di Sukabumi semakin pesat dengan hadirnya inovasi baru berbasis teknologi hijau.',
+    content: `Sebuah startup bidang teknologi pertanian asal Sukabumi sukses mengamankan pendanaan Seri A senilai jutaan dolar dari konsorsium investor global.
+
+    Inovasi agritech ini memanfaatkan kecerdasan buatan (AI) untuk membantu petani lokal memprediksi cuaca, memantau nutrisi tanah, dan mengoptimalkan hasil panen secara efisien.`,
+    category: 'tech',
+    categoryLabel: 'TECH',
+    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Tim Startup Teknologi Sukabumi Berdiskusi di Kantor',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    createdAt: '2 HARI LALU',
+    publishedDate: '23 Okt 2024'
+  },
+
+  // --- ARTICLE 6: Mobil Klasik (OTOMOTIF) ---
+  {
+    id: '6',
+    title: 'Komunitas Mobil Klasik Sukabumi Adakan Touring Keagungan',
+    slug: 'komunitas-mobil-klasik-sukabumi-adakan-touring-keagungan',
+    excerpt: 'Puluhan mobil klasik menghiasi jalanan Sukabumi dalam acara tahunan yang dinanti-nanti.',
+    content: `Jalanan Sukabumi diramaikan oleh deretan mobil antik era 70-an dan 80-an yang terawat dengan sangat teratur dalam ajang tahunan Touring Keagungan.
+
+    Para pemilik mobil klasik beriringan menyusuri rute bersejarah dari pusat kota Sukabumi menuju kawasan wisata alam Selabintana.`,
+    category: 'otomotif',
+    categoryLabel: 'OTOMOTIF',
+    imageUrl: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Deretan Mobil Klasik Touring di Jalanan Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '3 min read',
+    createdAt: '3 HARI LALU',
+    publishedDate: '22 Okt 2024'
+  },
+
+  // --- ARTICLE 7: UMMI IoT (KAMPUS) ---
   {
     id: '7',
     title: 'Mahasiswa Universitas Muhammadiyah Sukabumi (UMMI) Kembangkan Sensor Udara IoT',
@@ -23,6 +152,29 @@ export const DUMMY_ARTICLES: Article[] = [
     createdAt: '2 JAM LALU',
     publishedDate: '26 Okt 2024'
   },
+
+  // --- ARTICLE 8: Curug Cikaso (LIFESTYLE / WISATA) ---
+  {
+    id: '8',
+    title: 'Menelusuri Keindahan Tersembunyi Curug Cikaso Sukabumi',
+    slug: 'menelusuri-keindahan-tersembunyi-curug-cikaso-sukabumi',
+    excerpt: 'Panduan lengkap perjalanan menuju salah satu air terjun paling ikonik di Jawa Barat dengan pemandangan yang memukau.',
+    content: `Curug Cikaso selalu menjadi daya tarik utama keindahan wisata alam Sukabumi Selatan dengan tiga gemercik air terjun megah bernuansa kehijauan.
+
+    Pengunjung dapat menikmati perjalanan menyusuri sungai dengan perahu tradisional sebelum tiba di lokasi air terjun yang dikelilingi tebing batu yang hijau dan asri.`,
+    category: 'lifestyle',
+    categoryLabel: 'LIFESTYLE',
+    imageUrl: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Pesona Air Terjun Curug Cikaso Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '5 min read',
+    isEditorsPick: true,
+    isSaved: true,
+    createdAt: '22 Okt 2024',
+    publishedDate: '22 Okt 2024'
+  },
+
+  // --- ARTICLE 9: Nusa Putra Akreditasi (KAMPUS) ---
   {
     id: '9',
     title: 'Universitas Nusa Putra Sukabumi Raih Akreditasi Internasional dari Lembaga Eropa',
@@ -30,9 +182,7 @@ export const DUMMY_ARTICLES: Article[] = [
     excerpt: 'Capaian gemilang kampus Nusa Putra Sukabumi memperkuat posisinya sebagai institusi pendidikan berstandar global.',
     content: `Universitas Nusa Putra Sukabumi resmi menerima sertifikasi akreditasi internasional dari lembaga akreditasi Eropa. Pencapaian ini menjadi bukti komitmen kampus dalam meningkatkan mutu kurikulum, fasilitas riset, dan daya saing lulusan di tingkat internasional.
 
-    Rektor Nusa Putra menyampaikan bahwa akreditasi ini akan memperluas kerja sama student exchange dengan universitas-universitas ternama di Jerman, Jepang, dan Amerika Serikat.
-
-    Mahasiswa Nusa Putra menyambut gembira kabar ini karena membuka peluang magang dan karir internasional yang lebih luas pasca kelulusan.`,
+    Rektor Nusa Putra menyampaikan bahwa akreditasi ini akan memperluas kerja sama student exchange dengan universitas-universitas ternama di Jerman, Jepang, dan Amerika Serikat.`,
     category: 'berita',
     categoryLabel: 'KAMPUS',
     subCategory: 'KAMPUS',
@@ -44,6 +194,8 @@ export const DUMMY_ARTICLES: Article[] = [
     createdAt: '4 JAM LALU',
     publishedDate: '26 Okt 2024'
   },
+
+  // --- ARTICLE 10: IPB Beasiswa (KAMPUS) ---
   {
     id: '10',
     title: 'Kampus IPB Sukabumi Buka Program Beasiswa Talenta Muda Daerah',
@@ -51,9 +203,7 @@ export const DUMMY_ARTICLES: Article[] = [
     excerpt: 'Pendaftaran beasiswa penuh untuk calon mahasiswa berprestasi asal Kota dan Kabupaten Sukabumi resmi dibuka.',
     content: `Kabar gembira bagi para pelajar lulusan SMA/SMK sederajat di Sukabumi. Kampus Sekolah Vokasi IPB Sukabumi kembali membuka pendaftaran Program Beasiswa Talenta Muda Daerah untuk tahun akademik 2024/2025.
 
-    Program beasiswa ini membiayai seluruh biaya kuliah hingga lulus dan memberikan uang saku bulanan bagi peserta didik berprestasi dari keluarga kurang mampu.
-
-    Seleksi dilakukan melalui jalur portofolio prestasi akademik dan wawancara motivasi pengembangan daerah pertanian dan lingkungan Sukabumi.`,
+    Program beasiswa ini membiayai seluruh biaya kuliah hingga lulus dan memberikan uang saku bulanan bagi peserta didik berprestasi dari keluarga kurang mampu.`,
     category: 'berita',
     categoryLabel: 'KAMPUS',
     subCategory: 'KAMPUS',
@@ -65,7 +215,7 @@ export const DUMMY_ARTICLES: Article[] = [
     publishedDate: '25 Okt 2024'
   },
 
-  // --- SEKOLAH ---
+  // --- ARTICLE 11: SMAN 1 Emas OSN (SEKOLAH) ---
   {
     id: '11',
     title: 'Siswa SMAN 1 Kota Sukabumi Sabet Medali Emas Olimpiade Sains Nasional 2024',
@@ -73,9 +223,7 @@ export const DUMMY_ARTICLES: Article[] = [
     excerpt: 'Kategori bidang Informatika diraih perwakilan pelajar SMAN 1 Sukabumi setelah menyingkirkan ratusan peserta nasional.',
     content: `Prestasi membanggakan datang dari dunia sekolah Kota Sukabumi. Muhammad Rizky, siswa kelas XII SMAN 1 Kota Sukabumi, sukses meraih medali emas pada ajang Olimpiade Sains Nasional (OSN) 2024 bidang Informatika yang berlangsung di Jakarta.
 
-    Kepala Sekolah SMAN 1 Sukabumi mengapresiasi kerja keras siswa dan guru pembimbing yang intensif melakukan karantina soal algoritma dan pemrograman selama tiga bulan terakhir.
-
-    "Prestasi ini membuktikan bahwa pelajar Sukabumi mampu bersaing di tingkat tertinggi kompetisi sains Indonesia," ujar Kepala Sekolah SMAN 1 Kota Sukabumi saat penyambutan kepulangan kontingen.`,
+    Kepala Sekolah SMAN 1 Sukabumi mengapresiasi kerja keras siswa dan guru pembimbing yang intensif melakukan karantina soal algoritma dan pemrograman selama tiga bulan terakhir.`,
     category: 'berita',
     categoryLabel: 'SEKOLAH',
     subCategory: 'SEKOLAH',
@@ -87,6 +235,8 @@ export const DUMMY_ARTICLES: Article[] = [
     createdAt: '3 JAM LALU',
     publishedDate: '26 Okt 2024'
   },
+
+  // --- ARTICLE 12: SMKN 1 Mobil Listrik (SEKOLAH) ---
   {
     id: '12',
     title: 'SMKN 1 Sukabumi Pamerkan Mobil Listrik "Vibes-EV" Karya Siswa Jurusan Otomotif',
@@ -94,9 +244,7 @@ export const DUMMY_ARTICLES: Article[] = [
     excerpt: 'Kendaraan ramah lingkungan berkecepatan 60 km/jam ini sepenuhnya dirakit oleh para pelajar SMK di Sukabumi.',
     content: `Kreativitas siswa SMKN 1 Sukabumi patut diacungi jempol. Dalam pameran karya vokasi daerah minggu ini, mereka meluncurkan prototipe mobil listrik perkotaan bernama 'Vibes-EV' yang efisien dan hemat energi.
 
-    Mobil listrik ringan ini ditenagai baterai lithium 48V dan mampu menempuh jarak hingga 50 km dalam sekali pengisian daya.
-
-    Guru pembimbing jurusan Otomotif SMKN 1 Sukabumi menyebutkan bahwa seluruh pengerjaan dari sasis, kelistrikan, hingga bodi fiberglass dikerjakan langsung oleh tangan para siswa.`,
+    Mobil listrik ringan ini ditenagai baterai lithium 48V dan mampu menempuh jarak hingga 50 km dalam sekali pengisian daya.`,
     category: 'berita',
     categoryLabel: 'SEKOLAH',
     subCategory: 'SEKOLAH',
@@ -107,24 +255,8 @@ export const DUMMY_ARTICLES: Article[] = [
     createdAt: 'KEMARIN',
     publishedDate: '25 Okt 2024'
   },
-  {
-    id: '18',
-    title: 'Gelar Karya P5 SMAN 3 Sukabumi Tampilkan Tari Budaya dan Produk Wirausaha Muda',
-    slug: 'gelar-karya-p5-sman-3-sukabumi-tampilkan-tari-budaya',
-    excerpt: 'Ratusan siswa SMAN 3 Kota Sukabumi memamerkan hasil karya seni tradisional Sunda dan bazaar jajanan lokal.',
-    content: `Panen Karya Projek Penguatan Profil Pelajar Pancasila (P5) SMAN 3 Kota Sukabumi berlangsung meriah di halaman sekolah. Para siswa dari kelas X hingga XII menampilkan beragam tarian budaya tradisional Sunda, teater kreasi, serta pameran karya seni rupa.
 
-    Selain pentas seni, lapangan sekolah dihiasi belasan stan wirausaha muda siswa yang menjual makanan khas Sukabumi seperti mochi kreasi baru, olahan kuliner tradisional, dan kerajinan tangan ramah lingkungan.`,
-    category: 'berita',
-    categoryLabel: 'SEKOLAH',
-    subCategory: 'SEKOLAH',
-    imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Pentas Tari Budaya dalam Gelar Karya P5 SMAN 3 Sukabumi',
-    author: 'Tim Redaksi',
-    readTime: '4 min read',
-    createdAt: '2 HARI LALU',
-    publishedDate: '24 Okt 2024'
-  },
+  // --- ARTICLE 13: KIP Sekolah (SEKOLAH) ---
   {
     id: '13',
     title: 'Dinas Pendidikan Sukabumi Sosialisasi Program KIP Sekolah Bebas Biaya',
@@ -144,7 +276,7 @@ export const DUMMY_ARTICLES: Article[] = [
     publishedDate: '23 Okt 2024'
   },
 
-  // --- KOMUNITAS ---
+  // --- ARTICLE 14: Baros Skatepark (KOMUNITAS) ---
   {
     id: '14',
     title: 'Lokal Vibes Skate! Ajang Kumpul Komunitas Skateboarder Sukabumi di Baros',
@@ -152,9 +284,7 @@ export const DUMMY_ARTICLES: Article[] = [
     excerpt: 'Puluhan pemuda pecinta olahraga ekstrem meramaikan Skatepark Baros dalam kompetisi trik papan luncur.',
     content: `Skatepark Baros Sukabumi dipadati oleh puluhan skateboarder muda dari berbagai komunitas lokal dalam ajang 'Lokal Vibes Skate Jam'. 
 
-    Acara ini tidak hanya mempertandingkan kategori Best Trick dan Game of Skate, tetapi juga menjadi wadah mempererat silaturahmi antar pegiat olahraga papan luncur se-Sukabumi.
-
-    Para pemenang kompetisi mendapatkan hadiah perlengkapan papan luncur dan trofi kehormatan dari komunitas skate lokal Sukabumi.`,
+    Acara ini tidak hanya mempertandingkan kategori Best Trick dan Game of Skate, tetapi juga menjadi wadah mempererat silaturahmi antar pegiat olahraga papan luncur se-Sukabumi.`,
     category: 'lifestyle',
     categoryLabel: 'KOMUNITAS',
     subCategory: 'KOMUNITAS',
@@ -166,6 +296,8 @@ export const DUMMY_ARTICLES: Article[] = [
     createdAt: '1 JAM LALU',
     publishedDate: '26 Okt 2024'
   },
+
+  // --- ARTICLE 15: Vespa Baksos (KOMUNITAS) ---
   {
     id: '15',
     title: 'Komunitas Vespa Sukabumi Gelar Touring Baksos dan Bersih Pantai Palabuhanratu',
@@ -184,6 +316,8 @@ export const DUMMY_ARTICLES: Article[] = [
     createdAt: 'KEMARIN',
     publishedDate: '25 Okt 2024'
   },
+
+  // --- ARTICLE 16: Tanam Pohon (KOMUNITAS) ---
   {
     id: '16',
     title: 'Relawan Komunitas Peduli Lingkungan Tanam 1.000 Bibit Pohon di Lereng Gunung Gede',
@@ -201,44 +335,7 @@ export const DUMMY_ARTICLES: Article[] = [
     publishedDate: '23 Okt 2024'
   },
 
-  // --- EVENT LOKAL ---
-  {
-    id: '1',
-    title: 'Festival Kuliner Sukabumi 2024 Dibanjiri Ribuan Pengunjung Gen-Z',
-    slug: 'festival-kuliner-sukabumi-2024-dibanjiri-ribuan-pengunjung-gen-z',
-    excerpt: 'Kemeriahan festival kuliner tahunan yang menyajikan berbagai hidangan khas daerah dan modern di pusat kota Sukabumi.',
-    content: `Sukabumi tak henti-hentinya menghadirkan kejutan bagi para pecinta kuliner dan hiburan. Festival Kuliner Sukabumi 2024 yang digelar di Alun-alun Kota Sukabumi resmi dibuka minggu ini dan langsung menyedot antusiasme ribuan pengunjung dari berbagai kalangan, khususnya generasi muda.
-
-    Berbagai booth makanan lokal hingga kuliner kekinian tersaji lengkap dengan pertunjukan musik live dari talenta-talenta lokal berbakat.`,
-    category: 'lifestyle',
-    categoryLabel: 'EVENT LOKAL',
-    subCategory: 'EVENT LOKAL',
-    imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Suasana Kemeriahan Festival Kuliner Sukabumi 2024',
-    author: 'Tim Redaksi',
-    readTime: '5 min read',
-    isHero: true,
-    badge: 'VIRAL',
-    createdAt: '2 JAM LALU',
-    publishedDate: '26 Okt 2024'
-  },
-  {
-    id: '4',
-    title: 'Lineup Artis Indie yang Akan Menggebrak Panggung Sukabumi Creative Fest',
-    slug: 'lineup-artis-indie-yang-akan-menggebrak-panggung-sukabumi-creative-fest',
-    excerpt: 'Dari band lokal hingga pendatang baru nasional, bersiaplah untuk malam konser musik yang tak terlupakan.',
-    content: `Komunitas musik Sukabumi kembali bersiap menyambut festival musik indie bergengsi Sukabumi Creative Fest yang akan menghadirkan deretan musisi papan atas nasional dan talenta lokal pilihan di GOR Cisaat.`,
-    category: 'lifestyle',
-    categoryLabel: 'EVENT LOKAL',
-    subCategory: 'EVENT LOKAL',
-    imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Panggung Konser Musik Indie Sukabumi Creative Fest',
-    author: 'Tim Redaksi',
-    readTime: '4 min read',
-    badge: 'EVENT',
-    createdAt: 'KEMARIN',
-    publishedDate: '24 Okt 2024'
-  },
+  // --- ARTICLE 17: Night Run (EVENT LOKAL) ---
   {
     id: '17',
     title: 'Sukabumi Night Run 2024 Siap Meriahkan Akhir Pekan dengan Rute Ikonik Kota',
@@ -255,6 +352,28 @@ export const DUMMY_ARTICLES: Article[] = [
     createdAt: '2 HARI LALU',
     publishedDate: '24 Okt 2024'
   },
+
+  // --- ARTICLE 18: Gelar Karya P5 (SEKOLAH) ---
+  {
+    id: '18',
+    title: 'Gelar Karya P5 SMAN 3 Sukabumi Tampilkan Tari Budaya dan Produk Wirausaha Muda',
+    slug: 'gelar-karya-p5-sman-3-sukabumi-tampilkan-tari-budaya',
+    excerpt: 'Ratusan siswa SMAN 3 Kota Sukabumi memamerkan hasil karya seni tradisional Sunda dan bazaar jajanan lokal.',
+    content: `Panen Karya Projek Penguatan Profil Pelajar Pancasila (P5) SMAN 3 Kota Sukabumi berlangsung meriah di halaman sekolah. Para siswa dari kelas X hingga XII menampilkan beragam tarian budaya tradisional Sunda, teater kreasi, serta pameran karya seni rupa.
+
+    Selain pentas seni, lapangan sekolah dihiasi belasan stan wirausaha muda siswa yang menjual makanan khas Sukabumi seperti mochi kreasi baru, olahan kuliner tradisional, dan kerajinan tangan ramah lingkungan.`,
+    category: 'berita',
+    categoryLabel: 'SEKOLAH',
+    subCategory: 'SEKOLAH',
+    imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Pentas Tari Budaya dalam Gelar Karya P5 SMAN 3 Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    createdAt: '2 HARI LALU',
+    publishedDate: '24 Okt 2024'
+  },
+
+  // --- ARTICLE 19: UMKM Kreatif (EVENT LOKAL) ---
   {
     id: '19',
     title: 'Pameran Ekonomi Kreatif UMKM Sukabumi 2024 Hadirkan Kerajinan Batik dan Kuliner Mochi',
@@ -270,64 +389,5 @@ export const DUMMY_ARTICLES: Article[] = [
     readTime: '4 min read',
     createdAt: '3 HARI LALU',
     publishedDate: '23 Okt 2024'
-  },
-
-  // --- LIFESTYLE & KULINER ---
-  {
-    id: '2',
-    title: 'Review Jujur: Kedai Kopi Baru di Cikole yang Bikin Rela Antri',
-    slug: 'review-jujur-kedai-kopi-baru-di-cikole-yang-bikin-rela-antri',
-    excerpt: 'Desain interiornya yang minimalis dan sajian cold brew-nya menjadi sorotan utama pecinta kopi Sukabumi.',
-    content: `Sukabumi tak henti-hentinya menghadirkan kejutan bagi para pecinta kopi. Kali ini, sebuah kedai kopi baru di kawasan Cikole mendadak viral dan menjadi perbincangan hangat di media sosial. Bukan tanpa alasan, tempat ini menawarkan pengalaman menyesap kopi yang berbeda dari biasanya.
-
-    Begitu melangkah masuk, pengunjung akan disambut dengan desain interior yang mengusung konsep industrial-minimalis. Penggunaan material kayu yang dominan dipadukan dengan jendela kaca besar memberikan kesan luas dan menyatu dengan alam sekitar yang asri.`,
-    category: 'lifestyle',
-    categoryLabel: 'KULINER',
-    imageUrl: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Interior Kedai Kopi Cikole Minimalis Sukabumi',
-    author: 'Tim Redaksi',
-    readTime: '5 min read',
-    isHero: true,
-    isEditorsPick: true,
-    badge: 'HOT',
-    isSaved: true,
-    createdAt: '5 JAM LALU',
-    publishedDate: '26 Okt 2024'
-  },
-  {
-    id: '3',
-    title: 'Panduan Lengkap Pendakian Gunung Gede Jalur Selabintana',
-    slug: 'panduan-lengkap-pendakian-gunung-gede-jalur-selabintana',
-    excerpt: 'Persiapan penting, kondisi jalur terbaru, dan keindahan alam tersembunyi yang ditawarkan rute Selabintana.',
-    content: `Jalur Selabintana Sukabumi dikenal sebagai salah satu rute pendakian Gunung Gede yang paling menantang sekaligus memanjakan mata pendaki dengan keasrian hutan tropisnya.`,
-    category: 'lifestyle',
-    categoryLabel: 'WISATA',
-    imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Pemandangan jalur pendakian Gunung Gede Selabintana',
-    author: 'Tim Redaksi',
-    readTime: '6 min read',
-    isHero: true,
-    isEditorsPick: true,
-    badge: 'LATEST',
-    isSaved: true,
-    createdAt: 'KEMARIN',
-    publishedDate: '25 Okt 2024'
-  },
-  {
-    id: '8',
-    title: 'Menelusuri Keindahan Tersembunyi Curug Cikaso Sukabumi',
-    slug: 'menelusuri-keindahan-tersembunyi-curug-cikaso-sukabumi',
-    excerpt: 'Panduan lengkap perjalanan menuju salah satu air terjun paling ikonik di Jawa Barat dengan pemandangan yang memukau.',
-    content: `Curug Cikaso selalu menjadi daya tarik utama keindahan wisata alam Sukabumi Selatan dengan tiga gemercik air terjun megah bernuansa kehijauan.`,
-    category: 'lifestyle',
-    categoryLabel: 'LIFESTYLE',
-    imageUrl: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Pesona Air Terjun Curug Cikaso Sukabumi',
-    author: 'Tim Redaksi',
-    readTime: '5 min read',
-    isEditorsPick: true,
-    isSaved: true,
-    createdAt: '22 Okt 2024',
-    publishedDate: '22 Okt 2024'
   }
 ];
