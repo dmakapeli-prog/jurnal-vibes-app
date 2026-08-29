@@ -23,11 +23,10 @@ export const HeaderNav: React.FC = () => {
     { href: '/berita', label: 'Berita' },
     { href: '/lifestyle', label: 'Lifestyle' },
     { href: '/loker', label: 'Loker' },
-    { href: '#', label: 'Reels' }
+    { href: '/sport', label: 'Sport' }
   ];
 
   const dropdownLinks = [
-    { href: '/sport', label: 'Sport & E-Sport' },
     { href: '#', label: 'Music & Film' },
     { href: '/otomotif', label: 'Otomotif' },
     { href: '/science', label: 'Science' },
