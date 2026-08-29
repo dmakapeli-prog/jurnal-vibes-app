@@ -7,9 +7,11 @@ import { DUMMY_ARTICLES } from '@/data/dummyArticles';
 
 export default function OtomotifPage() {
   const otoArticles = DUMMY_ARTICLES.filter(
-    a => a.category === 'otomotif' || a.categoryLabel === 'OTOMOTIF'
+    a =>
+      a.category === 'otomotif' ||
+      a.categoryLabel.toUpperCase() === 'OTOMOTIF' ||
+      (a.subCategory || '').toUpperCase() === 'OTOMOTIF'
   );
-  const articlesToDisplay = otoArticles.length ? otoArticles : DUMMY_ARTICLES.slice(0, 4);
 
   return (
     <div className="flex flex-1 mx-auto max-w-container-max w-full px-margin-mobile md:px-margin-desktop gap-gutter py-stack-lg">
@@ -25,11 +27,19 @@ export default function OtomotifPage() {
           </p>
         </header>
 
-        <div className="flex flex-col gap-6">
-          {articlesToDisplay.map(article => (
-            <NewsCard key={article.id} article={article} variant="row" />
-          ))}
-        </div>
+        {otoArticles.length > 0 ? (
+          <div className="flex flex-col gap-6">
+            {otoArticles.map(article => (
+              <NewsCard key={article.id} article={article} variant="row" />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12 bg-surface-container rounded-2xl border border-outline-variant">
+            <p className="text-on-surface-variant font-medium">
+              Belum ada artikel untuk kategori <span className="font-bold text-primary">Otomotif</span>.
+            </p>
+          </div>
+        )}
       </main>
     </div>
   );

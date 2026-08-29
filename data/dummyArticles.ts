@@ -105,6 +105,7 @@ export const DUMMY_ARTICLES: Article[] = [
     Inovasi agritech ini memanfaatkan kecerdasan buatan (AI) untuk membantu petani lokal memprediksi cuaca, memantau nutrisi tanah, dan mengoptimalkan hasil panen secara efisien.`,
     category: 'tech',
     categoryLabel: 'TECH',
+    subCategory: 'TECH',
     imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Tim Startup Teknologi Sukabumi Berdiskusi di Kantor',
     author: 'Tim Redaksi',
@@ -124,6 +125,7 @@ export const DUMMY_ARTICLES: Article[] = [
     Para pemilik mobil klasik beriringan menyusuri rute bersejarah dari pusat kota Sukabumi menuju kawasan wisata alam Selabintana.`,
     category: 'otomotif',
     categoryLabel: 'OTOMOTIF',
+    subCategory: 'OTOMOTIF',
     imageUrl: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Deretan Mobil Klasik Touring di Jalanan Sukabumi',
     author: 'Tim Redaksi',
@@ -300,7 +302,7 @@ export const DUMMY_ARTICLES: Article[] = [
     publishedDate: '26 Okt 2024'
   },
 
-  // --- ARTICLE 15: Vespa Baksos (KOMUNITAS) ---
+  // --- ARTICLE 15: Vespa Baksos (KOMUNITAS / OTOMOTIF) ---
   {
     id: '15',
     title: 'Komunitas Vespa Sukabumi Gelar Touring Baksos dan Bersih Pantai Palabuhanratu',
@@ -320,14 +322,14 @@ export const DUMMY_ARTICLES: Article[] = [
     publishedDate: '25 Okt 2024'
   },
 
-  // --- ARTICLE 16: Tanam Pohon (KOMUNITAS) ---
+  // --- ARTICLE 16: Tanam Pohon (KOMUNITAS / SCIENCE) ---
   {
     id: '16',
     title: 'Relawan Komunitas Peduli Lingkungan Tanam 1.000 Bibit Pohon di Lereng Gunung Gede',
     slug: 'komunitas-peduli-lingkungan-tanam-1000-pohon-gunung-gede',
     excerpt: 'Aksi nyata reboisasi lahan kritis kawasan resapan air Sukabumi bersama ratusan sukarelawan muda.',
     content: `Komunitas Peduli Lingkungan Sukabumi menggelar gerakan penanaman 1.000 bibit pohon endemik di lereng kawasan Gunung Gede Selabintana. Aksi konservasi ini bertujuan menjaga mata air alami dan mencegah bahaya tanah longsor saat musim penghujan.`,
-    category: 'lifestyle',
+    category: 'science',
     categoryLabel: 'KOMUNITAS',
     subCategory: 'KOMUNITAS',
     imageUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80',
@@ -371,7 +373,7 @@ export const DUMMY_ARTICLES: Article[] = [
     imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Pentas Tari Budaya dalam Gelar Karya P5 SMAN 3 Sukabumi',
     author: 'Tim Redaksi',
-    readTime: '2 HARI LALU',
+    readTime: '4 min read',
     createdAt: '2 HARI LALU',
     publishedDate: '24 Okt 2024'
   },
@@ -428,6 +430,129 @@ export const DUMMY_ARTICLES: Article[] = [
     imageAlt: 'Penampilan Musik Akustik Komunitas Lokal Sukabumi',
     author: 'Tim Redaksi',
     readTime: '3 min read',
+    createdAt: '2 HARI LALU',
+    publishedDate: '24 Okt 2024'
+  },
+
+  // --- ARTICLE 22: Science (SCIENCE / ENVIRONMENT) ---
+  {
+    id: '22',
+    title: 'Riset Konservasi Penyu Hijau di Pesisir Pangumbahan Sukabumi Catat Peningkatan Populasi',
+    slug: 'riset-konservasi-penyu-hijau-pesisir-pangumbahan-sukabumi',
+    excerpt: 'Tim peneliti biologi laut mencatat kenaikan jumlah telur penyu hijau yang menetas di Kawasan Suaka Margasatwa Pangumbahan.',
+    content: `Kawasan Konservasi Penyu Pangumbahan di Sukabumi Selatan kembali mencatatkan kabar menggembirakan. Hasil monitoring tim peneliti menunjukkan adanya peningkatan jumlah sarang telur penyu hijau hingga 15% dibanding tahun lalu.
+
+    Peneliti fokus pada upaya perlindungan habitat peneluran dari ancaman abrasi laut dan aktivitas manusia guna menjaga keberlanjutan ekosistem pesisir Sukabumi.`,
+    category: 'science',
+    categoryLabel: 'SCIENCE',
+    subCategory: 'SCIENCE',
+    imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Pelepasan Tukik Penyu Hijau di Pantai Pangumbahan Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '5 min read',
+    badge: 'SAINS',
+    createdAt: '1 HARI LALU',
+    publishedDate: '25 Okt 2024'
+  },
+
+  // --- ARTICLE 23: Science (SCIENCE / GEOLOGY) ---
+  {
+    id: '23',
+    title: 'Peneliti Geologi Identifikasi Struktur Gua Alam Baru di Geopark Ciletuh Sukabumi',
+    slug: 'peneliti-geologi-identifikasi-struktur-gua-alam-baru-ciletuh',
+    excerpt: 'Penemuan himpunan keanekaragaman batuan purba berusia jutaan tahun memperkaya situs warisan geologi Ciletuh UNESCO.',
+    content: `Tim ahli geologi nasional yang melakukan pemetaan di kawasan Geopark Ciletuh-Palabuhanratu Sukabumi menemukan kompleks gua karst baru dengan bentukan stalaktit dan stalagmit yang sangat indah.
+
+    Temuan ini menjadi obyek riset penting untuk memahami sejarah pembentukan pulau Jawa jutaan tahun lalu sekaligus menjadi laboratorium alam bagi mahasiswa dan peneliti geologi.`,
+    category: 'science',
+    categoryLabel: 'SCIENCE',
+    subCategory: 'SCIENCE',
+    imageUrl: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Struktur Gua Karst Geopark Ciletuh Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    createdAt: '3 HARI LALU',
+    publishedDate: '23 Okt 2024'
+  },
+
+  // --- ARTICLE 24: Health (HEALTH / MEDIS) ---
+  {
+    id: '24',
+    title: 'RSUD Sekarwangi Sukabumi Resmikan Fasilitas Terapi Spesialis Jantung Modern',
+    slug: 'rsud-sekarwangi-sukabumi-resmikan-fasilitas-spesialis-jantung',
+    excerpt: 'Layanan kesehatan kardiovaskular canggih kini tersedia untuk memberikan perawatan medis cepat bagi warga Sukabumi.',
+    content: `Pelayanan kesehatan di Kabupaten Sukabumi kini semakin lengkap dengan diresmikannya gedung pusat penanganan kardiovaskular terpadu di RSUD Sekarwangi.
+
+    Peralatan medis seperti kardiografi digital dan ruang perawatan intensif spesialis dihadirkan agar masyarakat tidak perlu lagi dirujuk ke luar kota untuk tindakan medis spesialis jantung.`,
+    category: 'health',
+    categoryLabel: 'HEALTH',
+    subCategory: 'HEALTH',
+    imageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Fasilitas Peralatan Medis Spesialis Rumah Sakit Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    badge: 'KESEHATAN',
+    createdAt: '2 JAM LALU',
+    publishedDate: '26 Okt 2024'
+  },
+
+  // --- ARTICLE 25: Health (HEALTH / TIPS) ---
+  {
+    id: '25',
+    title: 'Tips Menjaga Kebugaran Tubuh Saat Musim Hujan untuk Warga Sukabumi',
+    slug: 'tips-menjaga-kebugaran-tubuh-saat-musim-hujan-warga-sukabumi',
+    excerpt: 'Panduan lengkap konsumsi nutrisi seimbang, asupan vitamin C, dan kebiasaan hidup bersih guna cegah penyakit flu.',
+    content: `Memasuki musim penghujan dengan intensitas curah hujan tinggi di Sukabumi, kewaspadaan terhadap daya tahan tubuh menjadi prioritas utama.
+
+    Para pakar kesehatan merekomendasikan konsumsi makanan bergizi kaya antioksidan, rutin berolahraga ringan indoor, serta menjaga kebersihan lingkungan rumah guna mencegah penyakit flu dan demam berdarah.`,
+    category: 'health',
+    categoryLabel: 'HEALTH',
+    subCategory: 'HEALTH',
+    imageUrl: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Makanan Sehat Nutrisi Seimbang Kebugaran Tubuh',
+    author: 'Tim Redaksi',
+    readTime: '3 min read',
+    createdAt: '1 HARI LALU',
+    publishedDate: '25 Okt 2024'
+  },
+
+  // --- ARTICLE 26: Tech (TECH / SMART CITY) ---
+  {
+    id: '26',
+    title: 'Pengembangan Aplikasi Smart City Sukabumi Tingkatkan Layanan Publik Digital',
+    slug: 'pengembangan-aplikasi-smart-city-sukabumi-tingkatkan-layanan-publik',
+    excerpt: 'Layanan pengaduan warga dan informasi transportasi kota Sukabumi kini terintegrasi dalam satu platform seluler berbasis cloud.',
+    content: `Pemerintah Kota Sukabumi resmi meluncurkan pembaruan besar pada aplikasi layanan digital publik 'SuperApp Sukabumi'.
+
+    Melalui sistem terintegrasi ini, warga dapat dengan cepat melaporkan gangguan infrastruktur, mengurus dokumen administrasi, serta memantau jadwal armada angkutan umum secara real-time dari smartphone.`,
+    category: 'tech',
+    categoryLabel: 'TECH',
+    subCategory: 'TECH',
+    imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Dashboard Aplikasi Layanan Publik Digital Smart City Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    badge: 'TEKNOLOGI',
+    createdAt: '5 JAM LALU',
+    publishedDate: '26 Okt 2024'
+  },
+
+  // --- ARTICLE 27: Otomotif (OTOMOTIF / CUSTOM) ---
+  {
+    id: '27',
+    title: 'Kontestasi Modifikasi Sepeda Motor Custom "Sukabumi Kustomfest" Dipadati Ratusan Builder',
+    slug: 'kontestasi-modifikasi-sepeda-motor-custom-sukabumi-kustomfest',
+    excerpt: 'Kreativitas perajin motor bergaya Cafe Racer, Chopper, dan Scrambler dipamerkan dalam ajang kustom bergengsi.',
+    content: `Lapang GOR Cisaat Sukabumi dipenuhi oleh raungan mesin dan keindahan karya modifikasi sepeda motor custom dalam ajang 'Sukabumi Kustomfest'.
+
+    Ratusan builder lokal dan regional memamerkan konsep rancangan unik dari gaya retro hingga futuristik yang menjadi inspirasi perkembangan dunia otomotif Sukabumi.`,
+    category: 'otomotif',
+    categoryLabel: 'OTOMOTIF',
+    subCategory: 'OTOMOTIF',
+    imageUrl: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Sepeda Motor Custom Modifikasi Karya Builder Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
     createdAt: '2 HARI LALU',
     publishedDate: '24 Okt 2024'
   }

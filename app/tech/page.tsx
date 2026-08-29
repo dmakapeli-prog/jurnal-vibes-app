@@ -7,9 +7,11 @@ import { DUMMY_ARTICLES } from '@/data/dummyArticles';
 
 export default function TechPage() {
   const techArticles = DUMMY_ARTICLES.filter(
-    a => a.category === 'tech' || a.categoryLabel === 'TECH'
+    a =>
+      a.category === 'tech' ||
+      a.categoryLabel.toUpperCase() === 'TECH' ||
+      (a.subCategory || '').toUpperCase() === 'TECH'
   );
-  const articlesToDisplay = techArticles.length ? techArticles : DUMMY_ARTICLES.slice(0, 4);
 
   return (
     <div className="flex flex-1 mx-auto max-w-container-max w-full px-margin-mobile md:px-margin-desktop gap-gutter py-stack-lg">
@@ -21,15 +23,23 @@ export default function TechPage() {
             Technology & Innovation
           </h1>
           <p className="font-body-md text-on-surface-variant text-base md:text-lg">
-            Kabar dunia teknologi, AI, gadget terbaru, dan lanskap startup digital
+            Kabar dunia teknologi, AI, gadget terbaru, dan lanskap startup digital Sukabumi
           </p>
         </header>
 
-        <div className="flex flex-col gap-6">
-          {articlesToDisplay.map(article => (
-            <NewsCard key={article.id} article={article} variant="row" />
-          ))}
-        </div>
+        {techArticles.length > 0 ? (
+          <div className="flex flex-col gap-6">
+            {techArticles.map(article => (
+              <NewsCard key={article.id} article={article} variant="row" />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12 bg-surface-container rounded-2xl border border-outline-variant">
+            <p className="text-on-surface-variant font-medium">
+              Belum ada artikel untuk kategori <span className="font-bold text-primary">Tech</span>.
+            </p>
+          </div>
+        )}
       </main>
     </div>
   );
