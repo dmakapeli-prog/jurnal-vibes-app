@@ -14,7 +14,8 @@ export const Footer: React.FC = () => {
             {/* eslint-disable-next-img-element */}
             <img
               alt="Jurnal Vibes Logo"
-              className="h-16 object-contain"
+              className="h-16 object-contain mix-blend-multiply"
+              style={{ mixBlendMode: 'multiply' }}
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMacEFPLeb4Dpwg-Q8rcKbxl0AVDeJ7YhYfdsr6AFDZ1tfJOs8_6uOi8OfEX8AC28-muDv32qDnc7cQchBHQiDivUKCrbeHMtD8iWYo3RhuOL0zhwXQ4G3b8Pm8MjnNU-u44pW4m8Nch7Nxx7U7Baw1sqQMBlLTQT8B6vZP68yrQLsPja0MXC9ExgXrddPZk3_8RpVY16Vh9FF8BMDZ-Qz9JDB-kHJlJup-5A6VTjcXh14fWiuCE30-1zYb5o-G96D5pE"
             />
           </Link>

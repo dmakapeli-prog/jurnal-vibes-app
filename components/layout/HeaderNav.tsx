@@ -45,6 +45,7 @@ export const HeaderNav: React.FC = () => {
               <img
                 alt="Jurnal Vibes Logo"
                 className="h-12 w-auto md:h-14 object-contain mix-blend-multiply"
+                style={{ mixBlendMode: 'multiply' }}
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_G4cy03YWhYa-Kym40jgbZSqmdZP7gNs-gp6i_alZS2lNYY8I-Yia7oaBcFZoHsd3u4ZjnFrGMnyRVa-lQTAFhRgUmxfrCMyotmWtSVTRq4GNhvL-4FdQWSBvinHo70fsaO1VQmUfKSKvHZU5L8dK0y4yNLh0VMRtPqobABdBRTvJRkuwqUKma6mTv0LZBFEKz-jheCGRyqIvjdGAyouWnTZK3lnRRPmS__HVL3w6UyhZN3-lKwGDF8WTdsHZi3iNPZ0"
               />
             </Link>
