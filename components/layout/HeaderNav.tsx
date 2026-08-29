@@ -38,12 +38,12 @@ export const HeaderNav: React.FC = () => {
     <header className="sticky top-0 z-40 bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-b border-outline-variant dark:border-secondary transition-colors duration-300">
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto w-full relative z-10">
         {/* Brand Logo */}
-        <div className="flex-shrink-0 w-1/4">
-          <Link href="/">
+        <div className="flex-shrink-0 w-1/4 flex items-center">
+          <Link href="/" className="flex items-center">
             {/* eslint-disable-next-img-element */}
             <img
               alt="Jurnal Vibes Logo"
-              className="h-8 md:h-12 object-contain"
+              className="h-10 md:h-14 w-auto object-contain mix-blend-multiply"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_G4cy03YWhYa-Kym40jgbZSqmdZP7gNs-gp6i_alZS2lNYY8I-Yia7oaBcFZoHsd3u4ZjnFrGMnyRVa-lQTAFhRgUmxfrCMyotmWtSVTRq4GNhvL-4FdQWSBvinHo70fsaO1VQmUfKSKvHZU5L8dK0y4yNLh0VMRtPqobABdBRTvJRkuwqUKma6mTv0LZBFEKz-jheCGRyqIvjdGAyouWnTZK3lnRRPmS__HVL3w6UyhZN3-lKwGDF8WTdsHZi3iNPZ0"
             />
           </Link>
