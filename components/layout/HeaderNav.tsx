@@ -27,7 +27,6 @@ export const HeaderNav: React.FC = () => {
   ];
 
   const dropdownLinks = [
-    { href: '#', label: 'Music & Film' },
     { href: '/otomotif', label: 'Otomotif' },
     { href: '/science', label: 'Science' },
     { href: '/health', label: 'Health' },
