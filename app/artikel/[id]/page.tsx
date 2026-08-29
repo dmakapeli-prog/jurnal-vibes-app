@@ -24,6 +24,30 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
   const { id } = use(params);
   const [isSaved, setIsSaved] = useState<boolean>(false);
 
+  const [reactions, setReactions] = useState<{
+    [key: string]: { emoji: string; label: string; count: number; userVoted: boolean; bg: string; border: string; text: string };
+  }>({
+    suka: { emoji: '🔥', label: 'Suka', count: 12, userVoted: false, bg: 'bg-amber-50 dark:bg-amber-950/30', border: 'border-amber-200 dark:border-amber-800', text: 'text-amber-900 dark:text-amber-200' },
+    menginspirasi: { emoji: '💖', label: 'Menginspirasi', count: 8, userVoted: false, bg: 'bg-rose-50 dark:bg-rose-950/30', border: 'border-rose-200 dark:border-rose-800', text: 'text-rose-900 dark:text-rose-200' },
+    menarik: { emoji: '🧐', label: 'Menarik', count: 5, userVoted: false, bg: 'bg-amber-50 dark:bg-amber-950/30', border: 'border-amber-200 dark:border-amber-800', text: 'text-amber-900 dark:text-amber-200' },
+    inginTahu: { emoji: '🤔', label: 'Ingin Tahu', count: 3, userVoted: false, bg: 'bg-slate-100 dark:bg-slate-800/50', border: 'border-slate-300 dark:border-slate-700', text: 'text-slate-800 dark:text-slate-200' },
+    menghibur: { emoji: '😂', label: 'Menghibur', count: 7, userVoted: false, bg: 'bg-purple-50 dark:bg-purple-950/30', border: 'border-purple-200 dark:border-purple-800', text: 'text-purple-900 dark:text-purple-200' }
+  });
+
+  const handleReactionClick = (key: string) => {
+    setReactions(prev => {
+      const current = prev[key];
+      return {
+        ...prev,
+        [key]: {
+          ...current,
+          count: current.userVoted ? current.count - 1 : current.count + 1,
+          userVoted: !current.userVoted
+        }
+      };
+    });
+  };
+
   const article = DUMMY_ARTICLES.find(a => a.id === id) || DUMMY_ARTICLES[1];
   const relatedArticles = DUMMY_ARTICLES.filter(a => a.id !== article.id).slice(0, 3);
 
@@ -175,31 +199,65 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
           </ul>
         </div>
 
-        {/* Engagement / Share */}
+        {/* Reaction Section (BAGAIMANA REAKSI ANDA?) */}
         <div className="mt-12 pt-8 border-t border-outline-variant">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <h4 className="font-button text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-4">
+            BAGAIMANA REAKSI ANDA?
+          </h4>
+          <div className="flex flex-wrap gap-3 mb-8">
+            {Object.entries(reactions).map(([key, r]) => (
+              <button
+                key={key}
+                onClick={() => handleReactionClick(key)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full border text-xs font-semibold transition-all cursor-pointer ${
+                  r.bg
+                } ${r.border} ${r.text} ${
+                  r.userVoted ? 'ring-2 ring-primary scale-105 shadow-sm' : 'hover:scale-105'
+                }`}
+              >
+                <span className="text-sm">{r.emoji}</span>
+                <span>{r.label}</span>
+                <span className="font-bold ml-0.5">{r.count}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Share & Save Actions */}
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-6 border-t border-outline-variant">
             <div className="flex items-center gap-4">
               <span className="font-button text-on-surface-variant font-semibold text-sm">
                 Bagikan:
               </span>
               <div className="flex gap-2">
-                <button className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all cursor-pointer">
+                <button
+                  onClick={() => alert('Bagikan ke Facebook')}
+                  className="w-10 h-10 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-all cursor-pointer"
+                >
                   <Globe className="w-5 h-5" />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all cursor-pointer">
+                <button
+                  onClick={() => alert('Bagikan ke Twitter')}
+                  className="w-10 h-10 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-all cursor-pointer"
+                >
                   <Share2 className="w-5 h-5" />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all cursor-pointer">
+                <button
+                  onClick={() => alert('Bagikan ke WhatsApp')}
+                  className="w-10 h-10 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-all cursor-pointer"
+                >
                   <MessageCircle className="w-5 h-5" />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all cursor-pointer">
+                <button
+                  onClick={() => alert('Salin Link')}
+                  className="w-10 h-10 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-all cursor-pointer"
+                >
                   <LinkIcon className="w-5 h-5" />
                 </button>
               </div>
             </div>
             <button
               onClick={() => setIsSaved(!isSaved)}
-              className="flex items-center justify-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-full font-button font-semibold text-sm hover:scale-105 transition-transform cursor-pointer"
+              className="flex items-center justify-center gap-2 bg-[#c00015] hover:bg-[#a00012] text-white px-6 py-3 rounded-full font-button font-bold text-sm hover:scale-105 transition-transform cursor-pointer shadow-md"
             >
               <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
               {isSaved ? 'Tersimpan' : 'Simpan Artikel'}
