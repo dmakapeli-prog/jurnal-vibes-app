@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+  --color-tertiary-container: #747676;
+  --color-surface: #fbf9f9;
+  --color-surface-tint: #c00015;
+  --color-on-surface: #1b1c1c;
+  --color-outline-variant: #e7bdb8;
+  --color-on-tertiary-container: #fefefe;
+  --color-on-background: #1b1c1c;
+  --color-on-primary: #ffffff;
+  --color-surface-variant: #e3e2e2;
+  --color-primary-fixed: #ffdad6;
+  --color-on-secondary-container: #656464;
+  --color-tertiary-fixed-dim: #c6c6c7;
+  --color-outline: #926e6b;
+  --color-surface-dim: #dbdad9;
+  --color-error-container: #ffdad6;
+  --color-secondary-fixed: #e5e2e1;
+  --color-inverse-primary: #ffb4ac;
+  --color-surface-bright: #fbf9f9;
+  --color-on-primary-container: #fffdff;
+  --color-inverse-on-surface: #f2f0f0;
+  --color-primary: #bd0015;
+  --color-primary-container: #e61e25;
+  --color-secondary-container: #e5e2e1;
+  --color-on-tertiary: #ffffff;
+  --color-on-surface-variant: #5d3f3c;
+  --color-primary-fixed-dim: #ffb4ac;
+  --color-surface-container-high: #e9e8e7;
+  --color-tertiary-fixed: #e2e2e2;
+  --color-secondary: #5f5e5e;
+  --color-on-primary-fixed: #410002;
+  --color-background: #fbf9f9;
+  --color-surface-container-low: #f5f3f3;
+  --color-on-secondary-fixed: #1c1b1b;
+  --color-on-secondary: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-tertiary-fixed: #1a1c1c;
+  --color-inverse-surface: #303031;
+  --color-on-primary-fixed-variant: #93000d;
+  --color-surface-container-highest: #e3e2e2;
+  --color-secondary-fixed-dim: #c8c6c5;
+  --color-surface-container: #efeded;
+  --color-on-tertiary-fixed-variant: #454747;
+  --color-on-secondary-fixed-variant: #474646;
+  --color-tertiary: #5c5d5e;
+  --color-error: #ba1a1a;
+
+  --spacing-base: 4px;
+  --spacing-margin-desktop: 40px;
+  --spacing-gutter: 24px;
+  --spacing-stack-sm: 8px;
+  --spacing-stack-md: 16px;
+  --spacing-margin-mobile: 16px;
+  --spacing-container-max: 1280px;
+  --spacing-stack-lg: 32px;
+
+  --font-button: Inter, sans-serif;
+  --font-body-md: Inter, sans-serif;
+  --font-body-lg: Inter, sans-serif;
+  --font-label-caps: Inter, sans-serif;
+  --font-headline-lg-mobile: Literata, serif;
+  --font-headline-lg: Literata, serif;
+  --font-headline-xl: Literata, serif;
+  --font-headline-md: Literata, serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(189, 0, 21, 0.12);
+}
