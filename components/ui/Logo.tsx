@@ -9,25 +9,28 @@ interface LogoProps {
 
 export const Logo: React.FC<LogoProps> = ({ variant = 'light', size = 'md' }) => {
   const iconHeights = {
-    sm: 'h-8',
+    sm: 'h-8 md:h-9',
     md: 'h-10 md:h-12',
-    lg: 'h-12 md:h-16'
+    lg: 'h-14 md:h-16'
   };
 
   const titleSizes = {
-    sm: 'text-lg',
+    sm: 'text-base md:text-lg',
     md: 'text-xl md:text-2xl',
     lg: 'text-2xl md:text-3xl'
   };
 
-  const subtitleSizes = {
-    sm: 'text-[9px]',
-    md: 'text-[10px] md:text-[11px]',
-    lg: 'text-[11px] md:text-xs'
+  const taglineSizes = {
+    sm: 'text-[10px]',
+    md: 'text-xs',
+    lg: 'text-xs md:text-sm'
   };
 
   const textColor = variant === 'footer' ? 'text-white' : 'dark:text-white text-[#1b1c1c]';
-  const taglineColor = variant === 'footer' ? 'text-gray-300' : 'dark:text-gray-400 text-[#5d3f3c]';
+  const taglineColor =
+    variant === 'footer'
+      ? 'text-gray-200 font-medium'
+      : 'dark:text-gray-300 text-[#bd0015] font-semibold opacity-90';
 
   return (
     <div className="flex items-center gap-3 group">
@@ -35,14 +38,14 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'light', size = 'md' }) =>
       <img
         src="/logo-icon.png"
         alt="Jurnal Vibes Icon"
-        className={`${iconHeights[size]} w-auto object-contain transition-transform group-hover:scale-105`}
+        className={`${iconHeights[size]} w-auto object-contain transition-transform group-hover:scale-105 shrink-0`}
       />
-      <div className="flex flex-col justify-center leading-none">
-        <span className={`font-headline-lg font-extrabold tracking-tight ${titleSizes[size]} ${textColor}`}>
+      <div className="flex flex-col justify-center leading-tight">
+        <span className={`font-headline-lg font-bold tracking-tight ${titleSizes[size]} ${textColor}`}>
           Jurnal <span className="text-[#bd0015]">Vibes</span>
         </span>
-        <span className={`font-sans tracking-wider uppercase font-semibold mt-0.5 ${subtitleSizes[size]} ${taglineColor}`}>
-          Your daily dose of Sukabumi Vibes
+        <span className={`font-sans tracking-wide ${taglineSizes[size]} ${taglineColor}`}>
+          Your daily dose of <span className="text-[#bd0015] font-bold">Sukabumi Vibes</span>
         </span>
       </div>
     </div>

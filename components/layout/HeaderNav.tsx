@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Search, Moon, Sun, ChevronDown } from 'lucide-react';
 import { SearchOverlay } from './SearchOverlay';
+import { Logo } from '../ui/Logo';
 
 export const HeaderNav: React.FC = () => {
   const pathname = usePathname();
@@ -38,14 +39,9 @@ export const HeaderNav: React.FC = () => {
     <header className="sticky top-0 z-40 bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-b border-outline-variant dark:border-secondary transition-colors duration-300">
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto w-full relative z-10">
         {/* Brand Logo */}
-        <div className="flex-shrink-0 w-1/3 md:w-1/4 flex items-center">
+        <div className="flex-shrink-0 flex items-center">
           <Link href="/" className="flex items-center">
-            {/* eslint-disable-next-img-element */}
-            <img
-              alt="Jurnal Vibes Logo"
-              className="h-12 md:h-16 w-auto object-contain transition-transform hover:scale-105"
-              src={isDark ? '/logo-all-white.png' : '/logo-unmatted.png'}
-            />
+            <Logo variant={isDark ? 'dark' : 'light'} size="md" />
           </Link>
         </div>
 
