@@ -1,6 +1,207 @@
 import { Article } from '@/types';
 
 export const DUMMY_ARTICLES: Article[] = [
+  // --- KAMPUS ---
+  {
+    id: '7',
+    title: 'Mahasiswa Universitas Muhammadiyah Sukabumi (UMMI) Kembangkan Sensor Udara IoT',
+    slug: 'mahasiswa-ummi-kembangkan-sensor-udara-iot',
+    excerpt: 'Inovasi karya tim riset mahasiswa UMMI ini mampu memantau indeks kualitas udara secara akurat dan real-time melalui smartphone.',
+    content: `Prestasi membanggakan kembali diukir oleh civitas akademika Universitas Muhammadiyah Sukabumi (UMMI). Tim mahasiswa Fakultas Sains dan Teknologi sukses merancang prototipe alat pemantau polusi udara pintar berbasis Internet of Things (IoT).
+
+    Alat ini dikembangkan untuk mendeteksi partikel mikron dan gas berbahaya di area perkotaan Sukabumi, kemudian mengirimkan hasilnya langsung ke aplikasi seluler masyarakat secara real-time.
+
+    Dekan Fakultas Sains UMMI menyampaikan apresiasi tinggi atas dedikasi mahasiswa dalam menciptakan teknologi yang bermanfaat langsung bagi kesehatan lingkungan warga Sukabumi.`,
+    category: 'berita',
+    categoryLabel: 'KAMPUS',
+    subCategory: 'KAMPUS',
+    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Mahasiswa UMMI Sukabumi di Laboratorium Teknologi Sensor IoT',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    badge: 'KAMPUS',
+    createdAt: '2 JAM LALU',
+    publishedDate: '26 Okt 2024'
+  },
+  {
+    id: '9',
+    title: 'Universitas Nusa Putra Sukabumi Raih Akreditasi Internasional dari Lembaga Eropa',
+    slug: 'universitas-nusa-putra-sukabumi-raih-akreditasi-internasional',
+    excerpt: 'Capaian gemilang kampus Nusa Putra Sukabumi memperkuat posisinya sebagai institusi pendidikan berstandar global.',
+    content: `Universitas Nusa Putra Sukabumi resmi menerima sertifikasi akreditasi internasional dari lembaga akreditasi Eropa. Pencapaian ini menjadi bukti komitmen kampus dalam meningkatkan mutu kurikulum, fasilitas riset, dan daya saing lulusan di tingkat internasional.
+
+    Rektor Nusa Putra menyampaikan bahwa akreditasi ini akan memperluas kerja sama student exchange dengan universitas-universitas ternama di Jerman, Jepang, dan Amerika Serikat.
+
+    Mahasiswa Nusa Putra menyambut gembira kabar ini karena membuka peluang magang dan karir internasional yang lebih luas pasca kelulusan.`,
+    category: 'berita',
+    categoryLabel: 'KAMPUS',
+    subCategory: 'KAMPUS',
+    imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Gedung Rektorat Universitas Nusa Putra Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '5 min read',
+    badge: 'PRESTASI',
+    createdAt: '4 JAM LALU',
+    publishedDate: '26 Okt 2024'
+  },
+  {
+    id: '10',
+    title: 'Kampus IPB Sukabumi Buka Program Beasiswa Talenta Muda Daerah',
+    slug: 'kampus-ipb-sukabumi-buka-program-beasiswa-talenta-muda',
+    excerpt: 'Pendaftaran beasiswa penuh untuk calon mahasiswa berprestasi asal Kota dan Kabupaten Sukabumi resmi dibuka.',
+    content: `Kabar gembira bagi para pelajar lulusan SMA/SMK sederajat di Sukabumi. Kampus Sekolah Vokasi IPB Sukabumi kembali membuka pendaftaran Program Beasiswa Talenta Muda Daerah untuk tahun akademik 2024/2025.
+
+    Program beasiswa ini membiayai seluruh biaya kuliah hingga lulus dan memberikan uang saku bulanan bagi peserta didik berprestasi dari keluarga kurang mampu.
+
+    Seleksi dilakukan melalui jalur portofolio prestasi akademik dan wawancara motivasi pengembangan daerah pertanian dan lingkungan Sukabumi.`,
+    category: 'berita',
+    categoryLabel: 'KAMPUS',
+    subCategory: 'KAMPUS',
+    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Mahasiswa Kampus IPB Sukabumi Berdiskusi di Taman Kampus',
+    author: 'Tim Redaksi',
+    readTime: '3 min read',
+    createdAt: 'KEMARIN',
+    publishedDate: '25 Okt 2024'
+  },
+
+  // --- SEKOLAH ---
+  {
+    id: '11',
+    title: 'Siswa SMAN 1 Kota Sukabumi Sabet Medali Emas Olimpiade Sains Nasional 2024',
+    slug: 'siswa-sman-1-kota-sukabumi-sabet-medali-emas-osn-2024',
+    excerpt: 'Kategori bidang Informatika diraih perwakilan pelajar SMAN 1 Sukabumi setelah menyingkirkan ratusan peserta nasional.',
+    content: `Prestasi membanggakan datang dari dunia sekolah Kota Sukabumi. Muhammad Rizky, siswa kelas XII SMAN 1 Kota Sukabumi, sukses meraih medali emas pada ajang Olimpiade Sains Nasional (OSN) 2024 bidang Informatika yang berlangsung di Jakarta.
+
+    Kepala Sekolah SMAN 1 Sukabumi mengapresiasi kerja keras siswa dan guru pembimbing yang intensif melakukan karantina soal algoritma dan pemrograman selama tiga bulan terakhir.
+
+    "Prestasi ini membuktikan bahwa pelajar Sukabumi mampu bersaing di tingkat tertinggi kompetisi sains Indonesia," ujar Kepala Sekolah SMAN 1 Kota Sukabumi saat penyambutan kepulangan kontingen.`,
+    category: 'berita',
+    categoryLabel: 'SEKOLAH',
+    subCategory: 'SEKOLAH',
+    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Siswa SMAN 1 Kota Sukabumi Meraih Medali Emas OSN Informatika',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    badge: 'PRESTASI',
+    createdAt: '3 JAM LALU',
+    publishedDate: '26 Okt 2024'
+  },
+  {
+    id: '12',
+    title: 'SMKN 1 Sukabumi Pamerkan Mobil Listrik "Vibes-EV" Karya Siswa Jurusan Otomotif',
+    slug: 'smkn-1-sukabumi-pamerkan-mobil-listrik-karya-siswa',
+    excerpt: 'Kendaraan ramah lingkungan berkecepatan 60 km/jam ini sepenuhnya dirakit oleh para pelajar SMK di Sukabumi.',
+    content: `Kreativitas siswa SMKN 1 Sukabumi patut diacungi jempol. Dalam pameran karya vokasi daerah minggu ini, mereka meluncurkan prototipe mobil listrik perkotaan bernama 'Vibes-EV' yang efisien dan hemat energi.
+
+    Mobil listrik ringan ini ditenagai baterai lithium 48V dan mampu menempuh jarak hingga 50 km dalam sekali pengisian daya.
+
+    Guru pembimbing jurusan Otomotif SMKN 1 Sukabumi menyebutkan bahwa seluruh pengerjaan dari sasis, kelistrikan, hingga bodi fiberglass dikerjakan langsung oleh tangan para siswa.`,
+    category: 'berita',
+    categoryLabel: 'SEKOLAH',
+    subCategory: 'SEKOLAH',
+    imageUrl: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Mobil Listrik Vibes-EV Dirakit Siswa SMKN 1 Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    createdAt: 'KEMARIN',
+    publishedDate: '25 Okt 2024'
+  },
+  {
+    id: '18',
+    title: 'Gelar Karya P5 SMAN 3 Sukabumi Tampilkan Tari Budaya dan Produk Wirausaha Muda',
+    slug: 'gelar-karya-p5-sman-3-sukabumi-tampilkan-tari-budaya',
+    excerpt: 'Ratusan siswa SMAN 3 Kota Sukabumi memamerkan hasil karya seni tradisional Sunda dan bazaar jajanan lokal.',
+    content: `Panen Karya Projek Penguatan Profil Pelajar Pancasila (P5) SMAN 3 Kota Sukabumi berlangsung meriah di halaman sekolah. Para siswa dari kelas X hingga XII menampilkan beragam tarian budaya tradisional Sunda, teater kreasi, serta pameran karya seni rupa.
+
+    Selain pentas seni, lapangan sekolah dihiasi belasan stan wirausaha muda siswa yang menjual makanan khas Sukabumi seperti mochi kreasi baru, olahan kuliner tradisional, dan kerajinan tangan ramah lingkungan.`,
+    category: 'berita',
+    categoryLabel: 'SEKOLAH',
+    subCategory: 'SEKOLAH',
+    imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Pentas Tari Budaya dalam Gelar Karya P5 SMAN 3 Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    createdAt: '2 HARI LALU',
+    publishedDate: '24 Okt 2024'
+  },
+  {
+    id: '13',
+    title: 'Dinas Pendidikan Sukabumi Sosialisasi Program KIP Sekolah Bebas Biaya',
+    slug: 'dinas-pendidikan-sukabumi-sosialisasi-kip-sekolah',
+    excerpt: 'Upaya pemerataan pendidikan berkualitas bagi puluhan ribu anak usia sekolah di seluruh kecamatan Sukabumi.',
+    content: `Dinas Pendidikan Kota Sukabumi memperluas jangkauan bantuan Kartu Indonesia Pintar (KIP) Sekolah guna memastikan tidak ada anak yang putus sekolah di jenjang SD, SMP, maupun SMA/SMK.
+
+    Program sosialisasi ditargetkan menyasar wali murid di daerah pelosok agar seluruh hak bantuan perlengkapan dan operasional sekolah tersalurkan dengan tepat sasaran.`,
+    category: 'berita',
+    categoryLabel: 'SEKOLAH',
+    subCategory: 'SEKOLAH',
+    imageUrl: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Kegiatan Belajar Mengajar Siswa Sekolah di Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '3 min read',
+    createdAt: '3 HARI LALU',
+    publishedDate: '23 Okt 2024'
+  },
+
+  // --- KOMUNITAS ---
+  {
+    id: '14',
+    title: 'Lokal Vibes Skate! Ajang Kumpul Komunitas Skateboarder Sukabumi di Baros',
+    slug: 'lokal-vibes-skate-ajang-kumpul-komunitas-skateboarder-sukabumi',
+    excerpt: 'Puluhan pemuda pecinta olahraga ekstrem meramaikan Skatepark Baros dalam kompetisi trik papan luncur.',
+    content: `Skatepark Baros Sukabumi dipadati oleh puluhan skateboarder muda dari berbagai komunitas lokal dalam ajang 'Lokal Vibes Skate Jam'. 
+
+    Acara ini tidak hanya mempertandingkan kategori Best Trick dan Game of Skate, tetapi juga menjadi wadah mempererat silaturahmi antar pegiat olahraga papan luncur se-Sukabumi.
+
+    Para pemenang kompetisi mendapatkan hadiah perlengkapan papan luncur dan trofi kehormatan dari komunitas skate lokal Sukabumi.`,
+    category: 'lifestyle',
+    categoryLabel: 'KOMUNITAS',
+    subCategory: 'KOMUNITAS',
+    imageUrl: 'https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Komunitas Skateboarder Sukabumi Beraksi di Skatepark Baros',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    badge: 'KOMUNITAS',
+    createdAt: '1 JAM LALU',
+    publishedDate: '26 Okt 2024'
+  },
+  {
+    id: '15',
+    title: 'Komunitas Vespa Sukabumi Gelar Touring Baksos dan Bersih Pantai Palabuhanratu',
+    slug: 'komunitas-vespa-sukabumi-gelar-touring-baksos',
+    excerpt: 'Ratusan pengendara Vespa retro menyusuri pesisir Pelabuhanratu sambil membagikan sembako dan membersihkan sampah.',
+    content: `Semangat kepedulian ditunjukkan oleh Komunitas Vespa Scooterist Sukabumi. Ratusan anggota komunitas motor klasik ini menggelar aksi touring sosial menuju kawasan Pantai Pelabuhanratu.
+
+    Selain menikmati keindahan jalur pesisir, para peserta juga membagikan paket sembako bagi nelayan setempat dan mengumpulkan puluhan kantong sampah plastik di area bibir pantai.`,
+    category: 'otomotif',
+    categoryLabel: 'KOMUNITAS',
+    subCategory: 'KOMUNITAS',
+    imageUrl: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Komunitas Motor Vespa Sukabumi Touring Baksos',
+    author: 'Tim Redaksi',
+    readTime: '5 min read',
+    createdAt: 'KEMARIN',
+    publishedDate: '25 Okt 2024'
+  },
+  {
+    id: '16',
+    title: 'Relawan Komunitas Peduli Lingkungan Tanam 1.000 Bibit Pohon di Lereng Gunung Gede',
+    slug: 'komunitas-peduli-lingkungan-tanam-1000-pohon-gunung-gede',
+    excerpt: 'Aksi nyata reboisasi lahan kritis kawasan resapan air Sukabumi bersama ratusan sukarelawan muda.',
+    content: `Komunitas Peduli Lingkungan Sukabumi menggelar gerakan penanaman 1.000 bibit pohon endemik di lereng kawasan Gunung Gede Selabintana. Aksi konservasi ini bertujuan menjaga mata air alami dan mencegah bahaya tanah longsor saat musim penghujan.`,
+    category: 'lifestyle',
+    categoryLabel: 'KOMUNITAS',
+    subCategory: 'KOMUNITAS',
+    imageUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Relawan Komunitas Lingkungan Sukabumi Menanam Pohon',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    createdAt: '3 HARI LALU',
+    publishedDate: '23 Okt 2024'
+  },
+
+  // --- EVENT LOKAL ---
   {
     id: '1',
     title: 'Festival Kuliner Sukabumi 2024 Dibanjiri Ribuan Pengunjung Gen-Z',
@@ -12,8 +213,8 @@ export const DUMMY_ARTICLES: Article[] = [
     category: 'lifestyle',
     categoryLabel: 'EVENT LOKAL',
     subCategory: 'EVENT LOKAL',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBWdh2L7XD5cekfWLbXF48X78RKUkMLAEcnUA_Uz_Gq9rvquPMZdw3OoB5a8xOQCyMPdnu5t_zP-xqAi9IxkWXB0QL_ILRhIARZxLlP0WNQ13fBbPSKsmLE9Inzl82JPiE41OxKPQSs2MWGLm_9nQUwJLc6I6SrmvpesHccu4EpCDiPO90r3mnhfd8U8nuLueFDKR3bsJrX6w7FAtHY-D_IFb7H1dMHog7M8xBtx4wvWLjIRdSdlfeJOA',
-    imageAlt: 'Festival Kuliner Sukabumi 2024',
+    imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Suasana Kemeriahan Festival Kuliner Sukabumi 2024',
     author: 'Tim Redaksi',
     readTime: '5 min read',
     isHero: true,
@@ -22,21 +223,68 @@ export const DUMMY_ARTICLES: Article[] = [
     publishedDate: '26 Okt 2024'
   },
   {
+    id: '4',
+    title: 'Lineup Artis Indie yang Akan Menggebrak Panggung Sukabumi Creative Fest',
+    slug: 'lineup-artis-indie-yang-akan-menggebrak-panggung-sukabumi-creative-fest',
+    excerpt: 'Dari band lokal hingga pendatang baru nasional, bersiaplah untuk malam konser musik yang tak terlupakan.',
+    content: `Komunitas musik Sukabumi kembali bersiap menyambut festival musik indie bergengsi Sukabumi Creative Fest yang akan menghadirkan deretan musisi papan atas nasional dan talenta lokal pilihan di GOR Cisaat.`,
+    category: 'lifestyle',
+    categoryLabel: 'EVENT LOKAL',
+    subCategory: 'EVENT LOKAL',
+    imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Panggung Konser Musik Indie Sukabumi Creative Fest',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    badge: 'EVENT',
+    createdAt: 'KEMARIN',
+    publishedDate: '24 Okt 2024'
+  },
+  {
+    id: '17',
+    title: 'Sukabumi Night Run 2024 Siap Meriahkan Akhir Pekan dengan Rute Ikonik Kota',
+    slug: 'sukabumi-night-run-2024-siap-meriahkan-akhir-pekan',
+    excerpt: 'Lomba lari malam 5K dan 10K melewati Alun-alun, Lapang Merdeka, hingga Balaikota Sukabumi.',
+    content: `Pemerintah Kota Sukabumi bekerjasama dengan panitia lokal resmi membuka pendaftaran ajang Sukabumi Night Run 2024. Ribuan pelari dari Jabodetabek dan Sukabumi ditargetkan memadati rute 5K dan 10K yang menyajikan keindahan tata lampu malam Kota Sukabumi.`,
+    category: 'sport',
+    categoryLabel: 'EVENT LOKAL',
+    subCategory: 'EVENT LOKAL',
+    imageUrl: 'https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Peserta Lomba Lari Malam Sukabumi Night Run 2024',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    createdAt: '2 HARI LALU',
+    publishedDate: '24 Okt 2024'
+  },
+  {
+    id: '19',
+    title: 'Pameran Ekonomi Kreatif UMKM Sukabumi 2024 Hadirkan Kerajinan Batik dan Kuliner Mochi',
+    slug: 'pameran-ekonomi-kreatif-umkm-sukabumi-2024',
+    excerpt: 'Puluhan pengrajin batik Sukabumi dan olahan mochi tradisional unjuk gigi di Gedung Juang 45.',
+    content: `Pameran Ekonomi Kreatif Sukabumi 2024 resmi dibuka di Gedung Juang 45. Acara ini menghadirkan lebih dari 40 gerai UMKM lokal yang menampilkan produk kerajinan batik khas Sukabumi, olahan jajanan kue mochi varian baru, serta cinderamata unik karya seniman daerah.`,
+    category: 'lifestyle',
+    categoryLabel: 'EVENT LOKAL',
+    subCategory: 'EVENT LOKAL',
+    imageUrl: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Gerai Pameran UMKM Kerajinan dan Kuliner Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    createdAt: '3 HARI LALU',
+    publishedDate: '23 Okt 2024'
+  },
+
+  // --- LIFESTYLE & KULINER ---
+  {
     id: '2',
     title: 'Review Jujur: Kedai Kopi Baru di Cikole yang Bikin Rela Antri',
     slug: 'review-jujur-kedai-kopi-baru-di-cikole-yang-bikin-rela-antri',
     excerpt: 'Desain interiornya yang minimalis dan sajian cold brew-nya menjadi sorotan utama pecinta kopi Sukabumi.',
     content: `Sukabumi tak henti-hentinya menghadirkan kejutan bagi para pecinta kopi. Kali ini, sebuah kedai kopi baru di kawasan Cikole mendadak viral dan menjadi perbincangan hangat di media sosial. Bukan tanpa alasan, tempat ini menawarkan pengalaman menyesap kopi yang berbeda dari biasanya.
 
-    Begitu melangkah masuk, pengunjung akan disambut dengan desain interior yang mengusung konsep industrial-minimalis. Penggunaan material kayu yang dominan dipadukan dengan jendela kaca besar memberikan kesan luas dan menyatu dengan alam sekitar yang asri.
-
-    "Kopi terbaik bukan hanya soal rasa, tapi juga soal memori yang tercipta di setiap sudutnya."
-
-    Cahaya matahari pagi yang masuk melalui celah-celah jendela menciptakan atmosfer yang hangat, sangat cocok bagi mereka yang ingin mencari ketenangan atau sekadar bekerja dengan suasana baru (WFH).`,
+    Begitu melangkah masuk, pengunjung akan disambut dengan desain interior yang mengusung konsep industrial-minimalis. Penggunaan material kayu yang dominan dipadukan dengan jendela kaca besar memberikan kesan luas dan menyatu dengan alam sekitar yang asri.`,
     category: 'lifestyle',
     categoryLabel: 'KULINER',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDlyVxPusdLIlG5gclYTgpAH7MpbUyJ_VGo8oaC5kzqGkOp0I8gOBk5GWuPnMmOH1JbNUsixMgeucjthkBARG4E6P2CZXQHx0MR1ZpW576XFlvg0G0ACYOhJAtT5J7ReKzuqPpIuQARmUJi7Wwgukvj2kqxjxB4T2izm2cbFLBRGsQ_p6vLXkpQ5Ra9433CXJZI8EviunxaUwq_Bp53KpBBbqFHeRHqgH7uGciKVD7Y6-mvLC8ovfGwzQ',
-    imageAlt: 'Interior Kedai Kopi Cikole Minimalis',
+    imageUrl: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Interior Kedai Kopi Cikole Minimalis Sukabumi',
     author: 'Tim Redaksi',
     readTime: '5 min read',
     isHero: true,
@@ -54,8 +302,8 @@ export const DUMMY_ARTICLES: Article[] = [
     content: `Jalur Selabintana Sukabumi dikenal sebagai salah satu rute pendakian Gunung Gede yang paling menantang sekaligus memanjakan mata pendaki dengan keasrian hutan tropisnya.`,
     category: 'lifestyle',
     categoryLabel: 'WISATA',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFa2Lajkwv8txJ4-coq7r2chPB6DAibGuyas-TrX-9dpNCGRnoQrZ683tygjYhDi5ho9yIxr8gkD2N2MSUnggMqTVHTkdzUhzBRE1nKr7PWMwjOjamhw2zgIsNPtKgLDjT4S30jDpMc6iLplfyqakzTBxWTT-XDG7NkeCqyyImf-wQQo3S9XtCMikaDCZE4E--miCy9nfImDckOntgJnTB37pKhD72GwPzsaHfg1n5k4C0DcE_O0m4CA',
-    imageAlt: 'Pendakian Gunung Gede Jalur Selabintana',
+    imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Pemandangan jalur pendakian Gunung Gede Selabintana',
     author: 'Tim Redaksi',
     readTime: '6 min read',
     isHero: true,
@@ -66,231 +314,6 @@ export const DUMMY_ARTICLES: Article[] = [
     publishedDate: '25 Okt 2024'
   },
   {
-    id: '7',
-    title: 'Mahasiswa Universitas Muhammadiyah Sukabumi (UMMI) Kembangkan Sensor Udara IoT',
-    slug: 'mahasiswa-ummi-kembangkan-sensor-udara-iot',
-    excerpt: 'Inovasi karya tim riset mahasiswa UMMI ini mampu memantau indeks kualitas udara secara akurat dan real-time.',
-    content: `Prestasi membanggakan kembali diukir oleh civitas akademika Universitas Muhammadiyah Sukabumi (UMMI). Tim mahasiswa Fakultas Sains dan Teknologi sukses merancang prototipe alat pemantau polusi udara pintar berbasis Internet of Things (IoT).
-
-    Alat ini dikembangkan untuk mendeteksi partikel mikron dan gas berbahaya di area perkotaan Sukabumi, kemudian mengirimkan hasilnya langsung ke aplikasi seluler masyarakat secara real-time.`,
-    category: 'berita',
-    categoryLabel: 'KAMPUS',
-    subCategory: 'KAMPUS',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnjhZVy6rUQjifmDatWSPxxYoAfk8jqK1ExVp5SRtBZ3Flo1PeZo0Wkdvm4QWliHRzACJxPU4ccFpDQHLZS2c-Amg1HI-mCI0bgOYOXQ-hNaCgu_jjE4J2rnVrrW_yUE-xKGRguqpokcaTdsJCoPyGXVMC5Ml--C4nKo4gkVGwmpLln8JkGvVNLSRT6kGl540mwmagLxuaUJQAwFyoZho9tIrgufMBzGDQxW5mQR6v5-unVZsTs1f5rw',
-    imageAlt: 'Mahasiswa UMMI Sukabumi di Laboratorium',
-    author: 'Tim Redaksi',
-    readTime: '4 min read',
-    badge: 'KAMPUS',
-    createdAt: '2 JAM LALU',
-    publishedDate: '26 Okt 2024'
-  },
-  {
-    id: '9',
-    title: 'Universitas Nusa Putra Sukabumi Raih Akreditasi Internasional dari Lembaga Eropa',
-    slug: 'universitas-nusa-putra-sukabumi-raih-akreditasi-internasional',
-    excerpt: 'Capaian gemilang kampus Nusa Putra Sukabumi memperkuat posisinya sebagai institusi pendidikan berstandar global.',
-    content: `Universitas Nusa Putra Sukabumi resmi menerima sertifikasi akreditasi internasional dari lembaga akreditasi Eropa. Pencapaian ini menjadi bukti komitmen kampus dalam meningkatkan mutu kurikulum, fasilitas riset, dan daya saing lulusan di tingkat internasional.
-
-    Rektor Nusa Putra menyampaikan bahwa akreditasi ini akan memperluas kerja sama exchange student dengan universitas-universitas ternama di Jerman, Jepang, dan Amerika Serikat.`,
-    category: 'berita',
-    categoryLabel: 'KAMPUS',
-    subCategory: 'KAMPUS',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDrEQqWYHvsFP9Ok-fxzdCwqOuXEbG08nhQh3_kWb0O1-LB3RKj3q55BX1kOeFiK1YWXtNjlAE9XaDZkEAncRYlMs2BvDhTDIfv7Plo2lyKa1fyM61zmlEL-4rUoujbHJ6M_hZl2p25qj3UyO_nGlZZ5QK6Fr3smsHfT4LllQd7r5_upg6j5UY-EK5Nj4lT07Hrc7dtFx0LLY3q18IPlEcdt-USWqHVM3PIlDFab7oKlu65YPmGyKKLgQ',
-    imageAlt: 'Gedung Rektorat Nusa Putra Sukabumi',
-    author: 'Tim Redaksi',
-    readTime: '5 min read',
-    badge: 'PRESTASI',
-    createdAt: '4 JAM LALU',
-    publishedDate: '26 Okt 2024'
-  },
-  {
-    id: '10',
-    title: 'Kampus IPB Sukabumi Buka Program Beasiswa Talenta Muda Daerah',
-    slug: 'kampus-ipb-sukabumi-buka-program-beasiswa-talenta-muda',
-    excerpt: 'Pendaftaran beasiswa penuh untuk calon mahasiswa berprestasi asal Kota dan Kabupaten Sukabumi resmi dibuka.',
-    content: `Kabar gembira bagi para pelajar lulusan SMA/SMK sederajat di Sukabumi. Kampus Sekolah Vokasi IPB Sukabumi kembali membuka pendaftaran Program Beasiswa Talenta Muda Daerah untuk tahun akademik 2024/2025.
-
-    Program beasiswa ini membiayai seluruh biaya kuliah hingga lulus dan memberikan uang saku bulanan bagi peserta didik berprestasi dari keluarga kurang mampu.`,
-    category: 'berita',
-    categoryLabel: 'KAMPUS',
-    subCategory: 'KAMPUS',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFa2Lajkwv8txJ4-coq7r2chPB6DAibGuyas-TrX-9dpNCGRnoQrZ683tygjYhDi5ho9yIxr8gkD2N2MSUnggMqTVHTkdzUhzBRE1nKr7PWMwjOjamhw2zgIsNPtKgLDjT4S30jDpMc6iLplfyqakzTBxWTT-XDG7NkeCqyyImf-wQQo3S9XtCMikaDCZE4E--miCy9nfImDckOntgJnTB37pKhD72GwPzsaHfg1n5k4C0DcE_O0m4CA',
-    imageAlt: 'Mahasiswa Kampus IPB Sukabumi',
-    author: 'Tim Redaksi',
-    readTime: '3 min read',
-    createdAt: 'KEMARIN',
-    publishedDate: '25 Okt 2024'
-  },
-  {
-    id: '11',
-    title: 'Siswa SMAN 1 Kota Sukabumi Sabet Medali Emas Olimpiade Sains Nasional 2024',
-    slug: 'siswa-sman-1-kota-sukabumi-sabet-medali-emas-osn-2024',
-    excerpt: 'Kategori bidang Informatika diraih perwakilan pelajar SMAN 1 Sukabumi setelah menyingkirkan ratusan peserta nasional.',
-    content: `Prestasi membanggakan datang dari dunia sekolah Kota Sukabumi. Muhammad Rizky, siswa kelas XII SMAN 1 Kota Sukabumi, sukses meraih medali emas pada ajang Olimpiade Sains Nasional (OSN) 2024 bidang Informatika yang berlangsung di Jakarta.
-
-    Kepala Sekolah SMAN 1 Sukabumi mengapresiasi kerja keras siswa dan guru pembimbing yang intensif melakukan karantina soal algoritma dan pemrograman selama tiga bulan terakhir.`,
-    category: 'berita',
-    categoryLabel: 'SEKOLAH',
-    subCategory: 'SEKOLAH',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnjhZVy6rUQjifmDatWSPxxYoAfk8jqK1ExVp5SRtBZ3Flo1PeZo0Wkdvm4QWliHRzACJxPU4ccFpDQHLZS2c-Amg1HI-mCI0bgOYOXQ-hNaCgu_jjE4J2rnVrrW_yUE-xKGRguqpokcaTdsJCoPyGXVMC5Ml--C4nKo4gkVGwmpLln8JkGvVNLSRT6kGl540mwmagLxuaUJQAwFyoZho9tIrgufMBzGDQxW5mQR6v5-unVZsTs1f5rw',
-    imageAlt: 'Siswa SMAN 1 Kota Sukabumi Meraih Medali Emas OSN',
-    author: 'Tim Redaksi',
-    readTime: '4 min read',
-    badge: 'PRESTASI',
-    createdAt: '3 JAM LALU',
-    publishedDate: '26 Okt 2024'
-  },
-  {
-    id: '12',
-    title: 'SMKN 1 Sukabumi Pamerkan Mobil Listrik Hasil Karya Siswa Jurusan Otomotif',
-    slug: 'smkn-1-sukabumi-pamerkan-mobil-listrik-karya-siswa',
-    excerpt: 'Kendaraan ramah lingkungan berkecepatan 60 km/jam ini sepenuhnya dirakit oleh para pelajar SMK di Sukabumi.',
-    content: `Kreativitas siswa SMKN 1 Sukabumi patut diacungi jempol. Dalam pameran karya vokasi daerah minggu ini, mereka meluncurkan prototipe mobil listrik perkotaan bernama 'Vibes-EV' yang efisien dan hemat energi.
-
-    Mobil listrik ringan ini ditenagai baterai lithium 48V dan mampu menempuh jarak hingga 50 km dalam sekali pengisian daya.`,
-    category: 'berita',
-    categoryLabel: 'SEKOLAH',
-    subCategory: 'SEKOLAH',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHlyZ30PDx_u6m09P1kO1lpMGo1IeHAPipY8BxOzMoCqYn9NK31TMOkvytSRJPPDR5HXUbBjfpQxvxQfIgOIDO9a5rJi-6x4jvexdo7yo2mlwwP6RBEMP5Q83o69MSz2tRCUr-6UVrP4vC8GOIAlQhWUcAi3-rCXXT6piqXVyKM2ZkEy1XgTHhw-3378eKd9sAt4O53go7RQANK8tAbMLSr7j7booD237rRiXXkTjjdQudE2qaXoldqg',
-    imageAlt: 'Mobil Listrik Karya Siswa SMKN 1 Sukabumi',
-    author: 'Tim Redaksi',
-    readTime: '4 min read',
-    createdAt: 'KEMARIN',
-    publishedDate: '25 Okt 2024'
-  },
-  {
-    id: '13',
-    title: 'Dinas Pendidikan Sukabumi Sosialisasi Program KIP Sekolah Bebas Biaya',
-    slug: 'dinas-pendidikan-sukabumi-sosialisasi-kip-sekolah',
-    excerpt: 'Upaya pemerataan pendidikan berkualitas bagi puluhan ribu anak usia sekolah di seluruh kecamatan Sukabumi.',
-    content: `Dinas Pendidikan Kota Sukabumi memperluas jangkauan bantuan Kartu Indonesia Pintar (KIP) Sekolah guna memastikan tidak ada anak yang putus sekolah di jenjang SD, SMP, maupun SMA/SMK.`,
-    category: 'berita',
-    categoryLabel: 'SEKOLAH',
-    subCategory: 'SEKOLAH',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFa2Lajkwv8txJ4-coq7r2chPB6DAibGuyas-TrX-9dpNCGRnoQrZ683tygjYhDi5ho9yIxr8gkD2N2MSUnggMqTVHTkdzUhzBRE1nKr7PWMwjOjamhw2zgIsNPtKgLDjT4S30jDpMc6iLplfyqakzTBxWTT-XDG7NkeCqyyImf-wQQo3S9XtCMikaDCZE4E--miCy9nfImDckOntgJnTB37pKhD72GwPzsaHfg1n5k4C0DcE_O0m4CA',
-    imageAlt: 'Kegiatan Belajar Siswa Sekolah di Sukabumi',
-    author: 'Tim Redaksi',
-    readTime: '3 min read',
-    createdAt: '2 HARI LALU',
-    publishedDate: '24 Okt 2024'
-  },
-  {
-    id: '14',
-    title: 'Lokal Vibes Skate! Ajang Kumpul Komunitas Skateboarder Sukabumi di Baros',
-    slug: 'lokal-vibes-skate-ajang-kumpul-komunitas-skateboarder-sukabumi',
-    excerpt: 'Puluhan pemuda pecinta olahraga ekstrem meramaikan Skatepark Baros dalam kompetisi trik papan luncur.',
-    content: `Skatepark Baros Sukabumi dipadati oleh puluhan skateboarder muda dari berbagai komunitas lokal dalam ajang 'Lokal Vibes Skate Jam'. 
-
-    Acara ini tidak hanya mempertandingkan kategori Best Trick dan Game of Skate, tetapi juga menjadi wadah mempererat silaturahmi antar pegiat olahraga papan luncur se-Sukabumi.`,
-    category: 'lifestyle',
-    categoryLabel: 'KOMUNITAS',
-    subCategory: 'KOMUNITAS',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFa2Lajkwv8txJ4-coq7r2chPB6DAibGuyas-TrX-9dpNCGRnoQrZ683tygjYhDi5ho9yIxr8gkD2N2MSUnggMqTVHTkdzUhzBRE1nKr7PWMwjOjamhw2zgIsNPtKgLDjT4S30jDpMc6iLplfyqakzTBxWTT-XDG7NkeCqyyImf-wQQo3S9XtCMikaDCZE4E--miCy9nfImDckOntgJnTB37pKhD72GwPzsaHfg1n5k4C0DcE_O0m4CA',
-    imageAlt: 'Komunitas Skateboarder Sukabumi di Baros',
-    author: 'Tim Redaksi',
-    readTime: '4 min read',
-    badge: 'KOMUNITAS',
-    createdAt: '1 JAM LALU',
-    publishedDate: '26 Okt 2024'
-  },
-  {
-    id: '15',
-    title: 'Komunitas Vespa Sukabumi Gelar Touring Baksos dan Bersih-Bersih Pantai',
-    slug: 'komunitas-vespa-sukabumi-gelar-touring-baksos',
-    excerpt: 'Ratusan pengandara Vespa retro menyusuri pesisir Pelabuhanratu sambil membagikan sembako dan membersihkan sampah.',
-    content: `Semangat kepedulian ditunjukkan oleh Komunitas Vespa Scooterist Sukabumi. Ratusan anggota komunitas motor klasik ini menggelar aksi touring sosial menuju kawasan Pantai Pelabuhanratu.
-
-    Selain menikmati keindahan jalur pesisir, para peserta juga membagikan paket sembako bagi nelayan setempat dan mengumpulkan puluhan kantong sampah plastik di area bibir pantai.`,
-    category: 'otomotif',
-    categoryLabel: 'KOMUNITAS',
-    subCategory: 'KOMUNITAS',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHlyZ30PDx_u6m09P1kO1lpMGo1IeHAPipY8BxOzMoCqYn9NK31TMOkvytSRJPPDR5HXUbBjfpQxvxQfIgOIDO9a5rJi-6x4jvexdo7yo2mlwwP6RBEMP5Q83o69MSz2tRCUr-6UVrP4vC8GOIAlQhWUcAi3-rCXXT6piqXVyKM2ZkEy1XgTHhw-3378eKd9sAt4O53go7RQANK8tAbMLSr7j7booD237rRiXXkTjjdQudE2qaXoldqg',
-    imageAlt: 'Komunitas Vespa Sukabumi Touring Sosial',
-    author: 'Tim Redaksi',
-    readTime: '5 min read',
-    createdAt: 'KEMARIN',
-    publishedDate: '25 Okt 2024'
-  },
-  {
-    id: '16',
-    title: 'Relawan Komunitas Peduli Lingkungan Tanam 1.000 Bibit Pohon di Lereng Gunung Gede',
-    slug: 'komunitas-peduli-lingkungan-tanam-1000-pohon-gunung-gede',
-    excerpt: 'Aksi nyata reboisasi lahan kritis kawasan resapan air Sukabumi bersama ratusan sukarelawan muda.',
-    content: `Komunitas Peduli Lingkungan Sukabumi menggelar gerakan penanaman 1.000 bibit pohon endemik di lereng kawasan Gunung Gede Selabintana. Aksi konservasi ini bertujuan menjaga mata air alami dan mencegah bahaya tanah longsor saat musim penghujan.`,
-    category: 'lifestyle',
-    categoryLabel: 'KOMUNITAS',
-    subCategory: 'KOMUNITAS',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFa2Lajkwv8txJ4-coq7r2chPB6DAibGuyas-TrX-9dpNCGRnoQrZ683tygjYhDi5ho9yIxr8gkD2N2MSUnggMqTVHTkdzUhzBRE1nKr7PWMwjOjamhw2zgIsNPtKgLDjT4S30jDpMc6iLplfyqakzTBxWTT-XDG7NkeCqyyImf-wQQo3S9XtCMikaDCZE4E--miCy9nfImDckOntgJnTB37pKhD72GwPzsaHfg1n5k4C0DcE_O0m4CA',
-    imageAlt: 'Penanaman Pohon oleh Komunitas Peduli Lingkungan Sukabumi',
-    author: 'Tim Redaksi',
-    readTime: '4 min read',
-    createdAt: '3 HARI LALU',
-    publishedDate: '23 Okt 2024'
-  },
-  {
-    id: '4',
-    title: 'Lineup Artis Indie yang Akan Menggebrak Panggung Sukabumi Creative Fest',
-    slug: 'lineup-artis-indie-yang-akan-menggebrak-panggung-sukabumi-creative-fest',
-    excerpt: 'Dari band lokal hingga pendatang baru nasional, bersiaplah untuk malam konser musik yang tak terlupakan.',
-    content: `Komunitas musik Sukabumi kembali bersiap menyambut festival musik indie bergengsi Sukabumi Creative Fest yang akan menghadirkan deretan musisi papan atas nasional dan talenta lokal pilihan di GOR Cisaat.`,
-    category: 'lifestyle',
-    categoryLabel: 'EVENT LOKAL',
-    subCategory: 'EVENT LOKAL',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFa2Lajkwv8txJ4-coq7r2chPB6DAibGuyas-TrX-9dpNCGRnoQrZ683tygjYhDi5ho9yIxr8gkD2N2MSUnggMqTVHTkdzUhzBRE1nKr7PWMwjOjamhw2zgIsNPtKgLDjT4S30jDpMc6iLplfyqakzTBxWTT-XDG7NkeCqyyImf-wQQo3S9XtCMikaDCZE4E--miCy9nfImDckOntgJnTB37pKhD72GwPzsaHfg1n5k4C0DcE_O0m4CA',
-    imageAlt: 'Konser Musik Sukabumi Creative Fest',
-    author: 'Tim Redaksi',
-    readTime: '4 min read',
-    badge: 'EVENT',
-    createdAt: 'KEMARIN',
-    publishedDate: '24 Okt 2024'
-  },
-  {
-    id: '17',
-    title: 'Sukabumi Night Run 2024 Siap Meriahkan Akhir Pekan dengan Rute Ikonik Kota',
-    slug: 'sukabumi-night-run-2024-siap-meriahkan-akhir-pekan',
-    excerpt: 'Lomba lari malam 5K dan 10K melewati Alun-alun, Lapang Merdeka, hingga Balaikota Sukabumi.',
-    content: `Pemerintah Kota Sukabumi bekerjasama dengan panitia lokal resmi membuka pendaftaran ajang Sukabumi Night Run 2024. Ribuan pelari dari Jabodetabek dan Sukabumi ditargetkan memadati rute 5K dan 10K yang menyajikan keindahan tata lampu malam Kota Sukabumi.`,
-    category: 'sport',
-    categoryLabel: 'EVENT LOKAL',
-    subCategory: 'EVENT LOKAL',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFa2Lajkwv8txJ4-coq7r2chPB6DAibGuyas-TrX-9dpNCGRnoQrZ683tygjYhDi5ho9yIxr8gkD2N2MSUnggMqTVHTkdzUhzBRE1nKr7PWMwjOjamhw2zgIsNPtKgLDjT4S30jDpMc6iLplfyqakzTBxWTT-XDG7NkeCqyyImf-wQQo3S9XtCMikaDCZE4E--miCy9nfImDckOntgJnTB37pKhD72GwPzsaHfg1n5k4C0DcE_O0m4CA',
-    imageAlt: 'Sukabumi Night Run 2024',
-    author: 'Tim Redaksi',
-    readTime: '4 min read',
-    createdAt: '2 HARI LALU',
-    publishedDate: '24 Okt 2024'
-  },
-  {
-    id: '5',
-    title: 'Startup Lokal Sukabumi Raih Pendanaan Seri A dari Investor Global',
-    slug: 'startup-lokal-sukabumi-raih-pendanaan-seri-a',
-    excerpt: 'Perkembangan ekosistem digital di Sukabumi semakin pesat dengan hadirnya inovasi baru berbasis teknologi hijau.',
-    content: `Sebuah startup bidang teknologi pertanian asal Sukabumi sukses mengamankan pendanaan Seri A senilai jutaan dolar dari konsorsium investor global.`,
-    category: 'tech',
-    categoryLabel: 'TECH',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDrEQqWYHvsFP9Ok-fxzdCwqOuXEbG08nhQh3_kWb0O1-LB3RKj3q55BX1kOeFiK1YWXtNjlAE9XaDZkEAncRYlMs2BvDhTDIfv7Plo2lyKa1fyM61zmlEL-4rUoujbHJ6M_hZl2p25qj3UyO_nGlZZ5QK6Fr3smsHfT4LllQd7r5_upg6j5UY-EK5Nj4lT07Hrc7dtFx0LLY3q18IPlEcdt-USWqHVM3PIlDFab7oKlu65YPmGyKKLgQ',
-    imageAlt: 'Kantor Startup Tech Sukabumi',
-    author: 'Tim Redaksi',
-    readTime: '4 min read',
-    createdAt: '2 HARI LALU',
-    publishedDate: '23 Okt 2024'
-  },
-  {
-    id: '6',
-    title: 'Komunitas Mobil Klasik Sukabumi Adakan Touring Keagungan',
-    slug: 'komunitas-mobil-klasik-sukabumi-adakan-touring-keagungan',
-    excerpt: 'Puluhan mobil klasik menghiasi jalanan Sukabumi dalam acara tahunan yang dinanti-nanti.',
-    content: `Jalanan Sukabumi diramaikan oleh deretan mobil antik era 70-an dan 80-an yang terawat dengan sangat teratur dalam ajang tahunan Touring Keagungan.`,
-    category: 'otomotif',
-    categoryLabel: 'OTOMOTIF',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHlyZ30PDx_u6m09P1kO1lpMGo1IeHAPipY8BxOzMoCqYn9NK31TMOkvytSRJPPDR5HXUbBjfpQxvxQfIgOIDO9a5rJi-6x4jvexdo7yo2mlwwP6RBEMP5Q83o69MSz2tRCUr-6UVrP4vC8GOIAlQhWUcAi3-rCXXT6piqXVyKM2ZkEy1XgTHhw-3378eKd9sAt4O53go7RQANK8tAbMLSr7j7booD237rRiXXkTjjdQudE2qaXoldqg',
-    imageAlt: 'Mobil Klasik Touring Sukabumi',
-    author: 'Tim Redaksi',
-    readTime: '3 min read',
-    createdAt: '3 HARI LALU',
-    publishedDate: '22 Okt 2024'
-  },
-  {
     id: '8',
     title: 'Menelusuri Keindahan Tersembunyi Curug Cikaso Sukabumi',
     slug: 'menelusuri-keindahan-tersembunyi-curug-cikaso-sukabumi',
@@ -298,8 +321,8 @@ export const DUMMY_ARTICLES: Article[] = [
     content: `Curug Cikaso selalu menjadi daya tarik utama keindahan wisata alam Sukabumi Selatan dengan tiga gemercik air terjun megah bernuansa kehijauan.`,
     category: 'lifestyle',
     categoryLabel: 'LIFESTYLE',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFa2Lajkwv8txJ4-coq7r2chPB6DAibGuyas-TrX-9dpNCGRnoQrZ683tygjYhDi5ho9yIxr8gkD2N2MSUnggMqTVHTkdzUhzBRE1nKr7PWMwjOjamhw2zgIsNPtKgLDjT4S30jDpMc6iLplfyqakzTBxWTT-XDG7NkeCqyyImf-wQQo3S9XtCMikaDCZE4E--miCy9nfImDckOntgJnTB37pKhD72GwPzsaHfg1n5k4C0DcE_O0m4CA',
-    imageAlt: 'Curug Cikaso Sukabumi',
+    imageUrl: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Pesona Air Terjun Curug Cikaso Sukabumi',
     author: 'Tim Redaksi',
     readTime: '5 min read',
     isEditorsPick: true,
