@@ -27,6 +27,7 @@ export interface Article {
   isEditorsPick?: boolean;
   badge?: string; // 'VIRAL' | 'HOT' | 'LATEST'
   isSaved?: boolean;
+  subCategory?: string; // 'KAMPUS' | 'SEKOLAH' | 'KOMUNITAS' | 'EVENT LOKAL'
   createdAt: string; // ISO date or time string
   publishedDate: string;
 }

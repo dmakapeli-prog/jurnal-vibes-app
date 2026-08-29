@@ -12,7 +12,22 @@ export default function BeritaPage() {
 
   const filteredArticles = DUMMY_ARTICLES.filter(article => {
     if (activeFilter === 'Semua Berita') return true;
-    if (activeFilter === 'Kampus') return article.categoryLabel === 'KAMPUS';
+    if (activeFilter === 'Kampus') {
+      return article.subCategory === 'KAMPUS' || article.categoryLabel === 'KAMPUS';
+    }
+    if (activeFilter === 'Sekolah') {
+      return article.subCategory === 'SEKOLAH' || article.categoryLabel === 'SEKOLAH';
+    }
+    if (activeFilter === 'Komunitas') {
+      return article.subCategory === 'KOMUNITAS' || article.categoryLabel === 'KOMUNITAS';
+    }
+    if (activeFilter === 'Event Lokal') {
+      return (
+        article.subCategory === 'EVENT LOKAL' ||
+        article.categoryLabel === 'EVENT LOKAL' ||
+        article.badge === 'EVENT'
+      );
+    }
     return true;
   });
 
@@ -36,11 +51,19 @@ export default function BeritaPage() {
           onSelectCategory={setActiveFilter}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-          {filteredArticles.map(article => (
-            <NewsCard key={article.id} article={article} variant="grid" />
-          ))}
-        </div>
+        {filteredArticles.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+            {filteredArticles.map(article => (
+              <NewsCard key={article.id} article={article} variant="grid" />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12 bg-surface-container rounded-2xl border border-outline-variant">
+            <p className="text-on-surface-variant font-medium">
+              Belum ada berita untuk kategori <span className="font-bold text-primary">{activeFilter}</span>.
+            </p>
+          </div>
+        )}
 
         {/* Load More Button */}
         <div className="flex justify-center mt-8">
