@@ -11,12 +11,12 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'light', size = 'md' }) =>
   const iconHeights = {
     sm: 'h-8 md:h-9',
     md: 'h-10 md:h-12',
-    lg: 'h-12 md:h-14'
+    lg: 'h-14 md:h-16'
   };
 
   const titleSizes = {
     sm: 'text-base md:text-lg',
-    md: 'text-lg md:text-xl font-headline-lg font-bold',
+    md: 'text-xl md:text-2xl font-headline-lg font-bold',
     lg: 'text-2xl md:text-3xl font-headline-lg font-bold'
   };
 
@@ -33,7 +33,7 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'light', size = 'md' }) =>
       : 'dark:text-gray-300 text-[#bd0015] font-semibold opacity-90';
 
   return (
-    <div className="flex items-center gap-2.5 group shrink-0 min-w-max">
+    <div className="flex items-center gap-3 group shrink-0 min-w-max">
       {/* eslint-disable-next-img-element */}
       <img
         src="/logo-icon.png"
