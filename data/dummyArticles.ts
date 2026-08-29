@@ -36,6 +36,7 @@ export const DUMMY_ARTICLES: Article[] = [
     "Kopi terbaik bukan hanya soal rasa, tapi juga soal memori yang tercipta di setiap sudutnya," tutur pemilik kedai kopi Cikole.`,
     category: 'lifestyle',
     categoryLabel: 'KULINER',
+    subCategory: 'KULINER',
     imageUrl: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Interior Kedai Kopi Cikole Minimalis Sukabumi',
     author: 'Tim Redaksi',
@@ -59,6 +60,7 @@ export const DUMMY_ARTICLES: Article[] = [
     Sepanjang rute pendakian, para pendaki akan disuguhi panorama vegetasi hutan hujan pegunungan yang lebat, gemericik aliran sungai jernih, serta keanekaragaman hayati flora dan fauna endemik Jawa Barat.`,
     category: 'lifestyle',
     categoryLabel: 'WISATA',
+    subCategory: 'WISATA',
     imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Pemandangan jalur pendakian Gunung Gede Selabintana Sukabumi',
     author: 'Tim Redaksi',
@@ -71,7 +73,7 @@ export const DUMMY_ARTICLES: Article[] = [
     publishedDate: '25 Okt 2024'
   },
 
-  // --- ARTICLE 4: Sukabumi Creative Fest (EVENT LOKAL) ---
+  // --- ARTICLE 4: Sukabumi Creative Fest (EVENT LOKAL / MUSIK) ---
   {
     id: '4',
     title: 'Lineup Artis Indie yang Akan Menggebrak Panggung Sukabumi Creative Fest',
@@ -81,7 +83,7 @@ export const DUMMY_ARTICLES: Article[] = [
 
     Selain penampilan panggung musik, festival ini juga menghadirkan area instalasi seni visual interaktif dan pameran merchandise dari band-band lokal indie Sukabumi.`,
     category: 'lifestyle',
-    categoryLabel: 'EVENT LOKAL',
+    categoryLabel: 'MUSIK',
     subCategory: 'EVENT LOKAL',
     imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Panggung Konser Musik Indie Sukabumi Creative Fest',
@@ -163,7 +165,8 @@ export const DUMMY_ARTICLES: Article[] = [
 
     Pengunjung dapat menikmati perjalanan menyusuri sungai dengan perahu tradisional sebelum tiba di lokasi air terjun yang dikelilingi tebing batu yang hijau dan asri.`,
     category: 'lifestyle',
-    categoryLabel: 'LIFESTYLE',
+    categoryLabel: 'WISATA',
+    subCategory: 'WISATA',
     imageUrl: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Pesona Air Terjun Curug Cikaso Sukabumi',
     author: 'Tim Redaksi',
@@ -368,7 +371,7 @@ export const DUMMY_ARTICLES: Article[] = [
     imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Pentas Tari Budaya dalam Gelar Karya P5 SMAN 3 Sukabumi',
     author: 'Tim Redaksi',
-    readTime: '4 min read',
+    readTime: '2 HARI LALU',
     createdAt: '2 HARI LALU',
     publishedDate: '24 Okt 2024'
   },
@@ -389,5 +392,43 @@ export const DUMMY_ARTICLES: Article[] = [
     readTime: '4 min read',
     createdAt: '3 HARI LALU',
     publishedDate: '23 Okt 2024'
+  },
+
+  // --- ARTICLE 20: Fashion (FASHION / LIFESTYLE) ---
+  {
+    id: '20',
+    title: 'Tren Streetwear dan Busana Thrift Berburu Gaya Anak Muda Sukabumi',
+    slug: 'tren-streetwear-dan-busana-thrift-anak-muda-sukabumi',
+    excerpt: 'Pameran fashion lokal Sukabumi Thrift Fest menghadirkan ratusan busana vintage dan brand distro lokal pilihan.',
+    content: `Demam busana thrift dan distro lokal kian mewarnai gaya berpakaian anak muda di Sukabumi. Dalam gelaran Sukabumi Thrift Fest minggu ini, ratusan pemuda memadati area bazaar busana vintage.
+
+    Acara ini memamerkan kombinasi gaya busana retro era 90-an dengan sentuhan distro lokal khas Sukabumi yang modis dan terjangkau.`,
+    category: 'lifestyle',
+    categoryLabel: 'FASHION',
+    subCategory: 'FASHION',
+    imageUrl: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Pameran Busana Streetwear dan Fashion Anak Muda Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '4 min read',
+    createdAt: '1 HARI LALU',
+    publishedDate: '25 Okt 2024'
+  },
+
+  // --- ARTICLE 21: Musik (MUSIK / LIFESTYLE) ---
+  {
+    id: '21',
+    title: 'Komunitas Musik Akustik Sukabumi Gelar Panggung Jamming Malam Minggu',
+    slug: 'komunitas-musik-akustik-sukabumi-gelar-panggung-jamming',
+    excerpt: 'Ratusan penikmat musik syahdu berkumpul di Taman Kota Sukabumi menikmati alunan gitar akustik dan lagu daerah Sunda.',
+    content: `Malam minggu di Taman Kota Sukabumi terasa hangat dengan alunan musik dari Komunitas Musik Akustik Sukabumi. Acara jamming santai terbuka ini mengundang musisi jalanan dan talenta muda lokal untuk tampil membawakan lagu hits nasional maupun tembang Sunda klasik.`,
+    category: 'lifestyle',
+    categoryLabel: 'MUSIK',
+    subCategory: 'MUSIK',
+    imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Penampilan Musik Akustik Komunitas Lokal Sukabumi',
+    author: 'Tim Redaksi',
+    readTime: '3 min read',
+    createdAt: '2 HARI LALU',
+    publishedDate: '24 Okt 2024'
   }
 ];
