@@ -39,8 +39,8 @@ export const HeaderNav: React.FC = () => {
     <header className="sticky top-0 z-40 bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-b border-outline-variant dark:border-secondary transition-colors duration-300">
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto w-full relative z-10">
         {/* Brand Logo */}
-        <div className="flex-shrink-0 flex items-center">
-          <Link href="/" className="flex items-center">
+        <div className="shrink-0 flex items-center pr-4">
+          <Link href="/" className="flex items-center shrink-0">
             <Logo variant={isDark ? 'dark' : 'light'} size="md" />
           </Link>
         </div>
@@ -100,7 +100,7 @@ export const HeaderNav: React.FC = () => {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center gap-stack-md w-1/4 justify-end">
+        <div className="flex items-center gap-stack-md shrink-0 justify-end">
           <button
             onClick={() => setIsSearchOpen(true)}
             className="text-on-surface hover:text-[#e74c3c] transition-colors p-2 rounded-full hover:bg-surface-variant flex items-center justify-center cursor-pointer"
