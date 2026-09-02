@@ -62,15 +62,15 @@ export const HeaderNav: React.FC = () => {
       />
 
       {/* Solid Slide-over Content Drawer */}
-      <div className="relative w-4/5 max-w-[320px] bg-surface dark:bg-slate-900 text-on-surface h-full min-h-screen shadow-2xl flex flex-col z-10 overflow-y-auto border-r border-outline-variant/60 dark:border-slate-800 animate-in slide-in-from-left duration-300 opacity-100">
+      <div className="relative w-4/5 max-w-[320px] bg-white dark:bg-slate-900 text-slate-900 dark:text-white h-full min-h-screen shadow-2xl flex flex-col z-10 overflow-y-auto border-r border-gray-200 dark:border-slate-800 animate-in slide-in-from-left duration-300 opacity-100">
         {/* 1. Header Logo + Close Button */}
-        <div className="p-4 border-b border-outline-variant/60 dark:border-slate-800 flex items-center justify-between bg-surface dark:bg-slate-900 shrink-0 sticky top-0 z-20">
+        <div className="p-4 border-b border-gray-200 dark:border-slate-800 flex items-center justify-between bg-white dark:bg-slate-900 shrink-0 sticky top-0 z-20">
           <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
             <Logo variant={isDark ? 'dark' : 'light'} size="sm" />
           </Link>
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className="p-2 rounded-full text-on-surface-variant hover:text-[#e74c3c] hover:bg-surface-variant transition-colors cursor-pointer"
+            className="p-2 rounded-full text-slate-700 dark:text-slate-300 hover:text-[#e74c3c] hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
             aria-label="Tutup Menu"
           >
             <X className="w-6 h-6" />
@@ -78,7 +78,7 @@ export const HeaderNav: React.FC = () => {
         </div>
 
         {/* 2. Drawer Body (Main Navigation & Categories) */}
-        <div className="p-4 flex flex-col gap-6 flex-1">
+        <div className="p-4 flex flex-col gap-6 flex-1 bg-white dark:bg-slate-900">
           {/* Main Navigation */}
           <div className="flex flex-col gap-1.5">
             <span className="text-[11px] font-extrabold uppercase text-[#e74c3c] tracking-widest px-3 mb-1">
@@ -90,8 +90,8 @@ export const HeaderNav: React.FC = () => {
               onClick={() => setIsMobileMenuOpen(false)}
               className={`flex items-center gap-3.5 px-4 py-3 rounded-xl font-bold text-sm transition-all ${
                 pathname === '/'
-                  ? 'bg-primary-fixed/20 text-[#e74c3c] shadow-xs'
-                  : 'text-on-surface hover:bg-surface-variant hover:text-[#e74c3c]'
+                  ? 'bg-red-50 text-[#e74c3c] dark:bg-primary-fixed/20 shadow-xs'
+                  : 'text-slate-800 dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-[#e74c3c]'
               }`}
             >
               <Home className="w-5 h-5 shrink-0" />
@@ -103,8 +103,8 @@ export const HeaderNav: React.FC = () => {
               onClick={() => setIsMobileMenuOpen(false)}
               className={`flex items-center gap-3.5 px-4 py-3 rounded-xl font-bold text-sm transition-all ${
                 pathname === '/bookmark'
-                  ? 'bg-primary-fixed/20 text-[#e74c3c] shadow-xs'
-                  : 'text-on-surface hover:bg-surface-variant hover:text-[#e74c3c]'
+                  ? 'bg-red-50 text-[#e74c3c] dark:bg-primary-fixed/20 shadow-xs'
+                  : 'text-slate-800 dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-[#e74c3c]'
               }`}
             >
               <Bookmark className="w-5 h-5 shrink-0" />
@@ -116,8 +116,8 @@ export const HeaderNav: React.FC = () => {
               onClick={() => setIsMobileMenuOpen(false)}
               className={`flex items-center gap-3.5 px-4 py-3 rounded-xl font-bold text-sm transition-all ${
                 pathname === '/reels'
-                  ? 'bg-primary-fixed/20 text-[#e74c3c] shadow-xs'
-                  : 'text-on-surface hover:bg-surface-variant hover:text-[#e74c3c]'
+                  ? 'bg-red-50 text-[#e74c3c] dark:bg-primary-fixed/20 shadow-xs'
+                  : 'text-slate-800 dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-[#e74c3c]'
               }`}
             >
               <Film className="w-5 h-5 shrink-0" />
@@ -129,7 +129,7 @@ export const HeaderNav: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center gap-3.5 px-4 py-3 rounded-xl font-bold text-sm text-on-surface hover:bg-surface-variant hover:text-[#e74c3c] transition-all group"
+              className="flex items-center gap-3.5 px-4 py-3 rounded-xl font-bold text-sm text-slate-800 dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-[#e74c3c] transition-all group"
             >
               <MessageCircle className="w-5 h-5 text-[#e74c3c] shrink-0 group-hover:scale-110 transition-transform" />
               <span className="flex-1 font-bold">Hallo Jurnal</span>
@@ -138,8 +138,8 @@ export const HeaderNav: React.FC = () => {
           </div>
 
           {/* Categories Section */}
-          <div className="pt-4 border-t border-outline-variant/60 dark:border-slate-800 flex flex-col gap-1.5">
-            <span className="text-[11px] font-extrabold uppercase text-on-surface-variant/80 tracking-widest px-3 mb-1">
+          <div className="pt-4 border-t border-gray-200 dark:border-slate-800 flex flex-col gap-1.5">
+            <span className="text-[11px] font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-widest px-3 mb-1">
               KATEGORI BERITA
             </span>
             {[...navLinks, ...dropdownLinks].map((item, idx) => {
@@ -151,8 +151,8 @@ export const HeaderNav: React.FC = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`px-4 py-2.5 rounded-lg font-semibold text-sm transition-colors ${
                     isActive
-                      ? 'text-[#e74c3c] font-bold bg-surface-variant'
-                      : 'text-on-surface-variant hover:text-[#e74c3c] hover:bg-surface-variant/50'
+                      ? 'text-[#e74c3c] font-bold bg-red-50 dark:bg-slate-800'
+                      : 'text-slate-700 dark:text-slate-300 hover:text-[#e74c3c] hover:bg-gray-100 dark:hover:bg-slate-800/50'
                   }`}
                 >
                   {item.label}
@@ -163,8 +163,8 @@ export const HeaderNav: React.FC = () => {
         </div>
 
         {/* 3. Drawer Footer */}
-        <div className="p-4 border-t border-outline-variant/60 dark:border-slate-800 bg-surface-container-lowest dark:bg-slate-950/80 shrink-0 text-center">
-          <span className="text-[11px] text-on-surface-variant opacity-80">
+        <div className="p-4 border-t border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-950 shrink-0 text-center">
+          <span className="text-[11px] text-slate-500 dark:text-slate-400 opacity-90">
             © Jurnal Vibes • Portal Berita Sukabumi
           </span>
         </div>
