@@ -63,8 +63,8 @@ export const NewsCard: React.FC<NewsCardProps> = ({ article, variant = 'row' }) 
   }
 
   return (
-    <article className="flex flex-col md:flex-row gap-stack-md group cursor-pointer border-t border-outline-variant pt-stack-lg">
-      <div className="relative w-full md:w-1/3 aspect-[4/3] rounded-lg overflow-hidden shrink-0">
+    <article className="flex flex-col md:flex-row gap-4 md:gap-stack-md group cursor-pointer border-t border-outline-variant/60 pt-4 md:pt-stack-lg w-full overflow-hidden">
+      <div className="relative w-full md:w-1/3 aspect-video md:aspect-[4/3] rounded-xl overflow-hidden shrink-0">
         {/* eslint-disable-next-img-element */}
         <img
           src={article.imageUrl}
@@ -73,25 +73,25 @@ export const NewsCard: React.FC<NewsCardProps> = ({ article, variant = 'row' }) 
         />
         <button
           onClick={toggleSave}
-          className="absolute top-2 right-2 z-10 text-white/80 hover:text-white transition-colors"
+          className="absolute top-3 right-3 z-10 text-white/90 hover:text-white p-1.5 rounded-full bg-black/40 backdrop-blur-xs transition-colors"
         >
-          <Bookmark className={`w-5 h-5 drop-shadow-md ${isSaved ? 'fill-current text-white' : ''}`} />
+          <Bookmark className={`w-4 h-4 sm:w-5 sm:h-5 drop-shadow-md ${isSaved ? 'fill-current text-white' : ''}`} />
         </button>
       </div>
-      <div className="flex flex-col gap-stack-sm justify-center">
+      <div className="flex flex-col gap-2 md:gap-stack-sm justify-center flex-1 min-w-0">
         <div className="flex gap-2 items-center text-label-caps text-[#e74c3c]">
-          <span className="bg-red-50 text-red-600 font-bold text-xs px-2 py-1 rounded-full uppercase">
+          <span className="bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 font-bold text-[11px] sm:text-xs px-2 py-0.5 rounded-full uppercase">
             {article.categoryLabel}
           </span>
           <span className="w-1 h-1 rounded-full bg-outline-variant" />
-          <span className="text-on-surface-variant text-xs">{article.createdAt}</span>
+          <span className="text-on-surface-variant text-[11px] sm:text-xs">{article.createdAt}</span>
         </div>
         <Link href={`/artikel/${article.id}`}>
-          <h3 className="font-headline-md text-lg md:text-xl font-bold text-on-surface group-hover:text-[#e74c3c] transition-colors line-clamp-2">
+          <h3 className="font-headline-md text-base sm:text-lg md:text-xl font-bold text-on-surface group-hover:text-[#e74c3c] transition-colors line-clamp-2 leading-snug">
             {article.title}
           </h3>
         </Link>
-        <p className="text-body-md text-on-surface-variant line-clamp-2">{article.excerpt}</p>
+        <p className="text-xs sm:text-sm text-on-surface-variant line-clamp-2 leading-relaxed">{article.excerpt}</p>
       </div>
     </article>
   );

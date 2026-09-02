@@ -100,10 +100,10 @@ export const ChatbotButton: React.FC = () => {
   };
 
   return (
-    <div ref={containerRef} className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div ref={containerRef} className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-40 flex flex-col items-end">
       {/* ----------------- CHAT BOX WINDOW MODAL ----------------- */}
       {isChatOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[350px] sm:w-[390px] h-[520px] bg-surface dark:bg-slate-900 rounded-2xl shadow-2xl border border-outline-variant dark:border-slate-800 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 w-[calc(100vw-2rem)] max-w-[390px] h-[480px] sm:h-[520px] bg-surface dark:bg-slate-900 rounded-2xl shadow-2xl border border-outline-variant dark:border-slate-800 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
           {/* 1. Header Chat */}
           <div className="bg-gradient-to-r from-[#c00015] to-[#e74c3c] text-white p-4 flex items-center justify-between shadow-md shrink-0">
             <div className="flex items-center gap-3">

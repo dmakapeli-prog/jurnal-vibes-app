@@ -66,16 +66,16 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ articles }) => {
             </button>
 
             {/* Slide Content */}
-            <div className="absolute bottom-10 left-6 right-6 z-10 flex flex-col gap-2">
+            <div className="absolute bottom-7 md:bottom-10 left-4 right-4 md:left-6 md:right-6 z-10 flex flex-col gap-1.5 md:gap-2">
               <div className="flex gap-2 items-center text-label-caps text-primary-fixed">
-                <span className="bg-red-50 text-red-600 font-bold text-xs px-2 py-1 rounded-full">
+                <span className="bg-red-50 text-red-600 font-bold text-[11px] sm:text-xs px-2 py-0.5 rounded-full">
                   {article.categoryLabel}
                 </span>
                 <span className="w-1 h-1 rounded-full bg-white/50" />
-                <span className="text-white/80 text-xs">{article.createdAt}</span>
+                <span className="text-white/80 text-[11px] sm:text-xs">{article.createdAt}</span>
               </div>
               <Link href={`/artikel/${article.id}`}>
-                <h2 className="font-headline-lg-mobile md:font-headline-lg text-white text-xl md:text-2xl font-bold hover:text-primary-fixed transition-colors cursor-pointer line-clamp-2">
+                <h2 className="text-white text-base sm:text-xl md:text-2xl font-bold hover:text-primary-fixed transition-colors cursor-pointer line-clamp-2 leading-tight">
                   {article.title}
                 </h2>
               </Link>

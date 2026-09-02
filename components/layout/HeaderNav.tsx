@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search, Moon, Sun, ChevronDown } from 'lucide-react';
+import { Search, Moon, Sun, ChevronDown, Menu, X, Home, Bookmark, Film, MessageCircle, ExternalLink } from 'lucide-react';
 import { SearchOverlay } from './SearchOverlay';
 import { Logo } from '../ui/Logo';
 import { WeatherWidget } from '../widgets/WeatherWidget';
@@ -12,6 +12,7 @@ export const HeaderNav: React.FC = () => {
   const pathname = usePathname();
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isDark, setIsDark] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   const toggleDarkMode = () => {
     setIsDark(!isDark);
@@ -35,19 +36,26 @@ export const HeaderNav: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-b border-outline-variant dark:border-secondary transition-colors duration-300">
-      <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto w-full relative z-10 gap-4">
-        {/* Brand Logo */}
-        <div className="shrink-0 min-w-max flex items-center pr-2">
-          <Link href="/" className="flex items-center shrink-0 min-w-max">
+    <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md dark:bg-inverse-surface/95 border-b border-outline-variant dark:border-secondary transition-colors duration-300">
+      <div className="flex justify-between items-center px-4 md:px-margin-desktop h-16 md:h-20 max-w-container-max mx-auto w-full relative z-10 gap-2 md:gap-4">
+        {/* Mobile Hamburger & Brand Logo */}
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+          <button
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="md:hidden text-on-surface hover:text-[#e74c3c] p-2 rounded-lg hover:bg-surface-variant transition-colors cursor-pointer"
+            aria-label="Buka Menu Sidebar"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+
+          <Link href="/" className="flex items-center shrink-0">
             <Logo variant={isDark ? 'dark' : 'light'} size="md" />
           </Link>
         </div>
 
-        {/* Navigation Links */}
-        <nav className="flex-1 flex items-center justify-center min-w-0">
-          {/* Desktop Navigation (Hybrid) */}
-          <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-on-surface">
+        {/* Navigation Links (Desktop Only) */}
+        <nav className="hidden md:flex flex-1 items-center justify-center min-w-0">
+          <div className="flex items-center gap-6 text-sm font-semibold text-on-surface">
             {navLinks.map((link, idx) => {
               const isActive = pathname === link.href;
               return (
@@ -82,41 +90,164 @@ export const HeaderNav: React.FC = () => {
               </div>
             </div>
           </div>
-
-          {/* Mobile Navigation (Horizontal Scroll) */}
-          <div className="md:hidden flex overflow-x-auto no-scrollbar gap-4 px-4 py-2 text-sm font-semibold text-on-surface snap-x">
-            {navLinks.map((link, idx) => (
-              <Link key={idx} href={link.href} className="shrink-0 snap-start hover:text-[#e74c3c]">
-                {link.label}
-              </Link>
-            ))}
-            {dropdownLinks.map((drop, idx) => (
-              <Link key={idx} href={drop.href} className="shrink-0 snap-start hover:text-[#e74c3c]">
-                {drop.label}
-              </Link>
-            ))}
-          </div>
         </nav>
 
-        {/* Actions */}
-        <div className="flex items-center gap-2 sm:gap-4 shrink-0 justify-end">
+        {/* Header Actions */}
+        <div className="flex items-center gap-1 sm:gap-3 shrink-0 justify-end">
           <WeatherWidget />
           <button
             onClick={() => setIsSearchOpen(true)}
             className="text-on-surface hover:text-[#e74c3c] transition-colors p-2 rounded-full hover:bg-surface-variant flex items-center justify-center cursor-pointer"
             title="Cari Berita"
           >
-            <Search className="w-6 h-6" />
+            <Search className="w-5 h-5 md:w-6 md:h-6" />
           </button>
           <button
             onClick={toggleDarkMode}
             className="text-on-surface hover:text-[#e74c3c] transition-colors p-2 rounded-full hover:bg-surface-variant flex items-center justify-center cursor-pointer"
             title="Ganti Mode Tampilan"
           >
-            {isDark ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
+            {isDark ? <Sun className="w-5 h-5 md:w-6 md:h-6" /> : <Moon className="w-5 h-5 md:w-6 md:h-6" />}
           </button>
         </div>
       </div>
+
+      {/* Mobile Quick Category Bar */}
+      <div className="md:hidden flex overflow-x-auto no-scrollbar gap-3 px-4 py-2 text-xs font-semibold text-on-surface border-t border-outline-variant/30 bg-surface-container-lowest/80">
+        {navLinks.map((link, idx) => {
+          const isActive = pathname === link.href;
+          return (
+            <Link
+              key={idx}
+              href={link.href}
+              className={`shrink-0 px-2.5 py-1 rounded-full transition-colors ${
+                isActive ? 'bg-primary text-on-primary font-bold' : 'hover:text-[#e74c3c]'
+              }`}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
+        {dropdownLinks.map((drop, idx) => (
+          <Link
+            key={idx}
+            href={drop.href}
+            className={`shrink-0 px-2.5 py-1 rounded-full transition-colors ${
+              pathname === drop.href ? 'bg-primary text-on-primary font-bold' : 'hover:text-[#e74c3c]'
+            }`}
+          >
+            {drop.label}
+          </Link>
+        ))}
+      </div>
+
+      {/* Mobile Drawer Slide-over Modal */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-50 md:hidden flex">
+          {/* Backdrop Overlay */}
+          <div
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity duration-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+
+          {/* Slide-over Content Drawer */}
+          <div className="relative w-4/5 max-w-xs bg-surface dark:bg-slate-900 h-full shadow-2xl flex flex-col z-10 overflow-y-auto animate-in slide-in-from-left duration-300 border-r border-outline-variant/50">
+            {/* Drawer Header */}
+            <div className="p-4 border-b border-outline-variant dark:border-slate-800 flex items-center justify-between">
+              <Logo variant={isDark ? 'dark' : 'light'} size="sm" />
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-colors cursor-pointer"
+                aria-label="Tutup Menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Sidebar Main Links */}
+            <div className="p-4 flex flex-col gap-1.5">
+              <span className="text-[11px] font-bold uppercase text-on-surface-variant/80 tracking-wider px-3 mb-1">
+                Navigasi Utama
+              </span>
+
+              <Link
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-colors ${
+                  pathname === '/'
+                    ? 'bg-primary-fixed/20 text-[#e74c3c]'
+                    : 'text-on-surface hover:bg-surface-variant'
+                }`}
+              >
+                <Home className="w-5 h-5" />
+                For You
+              </Link>
+
+              <Link
+                href="/bookmark"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-colors ${
+                  pathname === '/bookmark'
+                    ? 'bg-primary-fixed/20 text-[#e74c3c]'
+                    : 'text-on-surface hover:bg-surface-variant'
+                }`}
+              >
+                <Bookmark className="w-5 h-5" />
+                Tersimpan
+              </Link>
+
+              <Link
+                href="/reels"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-colors ${
+                  pathname === '/reels'
+                    ? 'bg-primary-fixed/20 text-[#e74c3c]'
+                    : 'text-on-surface hover:bg-surface-variant'
+                }`}
+              >
+                <Film className="w-5 h-5" />
+                Vibes Reels
+              </Link>
+
+              <a
+                href="https://halo-jurnal-app.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-on-surface hover:bg-surface-variant hover:text-[#e74c3c] transition-colors"
+              >
+                <MessageCircle className="w-5 h-5 text-[#e74c3c]" />
+                <span className="flex-1">Hallo Jurnal</span>
+                <ExternalLink className="w-4 h-4 opacity-50" />
+              </a>
+            </div>
+
+            {/* Categories Links */}
+            <div className="p-4 border-t border-outline-variant dark:border-slate-800 flex flex-col gap-1">
+              <span className="text-[11px] font-bold uppercase text-on-surface-variant/80 tracking-wider px-3 mb-1">
+                Kategori Berita
+              </span>
+              {[...navLinks, ...dropdownLinks].map((item, idx) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={idx}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`px-4 py-2.5 rounded-lg font-semibold text-sm transition-colors ${
+                      isActive
+                        ? 'text-[#e74c3c] font-bold bg-surface-variant'
+                        : 'text-on-surface-variant hover:text-[#e74c3c] hover:bg-surface-variant/50'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
 
       <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>
