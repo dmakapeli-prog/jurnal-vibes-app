@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Search, Moon, Sun, ChevronDown } from 'lucide-react';
 import { SearchOverlay } from './SearchOverlay';
 import { Logo } from '../ui/Logo';
+import { WeatherWidget } from '../widgets/WeatherWidget';
 
 export const HeaderNav: React.FC = () => {
   const pathname = usePathname();
@@ -98,16 +99,19 @@ export const HeaderNav: React.FC = () => {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center gap-stack-md shrink-0 justify-end">
+        <div className="flex items-center gap-2 sm:gap-4 shrink-0 justify-end">
+          <WeatherWidget />
           <button
             onClick={() => setIsSearchOpen(true)}
             className="text-on-surface hover:text-[#e74c3c] transition-colors p-2 rounded-full hover:bg-surface-variant flex items-center justify-center cursor-pointer"
+            title="Cari Berita"
           >
             <Search className="w-6 h-6" />
           </button>
           <button
             onClick={toggleDarkMode}
             className="text-on-surface hover:text-[#e74c3c] transition-colors p-2 rounded-full hover:bg-surface-variant flex items-center justify-center cursor-pointer"
+            title="Ganti Mode Tampilan"
           >
             {isDark ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
           </button>
