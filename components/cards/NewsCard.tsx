@@ -21,7 +21,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({ article, variant = 'row' }) 
 
   if (variant === 'grid') {
     return (
-      <article className="group bg-surface rounded-xl border border-surface-variant hover:border-outline-variant hover:shadow-[0_4px_20px_-4px_rgba(189,0,21,0.1)] transition-all duration-300 overflow-hidden flex flex-col">
+      <article className="group bg-surface dark:bg-slate-900 rounded-xl border border-surface-variant dark:border-slate-800 hover:border-outline-variant hover:shadow-[0_4px_20px_-4px_rgba(189,0,21,0.1)] transition-all duration-300 overflow-hidden flex flex-col">
         <div className="relative h-48 overflow-hidden">
           {/* eslint-disable-next-img-element */}
           <img
@@ -45,16 +45,16 @@ export const NewsCard: React.FC<NewsCardProps> = ({ article, variant = 'row' }) 
           </div>
           <Link href={`/artikel/${article.id}`}>
             <h3
-              className="font-headline-md font-bold text-on-surface mb-2 group-hover:text-primary transition-colors line-clamp-2"
+              className="font-headline-md font-bold text-on-surface dark:text-white mb-2 group-hover:text-primary transition-colors line-clamp-2"
               style={{ fontSize: '20px', lineHeight: '26px' }}
             >
               {article.title}
             </h3>
           </Link>
-          <p className="font-body-md text-body-md text-secondary line-clamp-2 mb-4 flex-1">
+          <p className="font-body-md text-body-md text-secondary dark:text-slate-400 line-clamp-2 mb-4 flex-1">
             {article.excerpt}
           </p>
-          <div className="flex items-center gap-4 text-xs text-tertiary">
+          <div className="flex items-center gap-4 text-xs text-tertiary dark:text-slate-500">
             <span>{article.createdAt}</span>
           </div>
         </div>
@@ -63,7 +63,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({ article, variant = 'row' }) 
   }
 
   return (
-    <article className="flex flex-col md:flex-row gap-4 md:gap-stack-md group cursor-pointer border-t border-outline-variant/60 pt-4 md:pt-stack-lg w-full overflow-hidden">
+    <article className="flex flex-col md:flex-row gap-4 md:gap-stack-md group cursor-pointer border-t border-outline-variant/60 dark:border-slate-800 pt-4 md:pt-stack-lg w-full overflow-hidden">
       <div className="relative w-full md:w-1/3 aspect-video md:aspect-[4/3] rounded-xl overflow-hidden shrink-0">
         {/* eslint-disable-next-img-element */}
         <img
@@ -83,15 +83,15 @@ export const NewsCard: React.FC<NewsCardProps> = ({ article, variant = 'row' }) 
           <span className="bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 font-bold text-[11px] sm:text-xs px-2 py-0.5 rounded-full uppercase">
             {article.categoryLabel}
           </span>
-          <span className="w-1 h-1 rounded-full bg-outline-variant" />
-          <span className="text-on-surface-variant text-[11px] sm:text-xs">{article.createdAt}</span>
+          <span className="w-1 h-1 rounded-full bg-outline-variant dark:bg-slate-700" />
+          <span className="text-on-surface-variant dark:text-slate-400 text-[11px] sm:text-xs">{article.createdAt}</span>
         </div>
         <Link href={`/artikel/${article.id}`}>
-          <h3 className="font-headline-md text-base sm:text-lg md:text-xl font-bold text-on-surface group-hover:text-[#e74c3c] transition-colors line-clamp-2 leading-snug">
+          <h3 className="font-headline-md text-base sm:text-lg md:text-xl font-bold text-on-surface dark:text-white group-hover:text-[#e74c3c] transition-colors line-clamp-2 leading-snug">
             {article.title}
           </h3>
         </Link>
-        <p className="text-xs sm:text-sm text-on-surface-variant line-clamp-2 leading-relaxed">{article.excerpt}</p>
+        <p className="text-xs sm:text-sm text-on-surface-variant dark:text-slate-400 line-clamp-2 leading-relaxed">{article.excerpt}</p>
       </div>
     </article>
   );

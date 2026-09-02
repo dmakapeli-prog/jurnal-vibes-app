@@ -46,7 +46,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({ articles }) => {
             className={`flex items-center gap-3 px-4 py-3 rounded-lg font-button group transition-colors ${
               isHome
                 ? 'bg-primary-fixed/20 text-[#e74c3c] hover:bg-primary-container hover:text-on-primary-container'
-                : 'text-secondary hover:bg-surface-variant hover:text-on-surface-variant'
+                : 'text-secondary dark:text-slate-300 hover:bg-surface-variant dark:hover:bg-slate-800 hover:text-on-surface-variant dark:hover:text-white'
             }`}
           >
             <Home className={`w-5 h-5 ${isHome ? 'fill-current' : ''}`} />
@@ -58,7 +58,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({ articles }) => {
             className={`flex items-center gap-3 px-4 py-3 rounded-lg font-button group transition-colors ${
               isBookmark
                 ? 'bg-primary-fixed/20 text-[#e74c3c] hover:bg-primary-container hover:text-on-primary-container'
-                : 'text-secondary hover:bg-surface-variant hover:text-on-surface-variant'
+                : 'text-secondary dark:text-slate-300 hover:bg-surface-variant dark:hover:bg-slate-800 hover:text-on-surface-variant dark:hover:text-white'
             }`}
           >
             <Bookmark className={`w-5 h-5 ${isBookmark ? 'fill-current' : ''}`} />
@@ -70,7 +70,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({ articles }) => {
             className={`flex items-center gap-3 px-4 py-3 rounded-lg font-button group transition-colors ${
               isReels
                 ? 'bg-primary-fixed/20 text-[#e74c3c] hover:bg-primary-container hover:text-on-primary-container'
-                : 'text-secondary hover:bg-surface-variant hover:text-on-surface-variant'
+                : 'text-secondary dark:text-slate-300 hover:bg-surface-variant dark:hover:bg-slate-800 hover:text-on-surface-variant dark:hover:text-white'
             }`}
           >
             <Film className={`w-5 h-5 ${isReels ? 'fill-current' : ''}`} />
@@ -82,12 +82,12 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({ articles }) => {
       </div>
 
       {/* Hallo Jurnal Channel Link at bottom section */}
-      <div className="mt-4 pt-3 border-t border-outline-variant/40 shrink-0 mb-4">
+      <div className="mt-4 pt-3 border-t border-outline-variant/40 dark:border-slate-800 shrink-0 mb-4">
         <a
           href="https://halo-jurnal-app.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-variant/50 hover:bg-primary-container text-on-surface hover:text-on-primary-container font-button font-bold text-sm transition-all group border border-outline-variant/50 shadow-xs cursor-pointer"
+          className="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-variant/50 dark:bg-slate-800/50 hover:bg-primary-container text-on-surface dark:text-white hover:text-on-primary-container font-button font-bold text-sm transition-all group border border-outline-variant/50 dark:border-slate-700 shadow-xs cursor-pointer"
         >
           <HandWaveIcon className="w-5 h-5 text-[#e74c3c] group-hover:rotate-12 transition-transform shrink-0" />
           <span className="flex-1 font-bold">Hallo Jurnal</span>

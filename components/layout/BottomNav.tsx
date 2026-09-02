@@ -12,13 +12,13 @@ export const BottomNav: React.FC = () => {
   const isReels = pathname === '/reels';
 
   return (
-    <nav className="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 md:hidden bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 shadow-lg border-t border-outline-variant dark:border-secondary">
+    <nav className="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 md:hidden bg-surface/90 backdrop-blur-md dark:bg-slate-950/90 shadow-lg border-t border-outline-variant dark:border-slate-800">
       <Link
         href="/"
         className={`flex flex-col items-center justify-center rounded-full px-4 py-1 transition-transform ${
           isHome
             ? 'bg-primary-container text-on-primary-container scale-95'
-            : 'text-on-surface-variant dark:text-tertiary-fixed-dim hover:bg-surface-container-high rounded-xl p-2'
+            : 'text-on-surface-variant dark:text-slate-400 hover:bg-surface-container-high dark:hover:bg-slate-800 dark:hover:text-white rounded-xl p-2'
         }`}
       >
         <Home className="w-5 h-5 fill-current" />
@@ -30,7 +30,7 @@ export const BottomNav: React.FC = () => {
         className={`flex flex-col items-center justify-center rounded-full px-4 py-1 transition-transform ${
           isBerita
             ? 'bg-primary-container text-on-primary-container scale-95'
-            : 'text-on-surface-variant dark:text-tertiary-fixed-dim hover:bg-surface-container-high rounded-xl p-2'
+            : 'text-on-surface-variant dark:text-slate-400 hover:bg-surface-container-high dark:hover:bg-slate-800 dark:hover:text-white rounded-xl p-2'
         }`}
       >
         <Compass className="w-5 h-5" />
@@ -42,7 +42,7 @@ export const BottomNav: React.FC = () => {
         className={`flex flex-col items-center justify-center rounded-full px-4 py-1 transition-transform ${
           isReels
             ? 'bg-primary-container text-on-primary-container scale-95'
-            : 'text-on-surface-variant dark:text-tertiary-fixed-dim hover:bg-surface-container-high rounded-xl p-2'
+            : 'text-on-surface-variant dark:text-slate-400 hover:bg-surface-container-high dark:hover:bg-slate-800 dark:hover:text-white rounded-xl p-2'
         }`}
       >
         <Film className="w-5 h-5" />
