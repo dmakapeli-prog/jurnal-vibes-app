@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { CloudSun } from 'lucide-react';
+import { CloudSun, Calendar } from 'lucide-react';
 
 interface WeatherWidgetProps {
   date?: string;
@@ -36,17 +36,27 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({
   return (
     <Link
       href="/cuaca"
-      className="hidden sm:flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-surface-variant/40 hover:bg-surface-variant/80 border border-outline-variant/40 transition-all cursor-pointer group text-xs shrink-0"
-      title="Lihat perkiraan cuaca Sukabumi"
+      className="hidden sm:flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-surface-container/70 dark:bg-slate-800/70 hover:bg-surface-variant dark:hover:bg-slate-800 border border-outline-variant/60 dark:border-slate-700/60 shadow-2xs hover:shadow-xs transition-all duration-300 group shrink-0 cursor-pointer backdrop-blur-xs"
+      title="Lihat Perkiraan Cuaca Sukabumi"
     >
-      <CloudSun className="w-4 h-4 text-amber-500 group-hover:scale-110 transition-transform shrink-0" />
-      <div className="flex items-center gap-2 font-medium text-on-surface">
-        <span className="text-[11px] text-on-surface-variant hidden lg:inline">{date}</span>
-        <span className="text-[11px] text-on-surface-variant hidden lg:inline">•</span>
-        <div className="flex items-center gap-1">
-          <span className="font-bold text-xs group-hover:text-[#e74c3c] transition-colors">{temp}</span>
-          <span className="text-[11px] text-on-surface-variant">{location}</span>
-        </div>
+      {/* Weather Icon Badge */}
+      <div className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300 shrink-0">
+        <CloudSun className="w-4 h-4 stroke-[2.2] group-hover:scale-110 transition-transform" />
+      </div>
+
+      {/* Weather Info */}
+      <div className="flex items-center gap-1.5 text-xs font-semibold text-on-surface">
+        <span className="font-extrabold text-sm text-[#e74c3c] tracking-tight">{temp}</span>
+        <span className="text-[11px] text-on-surface-variant font-medium opacity-90">{location}</span>
+      </div>
+
+      {/* Divider */}
+      <span className="hidden lg:block w-px h-3.5 bg-outline-variant/60 dark:bg-slate-700 shrink-0" />
+
+      {/* Date Info */}
+      <div className="hidden lg:flex items-center gap-1.5 text-[11px] font-medium text-on-surface-variant/90 shrink-0">
+        <Calendar className="w-3.5 h-3.5 opacity-60 text-[#e74c3c]" />
+        <span>{date}</span>
       </div>
     </Link>
   );
