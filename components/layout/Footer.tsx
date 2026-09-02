@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-black via-[#6b0f1a] to-[#c0392b] py-16 px-4 border-t border-white/10 mt-auto w-full">
+    <footer className="bg-gradient-to-r from-black via-[#6b0f1a] to-[#c0392b] dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 py-16 px-4 border-t border-white/10 dark:border-slate-800 mt-auto w-full">
       <div className="max-w-container-max mx-auto flex flex-col items-center gap-8 text-white">
         {/* Layer 1: Logo */}
         <div>

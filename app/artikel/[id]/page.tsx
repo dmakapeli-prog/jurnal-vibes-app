@@ -57,7 +57,7 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
 
       <main className="w-full md:w-3/4 flex flex-col gap-stack-lg pr-0 md:pr-12">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs text-on-surface-variant mb-2">
+        <nav className="flex items-center gap-2 text-xs text-on-surface-variant dark:text-gray-400 mb-2">
           <Link href="/" className="hover:text-primary transition-colors">
             Home
           </Link>
@@ -66,7 +66,7 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
             Berita
           </Link>
           <ChevronRight className="w-3 h-3" />
-          <span className="text-on-surface font-semibold">{article.categoryLabel}</span>
+          <span className="text-on-surface dark:text-white font-semibold">{article.categoryLabel}</span>
         </nav>
 
         {/* Article Header */}
@@ -76,20 +76,20 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
               {article.categoryLabel}
             </span>
           </div>
-          <h1 className="font-headline-xl text-3xl md:text-5xl font-bold text-on-surface leading-tight">
+          <h1 className="font-headline-xl text-3xl md:text-5xl font-bold text-on-surface dark:text-white leading-tight">
             {article.title}
           </h1>
 
-          <div className="flex items-center justify-between flex-wrap gap-4 border-b border-outline-variant pb-6">
+          <div className="flex items-center justify-between flex-wrap gap-4 border-b border-outline-variant dark:border-slate-800 pb-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
-                <User className="w-5 h-5 text-on-surface-variant" />
+              <div className="w-10 h-10 rounded-full bg-surface-container-high dark:bg-slate-800 flex items-center justify-center overflow-hidden">
+                <User className="w-5 h-5 text-on-surface-variant dark:text-gray-400" />
               </div>
               <div className="flex flex-col">
-                <span className="font-button text-on-surface font-bold text-sm">
+                <span className="font-button text-on-surface dark:text-white font-bold text-sm">
                   {article.author}
                 </span>
-                <span className="text-xs text-on-surface-variant">
+                <span className="text-xs text-on-surface-variant dark:text-gray-400">
                   {article.publishedDate} • {article.readTime || '5 min read'}
                 </span>
               </div>
@@ -98,13 +98,13 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setIsSaved(!isSaved)}
-                className="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant hover:text-primary cursor-pointer"
+                className="p-2 rounded-full hover:bg-surface-container-high dark:hover:bg-slate-800 transition-colors text-on-surface-variant dark:text-gray-400 hover:text-primary cursor-pointer"
               >
                 <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-current text-primary' : ''}`} />
               </button>
               <button
                 onClick={() => alert('Link artikel telah disalin!')}
-                className="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant hover:text-primary cursor-pointer"
+                className="p-2 rounded-full hover:bg-surface-container-high dark:hover:bg-slate-800 transition-colors text-on-surface-variant dark:text-gray-400 hover:text-primary cursor-pointer"
               >
                 <Share2 className="w-5 h-5" />
               </button>
@@ -113,23 +113,23 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
         </header>
 
         {/* Audio Player Widget */}
-        <div className="mb-6 px-4 py-3 bg-surface-container rounded-full flex items-center gap-4 border border-outline-variant">
+        <div className="mb-6 px-4 py-3 bg-surface-container dark:bg-slate-900 rounded-full flex items-center gap-4 border border-outline-variant dark:border-slate-800">
           <button className="w-10 h-10 flex-shrink-0 bg-primary text-on-primary rounded-full flex items-center justify-center hover:scale-105 transition-transform cursor-pointer">
             <Play className="w-5 h-5 fill-current ml-0.5" />
           </button>
           <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 flex-grow">
-            <span className="font-button text-on-surface text-sm font-semibold whitespace-nowrap">
+            <span className="font-button text-on-surface dark:text-white text-sm font-semibold whitespace-nowrap">
               Dengarkan Artikel
             </span>
-            <div className="flex-grow h-1.5 bg-outline-variant rounded-full relative overflow-hidden">
+            <div className="flex-grow h-1.5 bg-outline-variant dark:bg-slate-700 rounded-full relative overflow-hidden">
               <div className="absolute inset-y-0 left-0 w-1/3 bg-primary" />
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-xs font-medium text-on-surface-variant tabular-nums">
+            <span className="text-xs font-medium text-on-surface-variant dark:text-gray-400 tabular-nums">
               0:00 / 3:45
             </span>
-            <button className="text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+            <button className="text-on-surface-variant dark:text-gray-400 hover:text-primary transition-colors cursor-pointer">
               <Volume2 className="w-5 h-5" />
             </button>
           </div>
@@ -145,21 +145,21 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
               className="w-full h-full object-cover"
             />
           </div>
-          <figcaption className="mt-3 text-sm text-on-surface-variant italic text-center">
+          <figcaption className="mt-3 text-sm text-on-surface-variant dark:text-gray-400 italic text-center">
             {article.imageAlt || article.title}
           </figcaption>
         </figure>
 
         {/* Article Body (Dynamic & Matched) */}
-        <div className="font-body-lg text-on-surface leading-relaxed flex flex-col gap-6 text-base md:text-lg">
+        <div className="font-body-lg text-on-surface dark:text-gray-100 leading-relaxed flex flex-col gap-6 text-base md:text-lg">
           {article.content.split('\n\n').map((paragraph, idx) => (
             <p key={idx}>{paragraph.trim()}</p>
           ))}
         </div>
 
         {/* Reaction Section (BAGAIMANA REAKSI ANDA?) */}
-        <div className="mt-12 pt-8 border-t border-outline-variant">
-          <h4 className="font-button text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-4">
+        <div className="mt-12 pt-8 border-t border-outline-variant dark:border-slate-800">
+          <h4 className="font-button text-xs font-bold uppercase tracking-wider text-on-surface-variant dark:text-gray-400 mb-4">
             BAGAIMANA REAKSI ANDA?
           </h4>
           <div className="flex flex-wrap gap-3 mb-8">
@@ -181,33 +181,33 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
           </div>
 
           {/* Share & Save Actions */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-6 border-t border-outline-variant">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-6 border-t border-outline-variant dark:border-slate-800">
             <div className="flex items-center gap-4">
-              <span className="font-button text-on-surface-variant font-semibold text-sm">
+              <span className="font-button text-on-surface-variant dark:text-gray-400 font-semibold text-sm">
                 Bagikan:
               </span>
               <div className="flex gap-2">
                 <button
                   onClick={() => alert('Bagikan ke Facebook')}
-                  className="w-10 h-10 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-all cursor-pointer"
+                  className="w-10 h-10 rounded-full bg-surface-container dark:bg-slate-800 border border-outline-variant dark:border-slate-700 flex items-center justify-center text-on-surface dark:text-white hover:bg-primary hover:text-white transition-all cursor-pointer"
                 >
                   <Globe className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => alert('Bagikan ke Twitter')}
-                  className="w-10 h-10 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-all cursor-pointer"
+                  className="w-10 h-10 rounded-full bg-surface-container dark:bg-slate-800 border border-outline-variant dark:border-slate-700 flex items-center justify-center text-on-surface dark:text-white hover:bg-primary hover:text-white transition-all cursor-pointer"
                 >
                   <Share2 className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => alert('Bagikan ke WhatsApp')}
-                  className="w-10 h-10 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-all cursor-pointer"
+                  className="w-10 h-10 rounded-full bg-surface-container dark:bg-slate-800 border border-outline-variant dark:border-slate-700 flex items-center justify-center text-on-surface dark:text-white hover:bg-primary hover:text-white transition-all cursor-pointer"
                 >
                   <MessageCircle className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => alert('Salin Link')}
-                  className="w-10 h-10 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-all cursor-pointer"
+                  className="w-10 h-10 rounded-full bg-surface-container dark:bg-slate-800 border border-outline-variant dark:border-slate-700 flex items-center justify-center text-on-surface dark:text-white hover:bg-primary hover:text-white transition-all cursor-pointer"
                 >
                   <LinkIcon className="w-5 h-5" />
                 </button>
@@ -225,7 +225,7 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
 
         {/* Related Articles */}
         <section className="mt-16 pb-12">
-          <h3 className="font-headline-md text-2xl font-bold text-on-surface mb-6">
+          <h3 className="font-headline-md text-2xl font-bold text-on-surface dark:text-white mb-6">
             Berita Terkait
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -240,7 +240,7 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
                   />
                 </div>
                 <Link href={`/artikel/${rel.id}`}>
-                  <h4 className="font-button text-on-surface group-hover:text-primary transition-colors line-clamp-2 font-bold text-base">
+                  <h4 className="font-button text-on-surface dark:text-white group-hover:text-primary transition-colors line-clamp-2 font-bold text-base">
                     {rel.title}
                   </h4>
                 </Link>
