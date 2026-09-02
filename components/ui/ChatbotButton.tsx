@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Bot, X, Sparkles, Send } from 'lucide-react';
+import { Bot, X, Sparkles, Send, MessageCircle, ExternalLink } from 'lucide-react';
 
 interface ChatMessage {
   id: string;
@@ -164,6 +164,17 @@ export const ChatbotButton: React.FC = () => {
                 Aksi Cepat:
               </span>
               <div className="flex flex-wrap gap-1.5">
+                <a
+                  href="https://halo-jurnal-app.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 bg-[#e74c3c] hover:bg-[#c00015] text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>Hallo Jurnal</span>
+                  <ExternalLink className="w-3 h-3 opacity-70 ml-0.5" />
+                </a>
+
                 <button
                   onClick={() => handleSendMessage('Rekomendasi kuliner Cikole')}
                   className="bg-surface-container-high hover:bg-primary hover:text-white text-on-surface px-3 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer border border-outline-variant"
