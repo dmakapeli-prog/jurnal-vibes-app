@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Bot, MessageCircle, X, Sparkles, Send, ExternalLink, RefreshCw } from 'lucide-react';
+import { Bot, X, Sparkles, Send } from 'lucide-react';
 
 interface ChatMessage {
   id: string;
@@ -11,7 +11,6 @@ interface ChatMessage {
 }
 
 export const ChatbotButton: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
   const [inputText, setInputText] = useState<string>('');
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -23,23 +22,23 @@ export const ChatbotButton: React.FC = () => {
     }
   ]);
 
-  const menuRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const chatBottomRef = useRef<HTMLDivElement>(null);
 
-  // Close popup menu when clicking outside
+  // Close chat when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        // Keep open unless user explicitly closes or clicks outside on desktop
       }
     };
-    if (isMenuOpen) {
+    if (isChatOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isMenuOpen]);
+  }, [isChatOpen]);
 
   // Auto scroll chat to bottom when messages update
   useEffect(() => {
@@ -47,11 +46,6 @@ export const ChatbotButton: React.FC = () => {
       chatBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages, isChatOpen]);
-
-  const handleOpenChat = () => {
-    setIsMenuOpen(false);
-    setIsChatOpen(true);
-  };
 
   const getTimeString = () => {
     const now = new Date();
@@ -106,7 +100,7 @@ export const ChatbotButton: React.FC = () => {
   };
 
   return (
-    <div ref={menuRef} className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div ref={containerRef} className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {/* ----------------- CHAT BOX WINDOW MODAL ----------------- */}
       {isChatOpen && (
         <div className="fixed bottom-6 right-6 z-50 w-[350px] sm:w-[390px] h-[520px] bg-surface dark:bg-slate-900 rounded-2xl shadow-2xl border border-outline-variant dark:border-slate-800 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
@@ -170,18 +164,6 @@ export const ChatbotButton: React.FC = () => {
                 Aksi Cepat:
               </span>
               <div className="flex flex-wrap gap-1.5">
-                {/* WhatsApp Link Button */}
-                <a
-                  href="https://halo-jurnal-app.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-xs transition-colors cursor-pointer"
-                >
-                  <MessageCircle className="w-3.5 h-3.5" />
-                  <span>Chat via Hallo Jurnal</span>
-                  <ExternalLink className="w-3 h-3 opacity-70 ml-0.5" />
-                </a>
-
                 <button
                   onClick={() => handleSendMessage('Rekomendasi kuliner Cikole')}
                   className="bg-surface-container-high hover:bg-primary hover:text-white text-on-surface px-3 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer border border-outline-variant"
@@ -193,6 +175,12 @@ export const ChatbotButton: React.FC = () => {
                   className="bg-surface-container-high hover:bg-primary hover:text-white text-on-surface px-3 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer border border-outline-variant"
                 >
                   📰 Berita Terbaru
+                </button>
+                <button
+                  onClick={() => handleSendMessage('Info lowongan kerja')}
+                  className="bg-surface-container-high hover:bg-primary hover:text-white text-on-surface px-3 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer border border-outline-variant"
+                >
+                  💼 Info Loker
                 </button>
               </div>
             </div>
@@ -231,56 +219,16 @@ export const ChatbotButton: React.FC = () => {
         </div>
       )}
 
-      {/* ----------------- POP-UP MENU TOGGLE ----------------- */}
-      {!isChatOpen && (
-        <div
-          className={`flex flex-col gap-3 mb-3 transition-all duration-300 transform origin-bottom-right ${
-            isMenuOpen
-              ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
-              : 'opacity-0 scale-90 translate-y-4 pointer-events-none'
-          }`}
-        >
-          {/* Tombol 2: Hallo Jurnal */}
-          <a
-            href="https://halo-jurnal-app.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsMenuOpen(false)}
-            className="flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-button font-bold text-sm px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer border border-white/20 whitespace-nowrap group"
-          >
-            <span className="shrink-0 bg-white/20 p-1.5 rounded-full">
-              <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
-            </span>
-            <span>Hallo Jurnal</span>
-          </a>
-
-          {/* Tombol 1: Tanya AI */}
-          <button
-            onClick={handleOpenChat}
-            className="flex items-center gap-3 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-button font-bold text-sm px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer border border-white/20 whitespace-nowrap group"
-          >
-            <span className="shrink-0 bg-white/20 p-1.5 rounded-full">
-              <Sparkles className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-            </span>
-            <span>Tanya AI</span>
-          </button>
-        </div>
-      )}
-
-      {/* Main Floating Action Button (FAB Toggle) */}
+      {/* Main Floating Action Button (Clean Tanya AI Button) */}
       {!isChatOpen && (
         <button
-          aria-label="Toggle Action Menu"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={`w-14 h-14 text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center cursor-pointer border border-white/20 hover:scale-105 active:scale-95 ${
-            isMenuOpen ? 'bg-slate-800 rotate-90' : 'bg-[#e74c3c]'
-          }`}
+          aria-label="Tanya AI"
+          onClick={() => setIsChatOpen(true)}
+          className="group relative flex items-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-button font-bold text-sm px-4 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer border border-white/20 hover:scale-105 active:scale-95"
+          title="Tanya Jurnal Vibes AI"
         >
-          {isMenuOpen ? (
-            <X className="w-7 h-7" />
-          ) : (
-            <Bot className="w-8 h-8 group-hover:animate-pulse" />
-          )}
+          <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+          <span>Tanya AI</span>
         </button>
       )}
     </div>
