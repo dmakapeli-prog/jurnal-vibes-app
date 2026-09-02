@@ -143,107 +143,119 @@ export const HeaderNav: React.FC = () => {
 
       {/* Mobile Drawer Slide-over Modal */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 md:hidden flex">
-          {/* Backdrop Overlay */}
+        <div className="fixed inset-0 z-50 md:hidden flex overflow-hidden">
+          {/* Dark Backdrop Overlay */}
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity duration-300"
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300 z-0"
             onClick={() => setIsMobileMenuOpen(false)}
           />
 
-          {/* Slide-over Content Drawer */}
-          <div className="relative w-4/5 max-w-xs bg-surface dark:bg-slate-900 h-full shadow-2xl flex flex-col z-10 overflow-y-auto animate-in slide-in-from-left duration-300 border-r border-outline-variant/50">
-            {/* Drawer Header */}
-            <div className="p-4 border-b border-outline-variant dark:border-slate-800 flex items-center justify-between">
-              <Logo variant={isDark ? 'dark' : 'light'} size="sm" />
+          {/* Solid Slide-over Content Drawer */}
+          <div className="relative w-4/5 max-w-[320px] bg-white dark:bg-slate-900 text-on-surface h-screen min-h-full shadow-2xl flex flex-col z-10 overflow-y-auto border-r border-outline-variant/60 dark:border-slate-800 animate-in slide-in-from-left duration-300 opacity-100">
+            {/* 1. Drawer Header */}
+            <div className="p-4 border-b border-outline-variant/60 dark:border-slate-800 flex items-center justify-between bg-surface dark:bg-slate-900 shrink-0 sticky top-0 z-20">
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                <Logo variant={isDark ? 'dark' : 'light'} size="sm" />
+              </Link>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-colors cursor-pointer"
+                className="p-2 rounded-full text-on-surface-variant hover:text-[#e74c3c] hover:bg-surface-variant transition-colors cursor-pointer"
                 aria-label="Tutup Menu"
               >
-                <X className="w-5 h-5" />
+                <X className="w-6 h-6" />
               </button>
             </div>
 
-            {/* Sidebar Main Links */}
-            <div className="p-4 flex flex-col gap-1.5">
-              <span className="text-[11px] font-bold uppercase text-on-surface-variant/80 tracking-wider px-3 mb-1">
-                Navigasi Utama
-              </span>
+            {/* 2. Drawer Body */}
+            <div className="p-4 flex flex-col gap-5 flex-1">
+              {/* Main Navigation Section */}
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[11px] font-extrabold uppercase text-[#e74c3c] tracking-widest px-3 mb-1">
+                  NAVIGASI UTAMA
+                </span>
 
-              <Link
-                href="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-colors ${
-                  pathname === '/'
-                    ? 'bg-primary-fixed/20 text-[#e74c3c]'
-                    : 'text-on-surface hover:bg-surface-variant'
-                }`}
-              >
-                <Home className="w-5 h-5" />
-                For You
-              </Link>
+                <Link
+                  href="/"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`flex items-center gap-3.5 px-4 py-3 rounded-xl font-bold text-sm transition-all ${
+                    pathname === '/'
+                      ? 'bg-primary-fixed/20 text-[#e74c3c] shadow-xs'
+                      : 'text-on-surface hover:bg-surface-variant hover:text-[#e74c3c]'
+                  }`}
+                >
+                  <Home className="w-5 h-5 shrink-0" />
+                  <span>For You</span>
+                </Link>
 
-              <Link
-                href="/bookmark"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-colors ${
-                  pathname === '/bookmark'
-                    ? 'bg-primary-fixed/20 text-[#e74c3c]'
-                    : 'text-on-surface hover:bg-surface-variant'
-                }`}
-              >
-                <Bookmark className="w-5 h-5" />
-                Tersimpan
-              </Link>
+                <Link
+                  href="/bookmark"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`flex items-center gap-3.5 px-4 py-3 rounded-xl font-bold text-sm transition-all ${
+                    pathname === '/bookmark'
+                      ? 'bg-primary-fixed/20 text-[#e74c3c] shadow-xs'
+                      : 'text-on-surface hover:bg-surface-variant hover:text-[#e74c3c]'
+                  }`}
+                >
+                  <Bookmark className="w-5 h-5 shrink-0" />
+                  <span>Tersimpan</span>
+                </Link>
 
-              <Link
-                href="/reels"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-colors ${
-                  pathname === '/reels'
-                    ? 'bg-primary-fixed/20 text-[#e74c3c]'
-                    : 'text-on-surface hover:bg-surface-variant'
-                }`}
-              >
-                <Film className="w-5 h-5" />
-                Vibes Reels
-              </Link>
+                <Link
+                  href="/reels"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`flex items-center gap-3.5 px-4 py-3 rounded-xl font-bold text-sm transition-all ${
+                    pathname === '/reels'
+                      ? 'bg-primary-fixed/20 text-[#e74c3c] shadow-xs'
+                      : 'text-on-surface hover:bg-surface-variant hover:text-[#e74c3c]'
+                  }`}
+                >
+                  <Film className="w-5 h-5 shrink-0" />
+                  <span>Vibes Reels</span>
+                </Link>
 
-              <a
-                href="https://halo-jurnal-app.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-on-surface hover:bg-surface-variant hover:text-[#e74c3c] transition-colors"
-              >
-                <MessageCircle className="w-5 h-5 text-[#e74c3c]" />
-                <span className="flex-1">Hallo Jurnal</span>
-                <ExternalLink className="w-4 h-4 opacity-50" />
-              </a>
+                <a
+                  href="https://halo-jurnal-app.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-3.5 px-4 py-3 rounded-xl font-bold text-sm text-on-surface hover:bg-surface-variant hover:text-[#e74c3c] transition-all group"
+                >
+                  <MessageCircle className="w-5 h-5 text-[#e74c3c] shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="flex-1 font-bold">Hallo Jurnal</span>
+                  <ExternalLink className="w-4 h-4 opacity-50 shrink-0" />
+                </a>
+              </div>
+
+              {/* Categories Section */}
+              <div className="pt-4 border-t border-outline-variant/60 dark:border-slate-800 flex flex-col gap-1.5">
+                <span className="text-[11px] font-extrabold uppercase text-on-surface-variant/80 tracking-widest px-3 mb-1">
+                  KATEGORI BERITA
+                </span>
+                {[...navLinks, ...dropdownLinks].map((item, idx) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={idx}
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`px-4 py-2.5 rounded-lg font-semibold text-sm transition-colors ${
+                        isActive
+                          ? 'text-[#e74c3c] font-bold bg-surface-variant'
+                          : 'text-on-surface-variant hover:text-[#e74c3c] hover:bg-surface-variant/50'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* Categories Links */}
-            <div className="p-4 border-t border-outline-variant dark:border-slate-800 flex flex-col gap-1">
-              <span className="text-[11px] font-bold uppercase text-on-surface-variant/80 tracking-wider px-3 mb-1">
-                Kategori Berita
+            {/* 3. Drawer Footer */}
+            <div className="p-4 border-t border-outline-variant/60 dark:border-slate-800 bg-surface-container-lowest dark:bg-slate-950/80 shrink-0 text-center">
+              <span className="text-[11px] text-on-surface-variant opacity-80">
+                © Jurnal Vibes • Portal Berita Sukabumi
               </span>
-              {[...navLinks, ...dropdownLinks].map((item, idx) => {
-                const isActive = pathname === item.href;
-                return (
-                  <Link
-                    key={idx}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`px-4 py-2.5 rounded-lg font-semibold text-sm transition-colors ${
-                      isActive
-                        ? 'text-[#e74c3c] font-bold bg-surface-variant'
-                        : 'text-on-surface-variant hover:text-[#e74c3c] hover:bg-surface-variant/50'
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
             </div>
           </div>
         </div>
