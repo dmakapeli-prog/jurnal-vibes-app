@@ -219,16 +219,15 @@ export const ChatbotButton: React.FC = () => {
         </div>
       )}
 
-      {/* Main Floating Action Button (Clean Tanya AI Button) */}
+      {/* Main Floating Action Button (Circular Red Button) */}
       {!isChatOpen && (
         <button
           aria-label="Tanya AI"
           onClick={() => setIsChatOpen(true)}
-          className="group relative flex items-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-button font-bold text-sm px-4 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer border border-white/20 hover:scale-105 active:scale-95"
+          className="w-14 h-14 bg-[#e74c3c] hover:bg-[#c00015] text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center cursor-pointer border border-white/20 hover:scale-105 active:scale-95 group"
           title="Tanya Jurnal Vibes AI"
         >
-          <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-          <span>Tanya AI</span>
+          <Bot className="w-7 h-7 group-hover:scale-110 transition-transform" />
         </button>
       )}
     </div>
