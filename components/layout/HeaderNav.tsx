@@ -129,7 +129,16 @@ export const HeaderNav: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center gap-3.5 px-4 py-3 rounded-xl font-bold text-sm text-on-surface dark:text-slate-100 hover:bg-surface-variant dark:hover:bg-slate-800 hover:text-[#e74c3c] transition-all group"
+              onMouseEnter={() => {
+                if (typeof window !== 'undefined' && !document.head.querySelector('link[data-halo-prefetch="true"]')) {
+                  const link = document.createElement('link');
+                  link.rel = 'prefetch';
+                  link.href = 'https://halo-jurnal-app.vercel.app/';
+                  link.setAttribute('data-halo-prefetch', 'true');
+                  document.head.appendChild(link);
+                }
+              }}
+              className="flex items-center gap-3.5 px-4 py-3 rounded-xl font-bold text-sm text-on-surface dark:text-slate-100 hover:bg-surface-variant dark:hover:bg-slate-800 hover:text-[#e74c3c] transition-all group cursor-pointer"
             >
               <MessageCircle className="w-5 h-5 text-[#e74c3c] shrink-0 group-hover:scale-110 transition-transform" />
               <span className="flex-1 font-bold">Hallo Jurnal</span>

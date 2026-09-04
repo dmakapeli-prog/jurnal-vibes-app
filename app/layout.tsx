@@ -30,6 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${inter.variable} ${literata.variable} light`}>
+      <head>
+        <link rel="preconnect" href="https://halo-jurnal-app.vercel.app" />
+        <link rel="dns-prefetch" href="https://halo-jurnal-app.vercel.app" />
+      </head>
       <body className="bg-surface dark:bg-slate-950 text-on-surface dark:text-slate-100 min-h-screen flex flex-col font-body-md antialiased relative overflow-x-hidden transition-colors duration-300">
         <HeaderNav />
         {children}

@@ -168,6 +168,15 @@ export const ChatbotButton: React.FC = () => {
                   href="https://halo-jurnal-app.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onMouseEnter={() => {
+                    if (typeof window !== 'undefined' && !document.head.querySelector('link[data-halo-prefetch="true"]')) {
+                      const link = document.createElement('link');
+                      link.rel = 'prefetch';
+                      link.href = 'https://halo-jurnal-app.vercel.app/';
+                      link.setAttribute('data-halo-prefetch', 'true');
+                      document.head.appendChild(link);
+                    }
+                  }}
                   className="inline-flex items-center gap-1.5 bg-[#e74c3c] hover:bg-[#c00015] text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-xs transition-colors cursor-pointer"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />

@@ -87,6 +87,15 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({ articles }) => {
           href="https://halo-jurnal-app.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
+          onMouseEnter={() => {
+            if (typeof window !== 'undefined' && !document.head.querySelector('link[data-halo-prefetch="true"]')) {
+              const link = document.createElement('link');
+              link.rel = 'prefetch';
+              link.href = 'https://halo-jurnal-app.vercel.app/';
+              link.setAttribute('data-halo-prefetch', 'true');
+              document.head.appendChild(link);
+            }
+          }}
           className="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-variant/50 dark:bg-slate-800/50 hover:bg-primary-container text-on-surface dark:text-white hover:text-on-primary-container font-button font-bold text-sm transition-all group border border-outline-variant/50 dark:border-slate-700 shadow-xs cursor-pointer"
         >
           <HandWaveIcon className="w-5 h-5 text-[#e74c3c] group-hover:rotate-12 transition-transform shrink-0" />
