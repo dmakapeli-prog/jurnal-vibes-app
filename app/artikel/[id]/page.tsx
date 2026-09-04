@@ -8,13 +8,12 @@ import {
   Share2,
   Play,
   Volume2,
-  MessageCircle,
-  Link as LinkIcon,
   User,
-  Globe
+  Check
 } from 'lucide-react';
 import { LeftSidebar } from '@/components/layout/LeftSidebar';
 import { DUMMY_ARTICLES } from '@/data/dummyArticles';
+import { ShareButtons } from '@/components/ui/ShareButtons';
 
 interface ArticleDetailPageProps {
   params: Promise<{ id: string }>;
@@ -23,6 +22,27 @@ interface ArticleDetailPageProps {
 export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
   const { id } = use(params);
   const [isSaved, setIsSaved] = useState<boolean>(false);
+  const [headerCopied, setHeaderCopied] = useState<boolean>(false);
+
+  const handleHeaderShare = async () => {
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const textArea = document.createElement('textarea');
+        textArea.value = url;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      }
+      setHeaderCopied(true);
+      setTimeout(() => setHeaderCopied(false), 2500);
+    } catch (err) {
+      console.error('Failed to copy URL:', err);
+    }
+  };
 
   const [reactions, setReactions] = useState<{
     [key: string]: { emoji: string; label: string; count: number; userVoted: boolean; bg: string; border: string; text: string };
@@ -98,15 +118,21 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setIsSaved(!isSaved)}
+                title={isSaved ? 'Hapus Simpan' : 'Simpan Artikel'}
                 className="p-2 rounded-full hover:bg-surface-container-high dark:hover:bg-slate-800 transition-colors text-on-surface-variant dark:text-gray-400 hover:text-primary cursor-pointer"
               >
                 <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-current text-primary' : ''}`} />
               </button>
               <button
-                onClick={() => alert('Link artikel telah disalin!')}
-                className="p-2 rounded-full hover:bg-surface-container-high dark:hover:bg-slate-800 transition-colors text-on-surface-variant dark:text-gray-400 hover:text-primary cursor-pointer"
+                onClick={handleHeaderShare}
+                title={headerCopied ? 'Tersalin!' : 'Salin Link Artikel'}
+                className="p-2 rounded-full hover:bg-surface-container-high dark:hover:bg-slate-800 transition-colors text-on-surface-variant dark:text-gray-400 hover:text-primary cursor-pointer relative"
               >
-                <Share2 className="w-5 h-5" />
+                {headerCopied ? (
+                  <Check className="w-5 h-5 text-emerald-500" />
+                ) : (
+                  <Share2 className="w-5 h-5" />
+                )}
               </button>
             </div>
           </div>
@@ -182,37 +208,7 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
 
           {/* Share & Save Actions */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-6 border-t border-outline-variant dark:border-slate-800">
-            <div className="flex items-center gap-4">
-              <span className="font-button text-on-surface-variant dark:text-gray-400 font-semibold text-sm">
-                Bagikan:
-              </span>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => alert('Bagikan ke Facebook')}
-                  className="w-10 h-10 rounded-full bg-surface-container dark:bg-slate-800 border border-outline-variant dark:border-slate-700 flex items-center justify-center text-on-surface dark:text-white hover:bg-primary hover:text-white transition-all cursor-pointer"
-                >
-                  <Globe className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={() => alert('Bagikan ke Twitter')}
-                  className="w-10 h-10 rounded-full bg-surface-container dark:bg-slate-800 border border-outline-variant dark:border-slate-700 flex items-center justify-center text-on-surface dark:text-white hover:bg-primary hover:text-white transition-all cursor-pointer"
-                >
-                  <Share2 className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={() => alert('Bagikan ke WhatsApp')}
-                  className="w-10 h-10 rounded-full bg-surface-container dark:bg-slate-800 border border-outline-variant dark:border-slate-700 flex items-center justify-center text-on-surface dark:text-white hover:bg-primary hover:text-white transition-all cursor-pointer"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={() => alert('Salin Link')}
-                  className="w-10 h-10 rounded-full bg-surface-container dark:bg-slate-800 border border-outline-variant dark:border-slate-700 flex items-center justify-center text-on-surface dark:text-white hover:bg-primary hover:text-white transition-all cursor-pointer"
-                >
-                  <LinkIcon className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
+            <ShareButtons title={article.title} />
             <button
               onClick={() => setIsSaved(!isSaved)}
               className="flex items-center justify-center gap-2 bg-[#c00015] hover:bg-[#a00012] text-white px-6 py-3 rounded-full font-button font-bold text-sm hover:scale-105 transition-transform cursor-pointer shadow-md"
