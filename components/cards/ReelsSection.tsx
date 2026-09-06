@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { PlayCircle, Play } from 'lucide-react';
 import { Reel } from '@/types';
 
@@ -16,15 +17,16 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({ reels }) => {
           <PlayCircle className="w-6 h-6 text-[#e74c3c] fill-current" />
           Vibes Reels
         </h3>
-        <a href="#" className="text-[#e74c3c] font-button hover:underline text-sm font-semibold">
+        <Link href="/reels" className="text-[#e74c3c] font-button hover:underline text-sm font-semibold">
           Lihat Semua
-        </a>
+        </Link>
       </div>
       <div className="flex gap-4 overflow-x-auto no-scrollbar pb-4 snap-x snap-mandatory">
         {reels.map(reel => (
-          <div
+          <Link
             key={reel.id}
-            className="relative w-40 md:w-48 aspect-[9/16] rounded-xl overflow-hidden shrink-0 snap-center group cursor-pointer bg-surface-container"
+            href="/reels"
+            className="relative w-40 md:w-48 aspect-[9/16] rounded-xl overflow-hidden shrink-0 snap-center group cursor-pointer bg-surface-container block"
           >
             {/* eslint-disable-next-img-element */}
             <img
@@ -36,7 +38,7 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({ reels }) => {
               <Play className="w-6 h-6 text-white fill-current mb-1" />
               <p className="text-white font-button text-sm line-clamp-2">{reel.title}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
