@@ -36,7 +36,7 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({
   return (
     <Link
       href="/cuaca"
-      className="hidden sm:flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-surface-container/70 dark:bg-slate-800/70 hover:bg-surface-variant dark:hover:bg-slate-800 border border-outline-variant/60 dark:border-slate-700/60 shadow-2xs hover:shadow-xs transition-all duration-300 group shrink-0 cursor-pointer backdrop-blur-xs"
+      className="hidden sm:flex items-center gap-3 px-3.5 py-1 rounded-full bg-surface-container/70 hover:bg-surface-variant border border-outline-variant/60 shadow-2xs hover:shadow-xs transition-all duration-300 group shrink-0 cursor-pointer backdrop-blur-xs"
       title="Lihat Perkiraan Cuaca Sukabumi"
     >
       {/* Weather Icon Badge */}
@@ -51,7 +51,7 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({
       </div>
 
       {/* Divider */}
-      <span className="hidden lg:block w-px h-3.5 bg-outline-variant/60 dark:bg-slate-700 shrink-0" />
+      <span className="hidden lg:block w-px h-3.5 bg-outline-variant/60 shrink-0" />
 
       {/* Date Info */}
       <div className="hidden lg:flex items-center gap-1.5 text-[11px] font-medium text-on-surface-variant/90 shrink-0">

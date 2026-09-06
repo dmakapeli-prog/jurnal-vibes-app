@@ -26,11 +26,11 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'light', size = 'md' }) =>
     lg: 'text-[11px] md:text-xs'
   };
 
-  const textColor = variant === 'footer' ? 'text-white' : 'dark:text-white text-[#1b1c1c]';
+  const textColor = variant === 'footer' ? 'text-white' : 'text-[#1b1c1c]';
   const taglineColor =
     variant === 'footer'
       ? 'text-gray-200 font-medium'
-      : 'dark:text-gray-300 text-[#bd0015] font-semibold opacity-90';
+      : 'text-[#bd0015] font-semibold opacity-90';
 
   return (
     <div className="flex items-center gap-3 group shrink-0 min-w-max">
