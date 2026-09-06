@@ -1,6 +1,6 @@
 'use client';
 
-import React, { use, useState } from 'react';
+import React, { use, useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   ChevronRight,
@@ -12,7 +12,9 @@ import {
   Check
 } from 'lucide-react';
 import { LeftSidebar } from '@/components/layout/LeftSidebar';
+import { Article } from '@/types';
 import { DUMMY_ARTICLES } from '@/data/dummyArticles';
+import { fetchArticlesFromSupabase, fetchArticleByIdFromSupabase } from '@/lib/supabase';
 import { ShareButtons } from '@/components/ui/ShareButtons';
 
 interface ArticleDetailPageProps {
@@ -21,8 +23,32 @@ interface ArticleDetailPageProps {
 
 export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
   const { id } = use(params);
+  const initialArticle = DUMMY_ARTICLES.find(a => a.id === id || a.slug === id) || DUMMY_ARTICLES[0];
+
+  const [article, setArticle] = useState<Article>(initialArticle);
+  const [allArticles, setAllArticles] = useState<Article[]>(DUMMY_ARTICLES);
   const [isSaved, setIsSaved] = useState<boolean>(false);
   const [headerCopied, setHeaderCopied] = useState<boolean>(false);
+
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const [singleData, listData] = await Promise.all([
+          fetchArticleByIdFromSupabase(id),
+          fetchArticlesFromSupabase()
+        ]);
+        if (singleData) {
+          setArticle(singleData);
+        }
+        if (listData && listData.length > 0) {
+          setAllArticles(listData);
+        }
+      } catch (err) {
+        console.error('Error fetching article detail from Supabase:', err);
+      }
+    }
+    loadData();
+  }, [id]);
 
   const handleHeaderShare = async () => {
     const url = typeof window !== 'undefined' ? window.location.href : '';
@@ -68,12 +94,12 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
     });
   };
 
-  const article = DUMMY_ARTICLES.find(a => a.id === id) || DUMMY_ARTICLES[0];
-  const relatedArticles = DUMMY_ARTICLES.filter(a => a.id !== article.id).slice(0, 3);
+  const relatedArticles = allArticles.filter(a => a.id !== article.id).slice(0, 3);
 
   return (
     <div className="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-stack-lg pb-24 md:pb-stack-lg flex flex-col md:flex-row gap-gutter relative">
-      <LeftSidebar articles={DUMMY_ARTICLES} />
+      <LeftSidebar articles={allArticles} />
+
 
       <main className="w-full md:w-3/4 flex flex-col gap-stack-lg pr-0 md:pr-12">
         {/* Breadcrumb */}

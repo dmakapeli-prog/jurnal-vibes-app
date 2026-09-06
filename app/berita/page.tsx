@@ -1,16 +1,33 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LeftSidebar } from '@/components/layout/LeftSidebar';
 import { FilterChips } from '@/components/ui/FilterChips';
 import { NewsCard } from '@/components/cards/NewsCard';
+import { Article } from '@/types';
 import { DUMMY_ARTICLES } from '@/data/dummyArticles';
+import { fetchArticlesFromSupabase } from '@/lib/supabase';
 
 export default function BeritaPage() {
+  const [articles, setArticles] = useState<Article[]>(DUMMY_ARTICLES);
   const [activeFilter, setActiveFilter] = useState<string>('Semua Berita');
   const filters = ['Semua Berita', 'Kampus', 'Sekolah', 'Komunitas', 'Event Lokal'];
 
-  const filteredArticles = DUMMY_ARTICLES.filter(article => {
+  useEffect(() => {
+    async function loadArticles() {
+      try {
+        const data = await fetchArticlesFromSupabase();
+        if (data && data.length > 0) {
+          setArticles(data);
+        }
+      } catch (err) {
+        console.error('Error fetching articles in BeritaPage:', err);
+      }
+    }
+    loadArticles();
+  }, []);
+
+  const filteredArticles = articles.filter(article => {
     if (activeFilter === 'Semua Berita') return true;
     if (activeFilter === 'Kampus') {
       return article.subCategory === 'KAMPUS' || article.categoryLabel === 'KAMPUS';
@@ -33,7 +50,7 @@ export default function BeritaPage() {
 
   return (
     <div className="flex flex-1 mx-auto max-w-container-max w-full px-margin-mobile md:px-margin-desktop gap-gutter py-stack-lg">
-      <LeftSidebar articles={DUMMY_ARTICLES} />
+      <LeftSidebar articles={articles} />
 
       <main className="w-full md:w-3/4 flex flex-col gap-stack-lg min-w-0 pb-32">
         <header className="mb-4">
@@ -75,3 +92,4 @@ export default function BeritaPage() {
     </div>
   );
 }
+

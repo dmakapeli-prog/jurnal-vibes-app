@@ -1,23 +1,44 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { LeftSidebar } from '@/components/layout/LeftSidebar';
 import { HeroCarousel } from '@/components/cards/HeroCarousel';
 import { NewsCard } from '@/components/cards/NewsCard';
 import { PollingWidget } from '@/components/widgets/PollingWidget';
 import { ReelsSection } from '@/components/cards/ReelsSection';
+import { Article } from '@/types';
 import { DUMMY_ARTICLES } from '@/data/dummyArticles';
 import { DUMMY_POLL, DUMMY_REELS } from '@/data/dummyPolls';
+import { fetchArticlesFromSupabase } from '@/lib/supabase';
 
 export default function HomePage() {
-  const feedArticles = DUMMY_ARTICLES.filter(a => !a.isHero);
+  const [articles, setArticles] = useState<Article[]>(DUMMY_ARTICLES);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    async function loadArticles() {
+      try {
+        const data = await fetchArticlesFromSupabase();
+        if (data && data.length > 0) {
+          setArticles(data);
+        }
+      } catch (err) {
+        console.error('Error fetching articles from Supabase:', err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadArticles();
+  }, []);
+
+  const feedArticles = articles.filter(a => !a.isHero);
 
   return (
     <div className="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-stack-lg pb-24 md:pb-stack-lg flex flex-col md:flex-row gap-gutter relative">
-      <LeftSidebar articles={DUMMY_ARTICLES} />
+      <LeftSidebar articles={articles} />
 
       <main className="w-full md:w-3/4 flex flex-col gap-stack-lg pr-0 md:pr-12">
-        <HeroCarousel articles={DUMMY_ARTICLES} />
+        <HeroCarousel articles={articles} />
 
         {/* Feed Articles */}
         <div className="flex flex-col gap-6">
@@ -49,3 +70,4 @@ export default function HomePage() {
     </div>
   );
 }
+
