@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { Logo } from '../ui/Logo';
 
 export const Footer: React.FC = () => {
@@ -41,19 +41,31 @@ export const Footer: React.FC = () => {
       {/* Top Thin Red Accent Border */}
       <div className="h-0.5 bg-[#e74c3c] w-full" />
 
-      {/* Main Multi-Column Grid */}
+      {/* Main 3-Section Proportional Layout */}
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-12 pb-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
           
-          {/* Column 1: Brand */}
-          <div className="flex flex-col gap-3">
+          {/* Bagian 1 (Brand & Info Redaksi - Kiri): 6 Kolom Grid */}
+          <div className="md:col-span-6 flex flex-col gap-3.5 pr-0 md:pr-6">
             <Link href="/" className="inline-block">
               <Logo variant="light" size="md" />
             </Link>
-            <p className="text-zinc-600 dark:text-zinc-400 text-xs md:text-sm leading-relaxed font-body-md">
+
+            <p className="text-zinc-600 dark:text-zinc-400 text-xs md:text-sm leading-relaxed font-body-md max-w-lg">
               Media digital lokal Sukabumi ramah Gen-Z. Menyajikan berita terkini, gaya hidup, dan cerita visual seputar Sukabumi.
             </p>
-            <div className="flex items-center gap-2 pt-1">
+
+            {/* Kontak Redaksi Langsung di Bawah Deskripsi */}
+            <div className="flex items-center gap-2 text-xs md:text-sm text-zinc-600 dark:text-zinc-400 font-medium pt-0.5">
+              <Mail className="w-4 h-4 text-[#e74c3c] shrink-0" />
+              <span>Redaksi:</span>
+              <a href="mailto:redaksi@jurnalvibes.com" className="hover:text-[#e74c3c] transition-colors font-semibold text-zinc-800 dark:text-zinc-200">
+                redaksi@jurnalvibes.com
+              </a>
+            </div>
+
+            {/* Deretan Ikon Medsos Bulat */}
+            <div className="flex items-center gap-2.5 pt-1">
               {socialLinks.map((item, idx) => (
                 <a
                   key={idx}
@@ -61,7 +73,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={item.name}
-                  className="w-8 h-8 rounded-full bg-zinc-100 dark:bg-slate-800 border border-zinc-200 dark:border-slate-700 flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:bg-[#e74c3c] hover:text-white dark:hover:bg-[#e74c3c] dark:hover:text-white hover:border-[#e74c3c] transition-all duration-200 shadow-2xs"
+                  className="w-8.5 h-8.5 rounded-full bg-zinc-100 dark:bg-slate-800 border border-zinc-200 dark:border-slate-700 flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:bg-[#e74c3c] hover:text-white dark:hover:bg-[#e74c3c] dark:hover:text-white hover:border-[#e74c3c] transition-all duration-200 shadow-2xs"
                 >
                   {item.icon}
                 </a>
@@ -69,12 +81,12 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: Kategori */}
-          <div className="flex flex-col gap-3">
+          {/* Bagian 2 (Kanal): 3 Kolom Grid */}
+          <div className="md:col-span-3 flex flex-col gap-3">
             <h3 className="font-semibold text-zinc-900 dark:text-white text-sm uppercase tracking-wider">
-              Kategori
+              Kanal
             </h3>
-            <ul className="flex flex-col gap-2 text-xs md:text-sm font-medium">
+            <ul className="flex flex-col gap-2.5 text-xs md:text-sm font-medium">
               <li>
                 <Link href="/berita" className="text-zinc-600 dark:text-zinc-400 hover:text-[#e74c3c] transition-colors">
                   Berita
@@ -103,12 +115,12 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Jelajahi */}
-          <div className="flex flex-col gap-3">
+          {/* Bagian 3 (Informasi & Regulasi / Tentang Media): 3 Kolom Grid */}
+          <div className="md:col-span-3 flex flex-col gap-3">
             <h3 className="font-semibold text-zinc-900 dark:text-white text-sm uppercase tracking-wider">
-              Jelajahi
+              Tentang Media
             </h3>
-            <ul className="flex flex-col gap-2 text-xs md:text-sm font-medium">
+            <ul className="flex flex-col gap-2.5 text-xs md:text-sm font-medium">
               <li>
                 <a href="#" className="text-zinc-600 dark:text-zinc-400 hover:text-[#e74c3c] transition-colors">
                   Tentang Kami
@@ -116,12 +128,12 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#" className="text-zinc-600 dark:text-zinc-400 hover:text-[#e74c3c] transition-colors">
-                  Pedoman Siber
+                  Pedoman Media Siber
                 </a>
               </li>
               <li>
                 <a href="#" className="text-zinc-600 dark:text-zinc-400 hover:text-[#e74c3c] transition-colors">
-                  Redaksi
+                  Info Pemasangan Iklan
                 </a>
               </li>
               <li>
@@ -132,30 +144,11 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 4: Kontak Kami */}
-          <div className="flex flex-col gap-3">
-            <h3 className="font-semibold text-zinc-900 dark:text-white text-sm uppercase tracking-wider">
-              Kontak Kami
-            </h3>
-            <div className="flex flex-col gap-2.5 text-xs md:text-sm text-zinc-600 dark:text-zinc-400 font-medium">
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#e74c3c] shrink-0" />
-                <a href="mailto:redaksi@jurnalvibes.com" className="hover:text-[#e74c3c] transition-colors truncate">
-                  redaksi@jurnalvibes.com
-                </a>
-              </div>
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#e74c3c] shrink-0 mt-0.5" />
-                <span>Kota Sukabumi, Jawa Barat, Indonesia</span>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        {/* Bottom Bar: Garis Pemisah & Sub-Footer */}
+        {/* Bottom Bar: Garis Pemisah & Sub-Footer dengan safe padding pr-24 untuk Floating Bot */}
         <div className="border-t border-zinc-200 dark:border-slate-800 mt-10 pt-6 pb-4">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400 font-body-md pr-0 sm:pr-20">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400 font-body-md pr-0 sm:pr-24">
             <p>© 2026 Jurnal Vibes. All rights reserved.</p>
             <div className="flex items-center gap-4 font-medium text-zinc-600 dark:text-zinc-400">
               <a href="#" className="hover:text-[#e74c3c] transition-colors">
@@ -172,5 +165,6 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+
 
 
