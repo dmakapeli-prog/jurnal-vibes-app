@@ -13,6 +13,7 @@ interface ReelsSectionProps {
   showCategoryFilter?: boolean;
   title?: string;
   subtitle?: string;
+  limit?: number;
 }
 
 const CATEGORIES = ['Semua', 'Kuliner', 'Wisata', 'Lifestyle', 'Sport'];
@@ -23,18 +24,24 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
   hideHeader = false,
   showCategoryFilter = false,
   title = 'Vibes Reels',
-  subtitle
+  subtitle,
+  limit
 }) => {
   const [activeCategory, setActiveCategory] = useState<string>('Semua');
   const [isViewerOpen, setIsViewerOpen] = useState<boolean>(false);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   const filteredReels = useMemo(() => {
-    if (activeCategory === 'Semua') return reels;
-    return reels.filter(
-      reel => reel.category?.toLowerCase() === activeCategory.toLowerCase()
-    );
-  }, [reels, activeCategory]);
+    let list = activeCategory === 'Semua'
+      ? reels
+      : reels.filter(
+          reel => reel.category?.toLowerCase() === activeCategory.toLowerCase()
+        );
+    if (limit && limit > 0) {
+      list = list.slice(0, limit);
+    }
+    return list;
+  }, [reels, activeCategory, limit]);
 
   const handleOpenViewer = (index: number) => {
     setSelectedIndex(index);

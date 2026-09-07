@@ -68,8 +68,8 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* Reels Section */}
-        <ReelsSection reels={DUMMY_REELS} />
+        {/* Reels Section (Limited to 4 items on Homepage) */}
+        <ReelsSection reels={DUMMY_REELS} limit={4} />
       </main>
     </div>
   );
