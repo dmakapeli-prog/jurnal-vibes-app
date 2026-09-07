@@ -274,10 +274,15 @@ export const ReelsViewerModal: React.FC<ReelsViewerModalProps> = ({
 
               {/* Bottom Video Details Overlay */}
               <div className="absolute inset-x-0 bottom-0 z-20 p-5 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col gap-2 pointer-events-none">
-                <div className="pointer-events-auto flex items-center gap-2">
+                <div className="pointer-events-auto flex items-center gap-2 flex-wrap">
                   <span className="font-bold text-sm text-white hover:underline cursor-pointer">
-                    @jurnalvibes
+                    {reel.creator || '@jurnalvibes'}
                   </span>
+                  {reel.category && (
+                    <span className="text-[10px] font-bold bg-white/20 backdrop-blur-xs text-white px-2 py-0.5 rounded-full uppercase">
+                      {reel.category}
+                    </span>
+                  )}
                   <span className="text-[10px] font-bold bg-[#e74c3c] text-white px-2 py-0.5 rounded-full">
                     IKUTI
                   </span>
@@ -289,7 +294,9 @@ export const ReelsViewerModal: React.FC<ReelsViewerModalProps> = ({
 
                 <div className="flex items-center gap-2 text-xs text-gray-300 pointer-events-auto mt-1">
                   <Music className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '4s' }} />
-                  <span className="truncate max-w-[200px]">Suara Asli - Jurnal Vibes Sukabumi</span>
+                  <span className="truncate max-w-[200px]">
+                    {reel.location ? `${reel.location} • Suara Asli` : 'Suara Asli - Jurnal Vibes Sukabumi'}
+                  </span>
                 </div>
               </div>
             </div>

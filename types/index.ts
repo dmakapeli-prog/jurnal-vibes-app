@@ -66,4 +66,9 @@ export interface Reel {
   thumbnailUrl: string;
   videoUrl?: string;
   imageAlt?: string;
+  category?: string;
+  creator?: string;
+  location?: string;
+  viewsCount?: string;
 }
+
