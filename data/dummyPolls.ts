@@ -70,6 +70,27 @@ export const DUMMY_REELS: Reel[] = [
     viewsCount: '15.2k',
     thumbnailUrl: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=700&q=80',
     imageAlt: 'Night Run Sukabumi'
+  },
+  {
+    id: 'reel-7',
+    title: 'Festival Seni & Budaya Tradisional',
+    category: 'Wisata',
+    creator: '@budaya_sukabumi',
+    location: 'Gedung Kesenian',
+    viewsCount: '20.3k',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=700&q=80',
+    imageAlt: 'Festival Seni Budaya Sukabumi'
+  },
+  {
+    id: 'reel-8',
+    title: 'Sensasi Offroad Kawah Ratu Salak',
+    category: 'Sport',
+    creator: '@adventure_smi',
+    location: 'Kawah Ratu',
+    viewsCount: '27.8k',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=700&q=80',
+    imageAlt: 'Offroad Kawah Ratu Sukabumi'
   }
 ];
+
 

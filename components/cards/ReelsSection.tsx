@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { PlayCircle, Play, Eye, MapPin } from 'lucide-react';
 import { Reel } from '@/types';
@@ -9,18 +9,32 @@ import { ReelsViewerModal } from '../widgets/ReelsViewerModal';
 interface ReelsSectionProps {
   reels: Reel[];
   hideSeeAll?: boolean;
+  hideHeader?: boolean;
+  showCategoryFilter?: boolean;
   title?: string;
   subtitle?: string;
 }
 
+const CATEGORIES = ['Semua', 'Kuliner', 'Wisata', 'Lifestyle', 'Sport'];
+
 export const ReelsSection: React.FC<ReelsSectionProps> = ({
   reels,
   hideSeeAll = false,
+  hideHeader = false,
+  showCategoryFilter = false,
   title = 'Vibes Reels',
   subtitle
 }) => {
+  const [activeCategory, setActiveCategory] = useState<string>('Semua');
   const [isViewerOpen, setIsViewerOpen] = useState<boolean>(false);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
+
+  const filteredReels = useMemo(() => {
+    if (activeCategory === 'Semua') return reels;
+    return reels.filter(
+      reel => reel.category?.toLowerCase() === activeCategory.toLowerCase()
+    );
+  }, [reels, activeCategory]);
 
   const handleOpenViewer = (index: number) => {
     setSelectedIndex(index);
@@ -29,35 +43,60 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
 
   return (
     <>
-      <section className="border-t border-outline-variant/60 pt-stack-lg my-6">
-        <div className="flex items-center justify-between mb-5">
-          <div className="flex flex-col gap-1">
-            <h2 className="font-headline-md text-on-surface text-xl md:text-2xl font-bold flex items-center gap-2.5">
-              <span className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center text-[#e74c3c]">
-                <PlayCircle className="w-5 h-5 fill-current" />
-              </span>
-              <span>{title}</span>
-            </h2>
-            {subtitle && (
-              <p className="text-on-surface-variant text-sm font-body-md">
-                {subtitle}
-              </p>
+      <section className={hideHeader ? 'my-2' : 'border-t border-outline-variant/60 pt-stack-lg my-6'}>
+        {/* Optional Header */}
+        {!hideHeader && (
+          <div className="flex items-center justify-between mb-5">
+            <div className="flex flex-col gap-1">
+              <h2 className="font-headline-md text-on-surface text-xl md:text-2xl font-bold flex items-center gap-2.5">
+                <span className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center text-[#e74c3c]">
+                  <PlayCircle className="w-5 h-5 fill-current" />
+                </span>
+                <span>{title}</span>
+              </h2>
+              {subtitle && (
+                <p className="text-on-surface-variant text-sm font-body-md">
+                  {subtitle}
+                </p>
+              )}
+            </div>
+            {!hideSeeAll && (
+              <Link
+                href="/reels"
+                className="inline-flex items-center gap-1.5 text-[#e74c3c] font-button hover:text-[#c00015] hover:underline text-sm font-semibold transition-colors"
+              >
+                <span>Lihat Semua</span>
+                <span className="text-xs">→</span>
+              </Link>
             )}
           </div>
-          {!hideSeeAll && (
-            <Link
-              href="/reels"
-              className="inline-flex items-center gap-1.5 text-[#e74c3c] font-button hover:text-[#c00015] hover:underline text-sm font-semibold transition-colors"
-            >
-              <span>Lihat Semua</span>
-              <span className="text-xs">→</span>
-            </Link>
-          )}
-        </div>
+        )}
+
+        {/* Category Filter Pills (if enabled) */}
+        {showCategoryFilter && (
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 mb-5">
+            {CATEGORIES.map(cat => {
+              const isActive = activeCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition-all cursor-pointer whitespace-nowrap ${
+                    isActive
+                      ? 'bg-[#e74c3c] text-white shadow-md shadow-red-500/20 scale-105'
+                      : 'bg-surface-container-highest/60 text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface border border-outline-variant/30'
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {/* Responsive Layout: Swipe/Carousel on Mobile, Grid 3-4 cols on Tablet/Desktop */}
         <div className="flex md:grid md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 overflow-x-auto md:overflow-visible no-scrollbar snap-x snap-mandatory pb-4 md:pb-0">
-          {reels.map((reel, idx) => (
+          {filteredReels.map((reel, idx) => (
             <div
               key={reel.id}
               onClick={() => handleOpenViewer(idx)}
@@ -93,25 +132,24 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
                   </div>
                 </div>
 
-                {/* Bottom Metadata */}
-                <div className="flex flex-col gap-1.5 z-10 pt-8">
-                  <p className="text-white font-bold text-sm md:text-base leading-snug line-clamp-2 drop-shadow-sm group-hover:text-red-300 transition-colors">
+                {/* Bottom Metadata: Clean Vertical Stack */}
+                <div className="flex flex-col gap-1 z-10 pt-6">
+                  {reel.creator && (
+                    <span className="text-[11px] font-medium text-white/75 tracking-wide truncate">
+                      {reel.creator}
+                    </span>
+                  )}
+
+                  <p className="text-white font-bold text-sm md:text-base leading-snug line-clamp-2 drop-shadow-xs group-hover:text-red-300 transition-colors">
                     {reel.title}
                   </p>
 
-                  <div className="flex items-center justify-between text-xs text-white/80 font-medium pt-0.5">
-                    {reel.creator && (
-                      <span className="truncate max-w-[110px] text-white/90">
-                        {reel.creator}
-                      </span>
-                    )}
-                    {reel.location && (
-                      <span className="flex items-center gap-0.5 truncate text-white/70">
-                        <MapPin className="w-3 h-3 text-red-400 shrink-0" />
-                        <span className="truncate">{reel.location}</span>
-                      </span>
-                    )}
-                  </div>
+                  {reel.location && (
+                    <div className="flex items-center gap-1 text-[11px] text-white/85 font-medium pt-0.5 truncate">
+                      <MapPin className="w-3 h-3 text-red-400 shrink-0" />
+                      <span className="truncate">{reel.location}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -120,7 +158,7 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
       </section>
 
       <ReelsViewerModal
-        reels={reels}
+        reels={filteredReels}
         initialIndex={selectedIndex}
         isOpen={isViewerOpen}
         onClose={() => setIsViewerOpen(false)}
@@ -128,5 +166,6 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
     </>
   );
 };
+
 
 

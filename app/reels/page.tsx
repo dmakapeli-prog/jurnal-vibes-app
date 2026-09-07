@@ -26,13 +26,13 @@ export default function ReelsPage() {
           </p>
         </header>
 
-        {/* Unified Primary Reels Gallery */}
+        {/* Clean Unified Reels Section with Category Filter Pills */}
         <ReelsSection
           reels={DUMMY_REELS}
-          hideSeeAll={true}
-          title="Galeri Utama Reels"
-          subtitle="Jelajahi video pendek visual pilihan seputar Sukabumi"
+          hideHeader={true}
+          showCategoryFilter={true}
         />
+
       </main>
     </div>
   );
