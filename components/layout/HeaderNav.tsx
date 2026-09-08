@@ -167,7 +167,7 @@ export const HeaderNav: React.FC = () => {
   return (
     <>
       <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant transition-colors duration-300">
-        <div className="flex justify-between items-center px-4 md:px-margin-desktop h-16 md:h-20 max-w-container-max mx-auto w-full relative z-10 gap-2 md:gap-4">
+        <div className="flex justify-between items-center px-4 pr-4 md:px-margin-desktop h-16 md:h-20 max-w-container-max mx-auto w-full relative z-10 gap-2 md:gap-4">
           {/* Mobile Hamburger & Brand Logo */}
           <div className="flex items-center gap-1 sm:gap-2 shrink-0">
             <button
@@ -228,7 +228,7 @@ export const HeaderNav: React.FC = () => {
             <div className="h-5 w-px bg-outline-variant/60 hidden sm:block" />
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="text-on-surface hover:text-[#e74c3c] transition-colors p-1.5 sm:p-2 rounded-full hover:bg-surface-variant flex items-center justify-center cursor-pointer"
+              className="text-on-surface hover:text-[#e74c3c] transition-colors p-1.5 sm:p-2 rounded-full hover:bg-surface-variant flex items-center justify-center cursor-pointer shrink-0"
               title="Cari Berita"
               aria-label="Cari Berita"
             >
