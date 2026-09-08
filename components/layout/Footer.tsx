@@ -69,16 +69,16 @@ export const Footer: React.FC = () => {
 
       {/* Main Split Container */}
       <div className="max-w-container-max mx-auto py-8 px-6 md:px-12">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
-          {/* Sisi Kiri: Logo + Slogan + 6 Medsos Bulat */}
-          <div className="flex flex-col gap-3">
+          {/* Sisi Kiri: Logo + Medsos */}
+          <div className="space-y-3">
             <Link href="/" className="inline-block">
               <Logo variant="light" size="sm" />
             </Link>
 
             {/* Deretan Icon Medsos Bulat (Instagram, TikTok, WhatsApp, X, YouTube, Facebook) */}
-            <div className="flex items-center gap-2 pt-0.5">
+            <div className="inline-flex items-center gap-2 pt-0.5">
               {socialLinks.map((item, idx) => (
                 <a
                   key={idx}
@@ -95,8 +95,8 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Sisi Kanan (Rata Kanan di Desktop) dengan Padding-Right untuk Floating Bot */}
-          <div className="flex flex-col gap-2 md:items-end pr-16 md:pr-20">
-            <nav aria-label="Footer Navigation" className="flex items-center gap-2 md:gap-3 text-xs md:text-sm font-semibold text-zinc-600 dark:text-zinc-400 flex-wrap md:justify-end">
+          <div className="text-center md:text-right pr-20 md:pr-24">
+            <nav aria-label="Footer Navigation" className="font-medium text-sm text-zinc-600 dark:text-zinc-400 flex items-center gap-2 md:gap-3 flex-wrap justify-center md:justify-end">
               <a href="#" className="hover:text-[#e74c3c] transition-colors">Tentang Kami</a>
               <span className="text-zinc-300 dark:text-zinc-700">•</span>
               <a href="#" className="hover:text-[#e74c3c] transition-colors">Pedoman Media Siber</a>
@@ -106,8 +106,8 @@ export const Footer: React.FC = () => {
               <a href="#" className="hover:text-[#e74c3c] transition-colors">Kebijakan Privasi</a>
             </nav>
 
-            <p className="text-xs text-zinc-400 dark:text-zinc-500 font-body-md mt-2 md:text-right uppercase tracking-wider">
-              COPYRIGHT © 2026 JURNAL VIBES. ALL RIGHTS RESERVED.
+            <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-2">
+              © 2026 Jurnal Vibes. All rights reserved.
             </p>
           </div>
 
