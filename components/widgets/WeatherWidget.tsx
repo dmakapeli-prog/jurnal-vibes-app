@@ -36,18 +36,18 @@ export const WeatherWidget: React.FC<WeatherWidgetProps> = ({
   return (
     <Link
       href="/cuaca"
-      className="hidden sm:flex items-center gap-3 px-3.5 py-1 rounded-full bg-surface-container/70 hover:bg-surface-variant border border-outline-variant/60 shadow-2xs hover:shadow-xs transition-all duration-300 group shrink-0 cursor-pointer backdrop-blur-xs"
+      className="flex items-center gap-1.5 sm:gap-3 px-2 sm:px-3.5 py-1 rounded-full bg-surface-container/70 hover:bg-surface-variant border border-outline-variant/60 shadow-2xs hover:shadow-xs transition-all duration-300 group shrink-0 cursor-pointer backdrop-blur-xs"
       title="Lihat Perkiraan Cuaca Sukabumi"
     >
       {/* Weather Icon Badge */}
-      <div className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300 shrink-0">
-        <CloudSun className="w-4 h-4 stroke-[2.2] group-hover:scale-110 transition-transform" />
+      <div className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300 shrink-0">
+        <CloudSun className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2.2] group-hover:scale-110 transition-transform" />
       </div>
 
       {/* Weather Info */}
       <div className="flex items-center gap-1.5 text-xs font-semibold text-on-surface">
-        <span className="font-extrabold text-sm text-[#e74c3c] tracking-tight">{temp}</span>
-        <span className="text-[11px] text-on-surface-variant font-medium opacity-90">{location}</span>
+        <span className="font-extrabold text-xs sm:text-sm text-[#e74c3c] tracking-tight">{temp}</span>
+        <span className="hidden md:inline text-[11px] text-on-surface-variant font-medium opacity-90">{location}</span>
       </div>
 
       {/* Divider */}

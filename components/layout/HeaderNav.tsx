@@ -223,12 +223,12 @@ export const HeaderNav: React.FC = () => {
           </nav>
 
           {/* Header Actions (Top Right) */}
-          <div className="flex items-center gap-3 sm:gap-4 shrink-0 justify-end">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0 justify-end">
             <WeatherWidget />
             <div className="h-5 w-px bg-outline-variant/60 hidden sm:block" />
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="text-on-surface hover:text-[#e74c3c] transition-colors p-2 rounded-full hover:bg-surface-variant flex items-center justify-center cursor-pointer"
+              className="text-on-surface hover:text-[#e74c3c] transition-colors p-1.5 sm:p-2 rounded-full hover:bg-surface-variant flex items-center justify-center cursor-pointer"
               title="Cari Berita"
               aria-label="Cari Berita"
             >
