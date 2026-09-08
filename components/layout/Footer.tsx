@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
       <div className="h-0.5 bg-[#e74c3c] w-full" />
 
       {/* Main Split Container */}
-      <div className="max-w-container-max mx-auto py-8 px-6 md:px-12">
+      <div className="max-w-container-max mx-auto pt-8 pb-32 md:pb-8 px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* Sisi Kiri: Logo + Slogan + Medsos Bulat (Susunan Vertikal) */}
@@ -94,19 +94,16 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Sisi Kanan (Rata Kanan di Desktop) dengan Padding-Right Ekstra untuk Floating Bot */}
-          <div className="text-center md:text-right pr-28 md:pr-32">
-            <nav aria-label="Footer Navigation" className="font-medium text-sm text-zinc-600 dark:text-zinc-400 flex items-center gap-2 md:gap-3 flex-wrap justify-center md:justify-end">
+          {/* Sisi Kanan (Rata Kanan di Desktop) */}
+          <div className="text-center md:text-right md:pr-32">
+            <nav aria-label="Footer Navigation" className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-zinc-600 dark:text-zinc-400 font-medium">
               <a href="#" className="hover:text-[#e74c3c] transition-colors">Tentang Kami</a>
-              <span className="text-zinc-300 dark:text-zinc-700">•</span>
               <a href="#" className="hover:text-[#e74c3c] transition-colors">Pedoman Media Siber</a>
-              <span className="text-zinc-300 dark:text-zinc-700">•</span>
               <a href="#" className="hover:text-[#e74c3c] transition-colors">Hubungi Kami</a>
-              <span className="text-zinc-300 dark:text-zinc-700">•</span>
               <a href="#" className="hover:text-[#e74c3c] transition-colors">Kebijakan Privasi</a>
             </nav>
 
-            <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-2">
+            <p className="text-[11px] text-zinc-400 dark:text-zinc-500 mt-3 text-center md:text-right">
               © 2026 Jurnal Vibes. All rights reserved.
             </p>
           </div>
