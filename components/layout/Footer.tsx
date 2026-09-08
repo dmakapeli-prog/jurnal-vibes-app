@@ -71,14 +71,14 @@ export const Footer: React.FC = () => {
       <div className="max-w-container-max mx-auto py-8 px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
-          {/* Sisi Kiri: Logo + Medsos */}
-          <div className="space-y-3">
+          {/* Sisi Kiri: Logo + Slogan + Medsos Bulat (Susunan Vertikal) */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <Link href="/" className="inline-block">
               <Logo variant="light" size="sm" />
             </Link>
 
             {/* Deretan Icon Medsos Bulat (Instagram, TikTok, WhatsApp, X, YouTube, Facebook) */}
-            <div className="inline-flex items-center gap-2 pt-0.5">
+            <div className="flex items-center gap-2 mt-3">
               {socialLinks.map((item, idx) => (
                 <a
                   key={idx}
@@ -94,8 +94,8 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Sisi Kanan (Rata Kanan di Desktop) dengan Padding-Right untuk Floating Bot */}
-          <div className="text-center md:text-right pr-20 md:pr-24">
+          {/* Sisi Kanan (Rata Kanan di Desktop) dengan Padding-Right Ekstra untuk Floating Bot */}
+          <div className="text-center md:text-right pr-28 md:pr-32">
             <nav aria-label="Footer Navigation" className="font-medium text-sm text-zinc-600 dark:text-zinc-400 flex items-center gap-2 md:gap-3 flex-wrap justify-center md:justify-end">
               <a href="#" className="hover:text-[#e74c3c] transition-colors">Tentang Kami</a>
               <span className="text-zinc-300 dark:text-zinc-700">•</span>
